@@ -1,0 +1,16 @@
+# Ignore composer.phar
+restaurant-backend/composer.phar
+
+# Ignore local env file
+restaurant-backend/.env
+
+# Ignore laravel storage files
+restaurant-backend/storage/framework/views/*.php
+restaurant-backend/storage/framework/sessions/*
+restaurant-backend/storage/framework/cache/*
+restaurant-backend/storage/logs/*
+restaurant-backend/storage/app/public/*
+restaurant-backend/bootstrap/cache/*
+restaurant-backend/vendor/
+node_modules/
+.DS_Store
