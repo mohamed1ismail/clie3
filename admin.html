@@ -578,6 +578,32 @@
 </div>
 
 
+<!-- Dynamic QR Modal -->
+<div id="modal-qr" class="modal-overlay hidden">
+  <div class="modal" style="max-width:400px;text-align:center;">
+    <div class="modal-header">
+      <h3 class="text-heading font-bold text-base" id="qr-modal-title">رمز QR للطاولة</h3>
+      <button onclick="closeModal('modal-qr')" class="text-muted hover:text-heading"><span class="icon">close</span></button>
+    </div>
+    <div class="modal-body flex flex-col items-center gap-4 py-4">
+      <div id="qr-container" class="p-3 bg-white rounded-2xl shadow-inner inline-block"></div>
+      
+      <div class="w-full bg-s2 p-3 rounded-lg border border-line text-right">
+        <div class="text-[11px] text-muted mb-1 font-semibold">الرابط المباشر لهذه الطاولة:</div>
+        <div id="qr-link-url" class="text-xs font-mono text-gold truncate dir-ltr select-all">https://clie3.vercel.app/index.html?table=1</div>
+      </div>
+
+      <p class="text-xs text-muted leading-relaxed">
+        عند قيام أي زبون بعمل Scan لهذا الـ QR بالموبايل، سيفتح المنيو فوراً وطاولته محددة تلقائياً.
+      </p>
+
+      <a id="qr-download-link" href="#" target="_blank" download class="btn-primary w-full py-2.5 flex items-center justify-center gap-2">
+        <span class="icon" style="font-size:18px;">download</span> تحميل الـ QR للطباعة
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- Order Detail Modal -->
 <div id="modal-order" class="modal-overlay hidden">
   <div class="modal" style="max-width:560px;">
@@ -1777,20 +1803,21 @@ async function loadTables() {
     };
     el.innerHTML = tables.map(t => {
       const s = statusStyle[t.status] || statusStyle.available;
-      return `<div class="qr-card" style="border-color:${s.border};background:${s.bg};">
+      return `<div class="qr-card cursor-pointer hover:border-gold-dim transition-all" style="border-color:${s.border};background:${s.bg};" onclick="showQR(${t.id},'${esc(t.table_number)}')">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#1E1E1E;border:1px solid #2A2A2A;">
-          <span class="icon" style="font-size:22px;color:#D4AF37;">table_restaurant</span>
+          <span class="icon" style="font-size:22px;color:#D4AF37;">qr_code_2</span>
         </div>
         <div class="text-heading font-bold text-base">${esc(t.table_number)}</div>
         <div class="flex items-center gap-1.5 text-xs" style="color:${s.dot};">
           <span style="width:6px;height:6px;border-radius:50%;background:${s.dot};display:inline-block;"></span>${s.label}
         </div>
-        <div class="text-xs text-muted">السعة: ${t.capacity}</div>
+        <div class="text-xs text-muted">السعة: ${t.capacity} شخص</div>
+        <div class="text-[11px] text-gold-dim font-mono">اضغط لعرض QR الطاولة</div>
         <div class="flex gap-2 mt-1">
-          <button class="btn-ghost" style="padding:3px 8px;font-size:10px;" onclick="editTable(${JSON.stringify(t).replace(/'/g,'&#39;')})">
+          <button class="btn-ghost" style="padding:3px 8px;font-size:10px;" onclick="event.stopPropagation();editTable(${JSON.stringify(t).replace(/'/g,'&#39;')})">
             <span class="icon" style="font-size:13px;">edit</span>
           </button>
-          <button class="btn-danger" style="padding:3px 8px;font-size:10px;" onclick="deleteTable(${t.id},'${esc(t.table_number)}')">
+          <button class="btn-danger" style="padding:3px 8px;font-size:10px;" onclick="event.stopPropagation();deleteTable(${t.id},'${esc(t.table_number)}')">
             <span class="icon" style="font-size:13px;">delete</span>
           </button>
         </div>
@@ -1800,21 +1827,29 @@ async function loadTables() {
 }
 
 async function showQR(tableId, tableNumber) {
-  document.getElementById('qr-modal-title').textContent = `${currentLang === 'ar' ? 'رمز الاستجابة السريعة — ' : 'QR Code — '}${tableNumber}`;
+  document.getElementById('qr-modal-title').textContent = `رمز QR — ${tableNumber}`;
   const container = document.getElementById('qr-container');
-  container.innerHTML = '<div class="spin" style="width:80px;height:80px;border:3px solid #D4AF37;border-top-color:transparent;border-radius:50%;margin:auto;"></div>';
+  container.innerHTML = '<div class="spin" style="width:60px;height:60px;border:3px solid #D4AF37;border-top-color:transparent;border-radius:50%;margin:20px auto;"></div>';
   openModal('modal-qr');
-  try {
-    // Generate simulated QR SVG offline
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200"><rect width="100" height="100" fill="#ffffff"/><rect x="10" y="10" width="30" height="30" fill="#000000"/><rect x="15" y="15" width="20" height="20" fill="#ffffff"/><rect x="18" y="18" width="14" height="14" fill="#000000"/><rect x="60" y="10" width="30" height="30" fill="#000000"/><rect x="65" y="15" width="20" height="20" fill="#ffffff"/><rect x="68" y="18" width="14" height="14" fill="#000000"/><rect x="10" y="60" width="30" height="30" fill="#000000"/><rect x="15" y="65" width="20" height="20" fill="#ffffff"/><rect x="18" y="68" width="14" height="14" fill="#000000"/><rect x="45" y="45" width="10" height="10" fill="#000000"/><rect x="70" y="70" width="15" height="15" fill="#000000"/><rect x="80" y="55" width="8" height="8" fill="#000000"/></svg>`;
-    const blob = new Blob([svg], { type: 'image/svg+xml' });
-    const url  = URL.createObjectURL(blob);
-    container.innerHTML = `<img src="${url}" style="width:200px;height:200px;image-rendering:pixelated;"/>`;
-    document.getElementById('qr-download-link').href = url;
-    document.getElementById('qr-download-link').download = `qr-${tableNumber}.svg`;
-  } catch(e) {
-    container.innerHTML = `<div style="width:200px;height:200px;display:flex;align-items:center;justify-content:center;background:#111;border-radius:8px;font-size:11px;color:#888;padding:16px;text-align:center;">QR error.</div>`;
-  }
+  
+  // Construct absolute URL targeting index.html?table=ID
+  const baseUrl = window.location.origin + window.location.pathname.replace('admin.html', 'index.html');
+  const targetUrl = `${baseUrl}?table=${tableId}`;
+  
+  // Generate high quality QR code using Google chart API / api.qrserver.com
+  const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(targetUrl)}`;
+  
+  const img = new Image();
+  img.onload = function() {
+    container.innerHTML = `<img src="${qrApiUrl}" class="rounded-lg shadow-md" style="width:200px;height:200px;display:block;margin:auto;"/>`;
+    document.getElementById('qr-link-url').textContent = targetUrl;
+    document.getElementById('qr-download-link').href = qrApiUrl;
+    document.getElementById('qr-download-link').download = `QR-${tableNumber}.png`;
+  };
+  img.onerror = function() {
+    container.innerHTML = `<div class="p-4 text-xs text-red-400">حدث خطأ أثناء تحميل الـ QR</div>`;
+  };
+  img.src = qrApiUrl;
 }
 
 function openTableModal(data = null) {

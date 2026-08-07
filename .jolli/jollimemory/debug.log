@@ -487,3 +487,30 @@
 [2026-08-07T23:19:16.006Z] INFO  [PrePushHook] [trace=2566f9edd8c4010fd26d977e35ae91f9] Recorded 1 commit(s) for later sync — not signed in to Jolli
 [2026-08-07T23:19:16.006Z] INFO  [StorageFactory] [trace=2566f9edd8c4010fd26d977e35ae91f9] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
 [2026-08-07T23:19:16.071Z] INFO  [StorageFactory] [trace=2566f9edd8c4010fd26d977e35ae91f9] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T23:27:21.447Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook started (source: message) ===
+[2026-08-07T23:27:21.536Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook finished ===
+[2026-08-07T23:27:22.127Z] INFO  [PostCommitHook] [trace=cdf2f85eee7d03f7739eddb0cfbd3ef5] Detected operation: commit
+[2026-08-07T23:27:22.226Z] INFO  [PostCommitHook] [trace=cdf2f85eee7d03f7739eddb0cfbd3ef5] Enqueued: type=commit hash=3c5945af
+[2026-08-07T23:27:22.226Z] INFO  [QueueWorker] [trace=cdf2f85eee7d03f7739eddb0cfbd3ef5] Launching background worker
+[2026-08-07T23:27:22.237Z] INFO  [QueueWorker] [trace=cdf2f85eee7d03f7739eddb0cfbd3ef5] Background worker spawned (PID: 28420)
+[2026-08-07T23:27:22.402Z] INFO  [QueueWorker] [trace=cdf2f85eee7d03f7739eddb0cfbd3ef5] === Queue worker started === node=24.18.0 kind=vscode-plugin source=antigravity-ide pkgVer=0.99.10 cliVer=0.99.10 dist=c:\Users\narut\.antigravity-ide\extensions\jolli.jollimemory-vscode-0.99.10-universal\dist
+[2026-08-07T23:27:22.405Z] WARN  [LockPrimitives] [trace=cdf2f85eee7d03f7739eddb0cfbd3ef5] Removing orphaned lock C:\Users\narut\.jolli\jollimemory\locks\vault-b0d8e0f4dd4d7c36ac8e54006cb985b1f6a38ecf7d0e6a003e30948555446330.lock (PID 11136 no longer running)
+[2026-08-07T23:27:22.407Z] INFO  [StorageFactory] [trace=cdf2f85eee7d03f7739eddb0cfbd3ef5] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T23:27:22.579Z] INFO  [StorageFactory] [trace=cdf2f85eee7d03f7739eddb0cfbd3ef5] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T23:27:22.582Z] WARN  [LockPrimitives] [trace=cdf2f85eee7d03f7739eddb0cfbd3ef5] Removing orphaned lock D:\stitch_\.jolli\jollimemory\worker.lock (PID 11136 no longer running)
+[2026-08-07T23:27:22.605Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Processing queue entry: type=commit hash=46496a45
+[2026-08-07T23:27:22.650Z] INFO  [GitOps] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Commit 46496a45: Add 3D burger scrollytelling frames and link direct ordering
+[2026-08-07T23:27:22.651Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Commit: 46496a45 - Add 3D burger scrollytelling frames and link direct ordering system to admin (44ms)
+[2026-08-07T23:27:22.752Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] No active sessions found — will infer topics from diff if available
+[2026-08-07T23:27:22.971Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Git diff: 301 files changed, +331 -37 (217ms)
+[2026-08-07T23:27:23.212Z] WARN  [GitOps] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Diff exceeds 60000-char budget (98326 chars) — prepending --stat file list and truncating body
+[2026-08-07T23:27:23.224Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Prompt blocks: plans=0 notes=0 references=0 (+0 track-only archived, not prompted) (AI soft-excluded 0)
+[2026-08-07T23:27:23.225Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Generating summary for commit 46496a45
+[2026-08-07T23:27:23.225Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Context: transcript=0, files=301, lines=331+37
+[2026-08-07T23:27:23.226Z] WARN  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] First API attempt failed: No LLM provider available. Set an Anthropic API key (ANTHROPIC_API_KEY) or configure a Jolli Space API key (jolliApiKey).. Retrying in 2000ms...
+[2026-08-07T23:27:23.754Z] INFO  [PrePushHook] [trace=84e7c061431fdcde90e9a510f68fd065] pre-push hook: remote=origin budget=3000ms
+[2026-08-07T23:27:23.838Z] INFO  [PushPendingStore] [trace=84e7c061431fdcde90e9a510f68fd065] Enqueued 1 new push-pending entries (branch=main)
+[2026-08-07T23:27:23.840Z] INFO  [PrePushHook] [trace=84e7c061431fdcde90e9a510f68fd065] pre-push: recorded 1 commit(s) across 1 pushed ref(s)
+[2026-08-07T23:27:23.886Z] INFO  [PrePushHook] [trace=84e7c061431fdcde90e9a510f68fd065] Recorded 1 commit(s) for later sync — not signed in to Jolli
+[2026-08-07T23:27:23.888Z] INFO  [StorageFactory] [trace=84e7c061431fdcde90e9a510f68fd065] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T23:27:24.022Z] INFO  [StorageFactory] [trace=84e7c061431fdcde90e9a510f68fd065] Storage mode: dual-write (primary=orphan, shadow=folder)

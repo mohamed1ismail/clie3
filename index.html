@@ -365,9 +365,17 @@ function openOrderModalById(id) {
       tables.push({id: i, table_number: `طاولة ${i}`});
     }
   }
+
+  // Check URL query parameters for ?table= or ?table_id=
+  const urlParams = new URLSearchParams(window.location.search);
+  const tableParam = urlParams.get('table') || urlParams.get('table_id');
+
   const tableSelect = document.getElementById('order-table');
   tableSelect.innerHTML = '<option value="">توصيل خارجي / دليفري</option>' + 
-    tables.map(t => `<option value="${t.id}">${esc(t.table_number)}</option>`).join('');
+    tables.map(t => {
+      const isSelected = tableParam && (t.id == tableParam || t.table_number.includes(tableParam));
+      return `<option value="${t.id}" ${isSelected ? 'selected' : ''}>${esc(t.table_number)}</option>`;
+    }).join('');
 
   updateModalTotal();
 
