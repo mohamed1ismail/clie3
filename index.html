@@ -82,8 +82,8 @@ html{scroll-behavior:smooth;}
       <!-- Background Canvas Scrollytelling element -->
       <div class="absolute inset-0 z-0 flex justify-center items-center pointer-events-none md:pointer-events-auto">
         <div class="absolute inset-0 bg-primary/5 blur-[120px] rounded-full"></div>
-        <div class="w-full h-full max-w-[800px] max-h-[800px] opacity-40 md:opacity-60 mix-blend-screen">
-          <canvas id="hero-canvas" class="w-full h-full object-contain"></canvas>
+        <div class="w-full h-full opacity-50 md:opacity-75 mix-blend-screen">
+          <canvas id="hero-canvas" class="w-full h-full object-cover"></canvas>
         </div>
       </div>
       <!-- Scroll Indicator -->
@@ -842,9 +842,8 @@ function preloadImages() {
 
 function resizeCanvas() {
   if (!canvas) return;
-  const parent = canvas.parentElement;
-  canvas.width = parent.clientWidth || 450;
-  canvas.height = parent.clientHeight || 450;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
   renderFrame(currentFrameIndex());
 }
 
@@ -865,17 +864,19 @@ function renderFrame(index) {
   if (img.complete) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Contain/cover logic
+    // Cover logic (zoom to fill entire canvas area)
     const imgRatio = img.width / img.height;
     const canvasRatio = canvas.width / canvas.height;
     let drawWidth, drawHeight, drawX, drawY;
 
-    if (imgRatio > canvasRatio) {
+    if (imgRatio < canvasRatio) {
+      // Width is the limiting factor
       drawWidth = canvas.width;
       drawHeight = canvas.width / imgRatio;
       drawX = 0;
       drawY = (canvas.height - drawHeight) / 2;
     } else {
+      // Height is the limiting factor
       drawHeight = canvas.height;
       drawWidth = canvas.height * imgRatio;
       drawX = (canvas.width - drawWidth) / 2;
