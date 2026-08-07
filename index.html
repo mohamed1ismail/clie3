@@ -53,14 +53,14 @@ html{scroll-behavior:smooth;}
     <!-- Sticky container that stays on screen during the scroll -->
     <div class="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
       <!-- Full-screen canvas background -->
-      <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 z-0 mix-blend-screen">
         <canvas id="hero-canvas" class="w-full h-full"></canvas>
       </div>
       <!-- Gradient overlay on top of canvas -->
       <div class="absolute inset-0 z-[1] bg-gradient-to-b from-surface/60 via-transparent to-surface/80 pointer-events-none"></div>
       <!-- Content -->
-      <div class="relative z-10 w-full max-w-[1200px] px-margin-desktop">
-        <div class="flex flex-col gap-6 relative z-10 max-w-lg">
+      <div class="relative z-10 w-full max-w-[1200px] px-margin-desktop pointer-events-none md:pointer-events-auto">
+        <div class="flex flex-col gap-6 max-w-lg">
           <div class="flex items-center gap-4">
             <div class="h-px w-12 bg-primary"></div>
             <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">البرجر المميز</span>
