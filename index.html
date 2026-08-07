@@ -58,53 +58,50 @@ html{scroll-behavior:smooth;}
 <main class="w-full pt-14">
 
 <!-- ================================================================== -->
-<!-- ===================== SECTION 1: HERO SIGNATURE ================= -->
+<!-- ===================== SECTION 1: HERO (LOGO SPLASH) ============= -->
 <!-- ================================================================== -->
-<div id="hero" class="flex flex-col w-full bg-surface text-on-surface">
-  <!-- Pinned Scrollytelling Section: Height 400vh forces full frame playback before page scroll continues -->
-  <section id="hero-section" class="w-full relative" style="height: 400vh;">
-    <div class="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
-      <!-- Full-screen canvas background -->
-      <div class="absolute inset-0 z-0 mix-blend-screen">
-        <canvas id="hero-canvas" class="w-full h-full"></canvas>
-      </div>
-      <!-- Subtle Overlay for text readabilty -->
-      <div class="absolute inset-0 z-[1] bg-gradient-to-t from-surface/90 via-surface/40 to-surface/70 pointer-events-none"></div>
+<div id="hero" class="flex flex-col w-full">
+  <section class="w-full relative h-screen flex items-center justify-center overflow-hidden bg-surface">
+    <!-- Background glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(212,175,55,0.08),transparent)] pointer-events-none"></div>
 
-      <div class="relative z-10 w-full max-w-[1200px] px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div class="flex flex-col gap-6">
-          <div class="flex items-center gap-4">
-            <div class="h-px w-12 bg-primary"></div>
-            <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">البرجر المميز</span>
-          </div>
-          <h1 class="font-display-lg text-display-lg text-on-surface">سماش كلاسيك<br/><span class="text-primary italic font-serif">نانو برجر</span></h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-            برجر سماش كلاسيكي محضّر من قطعتين لحم أنجوس طازج مشوي على اللهب، مع الجبن السويسري الذائب والصلصة المميزة.
-          </p>
-          <div class="flex flex-col gap-4 mt-2">
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">local_fire_department</span>
-              <span class="font-label-caps text-label-caps text-on-background">مشوي بمثالية على اللهب</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">eco</span>
-              <span class="font-label-caps text-label-caps text-on-background">لحم أنجوس بقري طازج 100%</span>
-            </div>
-          </div>
-          <div class="mt-6 flex items-center gap-8">
-            <span class="font-headline-md text-headline-md text-primary" id="hero-featured-price">120 ج.م</span>
-            <button onclick="openOrderModalById(1)" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase flex items-center gap-2">
-              <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
-              اطلب الآن
-            </button>
-          </div>
-        </div>
+    <div class="relative z-10 flex flex-col items-center gap-8 text-center px-6">
+      <!-- Logo image big -->
+      <div class="relative">
+        <div class="absolute inset-0 rounded-full bg-primary/20 blur-3xl scale-150 animate-pulse"></div>
+        <img
+          src="https://lh3.googleusercontent.com/aida/AP1WRLtGzLr6pdYXL-tqPzfxjn8BImof0PjvLC_rejwj7MtGDEsXko5UMtY9GPZamsSmk-pYsxsS20y2BEryCqxYZYa89q_zVZaHiX9wNgQHLLwqMS1Mm8OqwXAXbTOAip0ni6-LMz3Pe-ppXTGQY5U2bP07RSvev2bMxTlo6g6U442Cul2LKYKX0hkxZ_3ja74sR9Fn3pqS5CW_S9j46jF11YQXQ9mTzV0HiJc0LHI7W_Ob49UwiMPwUCFXZQ8ZrLDdW96bfo-pNPha_g"
+          alt="East and West Logo"
+          class="relative w-44 h-44 md:w-64 md:h-64 rounded-full object-cover border-4 border-primary/60 shadow-[0_0_60px_rgba(212,175,55,0.35)]"
+        />
       </div>
 
-      <!-- Progress Scroll Bar Indicator -->
-      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-surface/80 backdrop-blur-sm px-5 py-2 rounded-full border border-primary/30 text-[12px] font-label-caps text-primary flex items-center gap-2 shadow-lg pointer-events-none">
-        <span class="material-symbols-outlined text-[16px] animate-bounce">south</span> مرر للأسفل لمشاهدة تجميع البرجر بالكامل
+      <!-- Brand Name -->
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-xs font-bold text-primary/70 tracking-[0.4em] uppercase">مطعم فاخر</span>
+        <h1 class="font-display font-extrabold text-5xl md:text-7xl text-on-surface tracking-wide leading-none">
+          East <span class="text-primary">&</span> West
+        </h1>
+        <p class="text-on-surface-variant text-base md:text-lg max-w-sm leading-relaxed">
+          رحلة طهي فاخرة تجمع بين عراقة الشرق وحداثة الغرب
+        </p>
       </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex items-center gap-4 flex-wrap justify-center">
+        <a href="#menu" class="bg-primary text-black font-bold px-8 py-3 rounded-lg hover:bg-primary-fixed transition-all shadow-[0_0_20px_rgba(242,202,80,0.3)] text-sm">
+          استعرض القائمة
+        </a>
+        <button onclick="openOrderModalById(1)" class="border border-primary/50 text-primary font-bold px-8 py-3 rounded-lg hover:bg-primary/10 transition-all text-sm">
+          اطلب الآن
+        </button>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-on-surface-variant/50 animate-bounce">
+      <span class="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+      <span class="text-[10px] tracking-widest uppercase">مرر لأسفل</span>
     </div>
   </section>
 </div>
@@ -159,50 +156,50 @@ html{scroll-behavior:smooth;}
 </div>
 
 
-<!-- ===================== DIAMOND COMPASS DIVIDER ===================== -->
-<div id="menu" class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-20 scroll-mt-32">
-  <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-outline-variant/50 to-transparent relative max-w-sm">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center z-10 bg-surface">
-      <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 6px rgba(212,175,55,0.5));">
-        <path d="M20 0L22.4 17.6L40 20L22.4 22.4L20 40L17.6 22.4L0 20L17.6 17.6L20 0Z" fill="#D4AF37" fill-opacity="0.55" stroke="#D4AF37" stroke-width="1"/>
-        <circle cx="20" cy="20" r="3" fill="#D4AF37"/>
-      </svg>
+<!-- ================================================================== -->
+<!-- ===================== SECTION 2: MENU (VIDEO BG + CARDS) ========= -->
+<!-- ================================================================== -->
+<div id="menu" class="w-full relative scroll-mt-16" style="min-height:100vh;">
+
+  <!-- Scrollytelling canvas background (sticky behind cards) -->
+  <div id="menu-canvas-wrap" class="sticky top-0 w-full h-screen overflow-hidden pointer-events-none" style="margin-top:-100vh; z-index:0;">
+    <canvas id="hero-canvas" class="w-full h-full"></canvas>
+    <!-- Overlay to darken canvas so cards are readable -->
+    <div class="absolute inset-0 bg-gradient-to-b from-surface/70 via-surface/60 to-surface/80"></div>
+  </div>
+
+  <!-- Cards content layer (scrolls over canvas) -->
+  <div class="relative z-10 flex flex-col w-full py-12" style="min-height:100vh;">
+    <div class="max-w-[1000px] mx-auto px-4 w-full flex flex-col gap-6">
+
+      <!-- Title & Search Bar -->
+      <div class="flex flex-col items-center gap-4 text-center">
+        <span class="text-xs font-bold text-primary tracking-widest uppercase">قائمتنا</span>
+        <div class="relative w-full max-w-md">
+          <span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-lg">search</span>
+          <input type="text" id="menu-search-input" oninput="renderMenu()" placeholder="بحث عن وجبة..." class="w-full bg-surface-container-low/90 backdrop-blur-sm border border-outline-variant/40 rounded-full py-2.5 pr-10 pl-4 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary outline-none transition-all shadow-sm"/>
+        </div>
+      </div>
+
+      <!-- Category Pills Navigation (Horizontal Scrollable) -->
+      <div class="w-full overflow-x-auto no-scrollbar py-2">
+        <div id="menu-cat-nav" class="flex items-center gap-2 min-w-max justify-center mx-auto">
+          <div class="menu-spin"></div>
+        </div>
+      </div>
+
+      <!-- Dish Cards (Horizontal Cards Stream) -->
+      <div class="w-full flex flex-col gap-4 mt-2" id="menu-sections">
+        <!-- Filled dynamically by JS -->
+        <div class="flex items-center justify-center py-16 gap-3 text-on-surface-variant">
+          <div class="menu-spin"></div>
+          <span class="text-sm">جارٍ تحميل قائمة الطعام...</span>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
 
-<!-- ================================================================== -->
-<!-- ===================== SECTION 3: MENU (DYNAMIC & MODERN) ========= -->
-<!-- ================================================================== -->
-<div id="menu" class="flex flex-col w-full bg-surface text-on-surface py-12 scroll-mt-16">
-  <div class="max-w-[1000px] mx-auto px-4 w-full flex flex-col gap-6">
-    
-    <!-- Title & Search Bar -->
-    <div class="flex flex-col items-center gap-4 text-center">
-      <span class="text-xs font-bold text-primary tracking-widest uppercase">قائمتنا</span>
-      <div class="relative w-full max-w-md">
-        <span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-lg">search</span>
-        <input type="text" id="menu-search-input" oninput="renderMenu()" placeholder="بحث عن وجبة..." class="w-full bg-surface-container-low border border-outline-variant/40 rounded-full py-2.5 pr-10 pl-4 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary outline-none transition-all shadow-sm"/>
-      </div>
-    </div>
-
-    <!-- Category Pills Navigation (Horizontal Scrollable) -->
-    <div class="w-full overflow-x-auto no-scrollbar py-2">
-      <div id="menu-cat-nav" class="flex items-center gap-2 min-w-max justify-center mx-auto">
-        <div class="menu-spin"></div>
-      </div>
-    </div>
-
-    <!-- Dish Cards (Horizontal Cards Stream) -->
-    <div class="w-full flex flex-col gap-4 mt-2" id="menu-sections">
-      <!-- Filled dynamically by JS -->
-      <div class="flex items-center justify-center py-16 gap-3 text-on-surface-variant">
-        <div class="menu-spin"></div>
-        <span class="text-sm">جارٍ تحميل قائمة الطعام...</span>
-      </div>
-    </div>
-
-  </div>
 </div>
 
 
@@ -461,7 +458,7 @@ const images = [];
 const canvas = document.getElementById('hero-canvas');
 const ctx = canvas?.getContext('2d');
 
-// Path to image frames: ezgif-5debe75207d55653-jpg/ezgif-frame-001.jpg
+// Canvas follows menu section scroll
 const currentFrame = index => (
   `./ezgif-5debe75207d55653-jpg/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
 );
@@ -477,19 +474,18 @@ function preloadImages() {
 
 function resizeCanvas() {
   if (!canvas) return;
-  // Match full screen resolution
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   renderFrame(currentFrameIndex());
 }
 
 function currentFrameIndex() {
-  const heroSection = document.getElementById('hero-section');
-  if (!heroSection) return 0;
-  const heroTop = heroSection.offsetTop;
-  const scrollableDistance = heroSection.offsetHeight - window.innerHeight;
+  const menuSection = document.getElementById('menu');
+  if (!menuSection) return 0;
+  const menuTop = menuSection.offsetTop;
+  const scrollableDistance = menuSection.offsetHeight - window.innerHeight;
   if (scrollableDistance <= 0) return 0;
-  const progress = Math.max(0, Math.min(1, (window.scrollY - heroTop) / scrollableDistance));
+  const progress = Math.max(0, Math.min(1, (window.scrollY - menuTop) / scrollableDistance));
   return Math.floor(progress * (frameCount - 1));
 }
 
