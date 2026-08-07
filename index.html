@@ -158,22 +158,36 @@ html{scroll-behavior:smooth;}
 </div>
 
 <!-- ================================================================== -->
-<!-- ===================== SECTION 3: MENU (DYNAMIC) ================ -->
+<!-- ===================== SECTION 3: MENU (DYNAMIC & MODERN) ========= -->
 <!-- ================================================================== -->
-<div class="flex flex-col w-full bg-surface text-on-surface">
-  <!-- Sticky category nav -->
-  <section class="w-full sticky top-20 z-40 bg-surface/95 backdrop-blur-md border-y border-outline-variant/30 py-4">
-    <div id="menu-cat-nav" class="max-w-[1200px] mx-auto px-margin-desktop flex justify-center gap-8 md:gap-16 flex-wrap">
-      <div class="menu-spin"></div>
+<div id="menu" class="flex flex-col w-full bg-surface text-on-surface py-12 scroll-mt-16">
+  <div class="max-w-[1000px] mx-auto px-4 w-full flex flex-col gap-6">
+    
+    <!-- Title & Search Bar -->
+    <div class="flex flex-col items-center gap-4 text-center">
+      <span class="text-xs font-bold text-primary tracking-widest uppercase">قائمتنا</span>
+      <div class="relative w-full max-w-md">
+        <span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-lg">search</span>
+        <input type="text" id="menu-search-input" oninput="renderMenu()" placeholder="بحث عن وجبة..." class="w-full bg-surface-container-low border border-outline-variant/40 rounded-full py-2.5 pr-10 pl-4 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary outline-none transition-all shadow-sm"/>
+      </div>
     </div>
-  </section>
 
-  <div class="w-full max-w-[1200px] mx-auto px-margin-desktop py-24 flex flex-col gap-32" id="menu-sections">
-    <!-- Filled by JS -->
-    <div class="flex items-center justify-center py-20 gap-4 text-on-surface-variant">
-      <div class="menu-spin"></div>
-      <span class="font-label-caps text-label-caps">جارٍ تحميل المنيو...</span>
+    <!-- Category Pills Navigation (Horizontal Scrollable) -->
+    <div class="w-full overflow-x-auto no-scrollbar py-2">
+      <div id="menu-cat-nav" class="flex items-center gap-2 min-w-max justify-center mx-auto">
+        <div class="menu-spin"></div>
+      </div>
     </div>
+
+    <!-- Dish Cards (Horizontal Cards Stream) -->
+    <div class="w-full flex flex-col gap-4 mt-2" id="menu-sections">
+      <!-- Filled dynamically by JS -->
+      <div class="flex items-center justify-center py-16 gap-3 text-on-surface-variant">
+        <div class="menu-spin"></div>
+        <span class="text-sm">جارٍ تحميل قائمة الطعام...</span>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -246,78 +260,78 @@ if (!localStorage.getItem('ew_seeded')) {
   localStorage.setItem('ew_seeded','1');
 }
 
-// ─── DYNAMIC MENU RENDERING ────────────────────────────────────────────────
+// ─── DYNAMIC MENU RENDERING (HORIZONTAL ROW CARDS & PILLS) ──────────────────
+let selectedCatId = 'all';
+
+function filterCat(id) {
+  selectedCatId = id;
+  renderMenu();
+}
+
 function renderMenu() {
-  const cats    = getList('ew_categories').filter(c => c.is_active);
-  const dishes  = getList('ew_dishes').filter(d => d.is_available);
+  const cats = getList('ew_categories').filter(c => c.is_active);
+  let dishes = getList('ew_dishes').filter(d => d.is_available);
+  
+  const query = (document.getElementById('menu-search-input')?.value || '').trim().toLowerCase();
+  if (query) {
+    dishes = dishes.filter(d => d.name.toLowerCase().includes(query) || (d.description||'').toLowerCase().includes(query));
+  }
 
+  // 1. Render Category Pills Bar
   const nav = document.getElementById('menu-cat-nav');
-  nav.innerHTML = cats.map((c,i) =>
-    `<a class="font-label-caps text-label-caps ${i===0?'text-primary border-b-2 border-primary pb-1':'text-on-surface-variant hover:text-primary pb-1'} transition-colors uppercase" href="#cat-${c.id}">${esc(c.name)}</a>`
-  ).join('');
+  if (nav) {
+    const allPill = `<button onclick="filterCat('all')" class="px-4 py-1.5 text-xs font-bold rounded-full transition-all flex items-center gap-1 ${selectedCatId==='all'?'bg-primary text-black shadow-md shadow-primary/20':'bg-surface-container-low text-on-surface-variant border border-outline-variant/30 hover:border-primary/40'}">🍽️ الكل</button>`;
+    const catPills = cats.map(c => 
+      `<button onclick="filterCat(${c.id})" class="px-4 py-1.5 text-xs font-bold rounded-full transition-all flex items-center gap-1 ${selectedCatId==c.id?'bg-primary text-black shadow-md shadow-primary/20':'bg-surface-container-low text-on-surface-variant border border-outline-variant/30 hover:border-primary/40'}">${esc(c.name)}</button>`
+    ).join('');
+    nav.innerHTML = allPill + catPills;
+  }
 
+  // Filter by active category pill
+  if (selectedCatId !== 'all') {
+    dishes = dishes.filter(d => d.category_id == selectedCatId);
+  }
+
+  // 2. Render Dish Cards (Horizontal Cards like screenshot 2)
   const sections = document.getElementById('menu-sections');
+  if (!sections) return;
+
   if (!dishes.length) {
-    sections.innerHTML = `<div class="text-center py-20 text-on-surface-variant font-label-caps text-label-caps">لا توجد أطباق متاحة حالياً</div>`;
+    sections.innerHTML = `<div class="text-center py-12 text-on-surface-variant/70 text-sm font-medium">لا توجد وجبات تطابق البحث</div>`;
     return;
   }
 
-  sections.innerHTML = cats.map(cat => {
-    const catDishes = dishes.filter(d => d.category_id == cat.id);
-    if (!catDishes.length) return '';
-    const dishCards = catDishes.map(d => {
-      const imgHtml = d.image_url
-        ? `<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${esc(d.image_url)}" alt="${esc(d.name)}" loading="lazy"/>`
-        : `<div class="w-full h-full flex items-center justify-center text-4xl bg-surface-container-high">🍔</div>`;
-      
-      const sizesHtml = d.sizes && d.sizes.length
-        ? `<div class="flex flex-wrap gap-1.5 my-1">${d.sizes.map(s=>`<span class="text-[11px] font-medium text-primary/80 border border-primary/20 px-2 py-0.5 rounded">${esc(s.size_name)}: ${Number(s.price).toLocaleString()} ج.م</span>`).join('')}</div>`
-        : '';
-
-      return `
-        <div class="group bg-surface-container rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <!-- Image with fixed aspect-video (16:9) -->
-            <div class="relative w-full aspect-video overflow-hidden bg-black/40">
-              ${imgHtml}
-            </div>
-            <!-- Body Content -->
-            <div class="p-5 flex flex-col gap-3">
-              <!-- 1. Dish Name (Most Prominent) -->
-              <h3 class="font-display font-bold text-xl text-on-surface group-hover:text-primary transition-colors leading-snug">${esc(d.name)}</h3>
-              
-              <!-- 2. Short Description -->
-              <p class="text-sm text-on-surface-variant/90 leading-relaxed min-h-[40px]">${esc(d.description||'')}</p>
-              
-              <!-- 3. Sizes / Features -->
-              ${sizesHtml}
-
-              <!-- 4. Price (Large and prominent with clean ج.م) -->
-              <div class="pt-2 flex items-baseline gap-1.5 border-t border-outline-variant/20 mt-1">
-                <span class="font-display font-extrabold text-2xl text-primary">${Number(d.price).toLocaleString()}</span>
-                <span class="text-xs font-semibold text-primary/80">ج.م</span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- 5. Fixed Order Button -->
-          <div class="p-5 pt-0">
-            <button onclick="openOrderModalById(${d.id})" class="w-full bg-primary text-black font-bold py-2.5 px-4 text-sm rounded hover:bg-primary-fixed transition-all flex items-center justify-center gap-2 shadow-[0_0_10px_rgba(242,202,80,0.15)] active:scale-95">
-              <span class="material-symbols-outlined text-[18px]">shopping_cart</span> اطلب الآن
-            </button>
-          </div>
-        </div>`;
-    }).join('');
+  sections.innerHTML = dishes.map(d => {
+    const imgHtml = d.image_url
+      ? `<img class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500" src="${esc(d.image_url)}" alt="${esc(d.name)}" loading="lazy"/>`
+      : `<div class="w-full h-full flex items-center justify-center text-3xl bg-surface-container-high rounded-xl">🍔</div>`;
 
     return `
-      <section class="flex flex-col gap-8 scroll-mt-24" id="cat-${cat.id}">
-        <div class="flex items-center gap-4 justify-center">
-          <div class="h-px w-16 bg-gradient-to-r from-transparent to-primary"></div>
-          <h2 class="font-display font-bold text-2xl text-primary tracking-wide text-center">${esc(cat.name)}</h2>
-          <div class="h-px w-16 bg-gradient-to-l from-transparent to-primary"></div>
+      <div class="group bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 rounded-2xl p-4 flex items-center justify-between gap-4 shadow-sm hover:shadow-md transition-all duration-300">
+        <!-- Content Info (Right side in RTL) -->
+        <div class="flex-1 flex flex-col gap-2 min-w-0">
+          <h3 class="font-display font-bold text-lg md:text-xl text-on-surface group-hover:text-primary transition-colors truncate">${esc(d.name)}</h3>
+          <p class="text-xs md:text-sm text-on-surface-variant/80 line-clamp-2 leading-relaxed">${esc(d.description||'')}</p>
+          
+          <div class="flex items-center gap-4 mt-2">
+            <!-- Price -->
+            <div class="flex items-baseline gap-1">
+              <span class="font-display font-extrabold text-xl text-primary">${Number(d.price).toLocaleString()}</span>
+              <span class="text-xs font-bold text-primary/80">ج.م</span>
+            </div>
+            
+            <!-- Quick Order Button -->
+            <button onclick="openOrderModalById(${d.id})" class="bg-primary/10 border border-primary/40 text-primary hover:bg-primary hover:text-black font-bold px-4 py-1.5 text-xs rounded-lg transition-all flex items-center gap-1.5 active:scale-95">
+              <span class="material-symbols-outlined text-[16px]">shopping_cart</span> اطلب الآن
+            </button>
+          </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">${dishCards}</div>
-      </section>`;
+
+        <!-- Dish Image (Left side in RTL) -->
+        <div class="w-28 h-28 md:w-36 md:h-36 flex-shrink-0 relative overflow-hidden rounded-xl bg-black/40">
+          ${imgHtml}
+        </div>
+      </div>`;
   }).join('');
 }
 
