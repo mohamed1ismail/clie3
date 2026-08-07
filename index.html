@@ -45,47 +45,50 @@ html{scroll-behavior:smooth;}
 <!-- ===================== SECTION 1: HERO SIGNATURE ================= -->
 <!-- ================================================================== -->
 <div id="hero" class="flex flex-col w-full bg-surface text-on-surface">
-  <section id="hero-section" class="w-full relative min-h-[90vh] flex items-center justify-center py-16 overflow-hidden">
-    <!-- Full-screen canvas background -->
-    <div class="absolute inset-0 z-0 flex items-center justify-center opacity-90">
-      <canvas id="hero-canvas" class="w-full h-full object-cover"></canvas>
-    </div>
-    <!-- Dark subtle overlay for legibility -->
-    <div class="absolute inset-0 z-[1] bg-gradient-to-r from-surface/90 via-surface/70 to-surface/40 pointer-events-none"></div>
-    
-    <div class="relative z-10 w-full max-w-[1200px] px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="flex flex-col gap-6">
-        <div class="flex items-center gap-4">
-          <div class="h-px w-12 bg-primary"></div>
-          <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">البرجر المميز</span>
-        </div>
-        <h1 class="font-display-lg text-display-lg text-on-surface">سماش كلاسيك<br/><span class="text-primary italic font-serif">نانو برجر</span></h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-          برجر سماش كلاسيكي محضّر من قطعتين لحم أنجوس طازج مشوي على اللهب، مع الجبن السويسري الذائب والصلصة المميزة.
-        </p>
-        <div class="flex flex-col gap-4 mt-2">
-          <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-primary">local_fire_department</span>
-            <span class="font-label-caps text-label-caps text-on-background">مشوي بمثالية على اللهب</span>
+  <!-- Pinned Scrollytelling Section: Height 400vh forces full frame playback before page scroll continues -->
+  <section id="hero-section" class="w-full relative" style="height: 400vh;">
+    <div class="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
+      <!-- Full-screen canvas background -->
+      <div class="absolute inset-0 z-0 mix-blend-screen">
+        <canvas id="hero-canvas" class="w-full h-full"></canvas>
+      </div>
+      <!-- Subtle Overlay for text readabilty -->
+      <div class="absolute inset-0 z-[1] bg-gradient-to-t from-surface/90 via-surface/40 to-surface/70 pointer-events-none"></div>
+
+      <div class="relative z-10 w-full max-w-[1200px] px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="flex flex-col gap-6">
+          <div class="flex items-center gap-4">
+            <div class="h-px w-12 bg-primary"></div>
+            <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">البرجر المميز</span>
           </div>
-          <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-primary">eco</span>
-            <span class="font-label-caps text-label-caps text-on-background">لحم أنجوس بقري طازج 100%</span>
+          <h1 class="font-display-lg text-display-lg text-on-surface">سماش كلاسيك<br/><span class="text-primary italic font-serif">نانو برجر</span></h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+            برجر سماش كلاسيكي محضّر من قطعتين لحم أنجوس طازج مشوي على اللهب، مع الجبن السويسري الذائب والصلصة المميزة.
+          </p>
+          <div class="flex flex-col gap-4 mt-2">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">local_fire_department</span>
+              <span class="font-label-caps text-label-caps text-on-background">مشوي بمثالية على اللهب</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">eco</span>
+              <span class="font-label-caps text-label-caps text-on-background">لحم أنجوس بقري طازج 100%</span>
+            </div>
           </div>
-        </div>
-        <div class="mt-6 flex items-center gap-8">
-          <span class="font-headline-md text-headline-md text-primary" id="hero-featured-price">120 ج.م</span>
-          <button onclick="openOrderModalById(1)" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase flex items-center gap-2">
-            <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
-            اطلب الآن
-          </button>
+          <div class="mt-6 flex items-center gap-8">
+            <span class="font-headline-md text-headline-md text-primary" id="hero-featured-price">120 ج.م</span>
+            <button onclick="openOrderModalById(1)" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+              اطلب الآن
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 bg-surface/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20 text-[11px] font-label-caps text-primary flex items-center gap-1.5 shadow-md pointer-events-none">
-      <span class="material-symbols-outlined text-[14px] animate-bounce">south</span> مرر للأسفل لاستعراض قائمة المنيو
+
+      <!-- Progress Scroll Bar Indicator -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-surface/80 backdrop-blur-sm px-5 py-2 rounded-full border border-primary/30 text-[12px] font-label-caps text-primary flex items-center gap-2 shadow-lg pointer-events-none">
+        <span class="material-symbols-outlined text-[16px] animate-bounce">south</span> مرر للأسفل لمشاهدة تجميع البرجر بالكامل
+      </div>
     </div>
   </section>
 </div>
@@ -431,7 +434,12 @@ function resizeCanvas() {
 }
 
 function currentFrameIndex() {
-  const progress = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 1.2)));
+  const heroSection = document.getElementById('hero-section');
+  if (!heroSection) return 0;
+  const heroTop = heroSection.offsetTop;
+  const scrollableDistance = heroSection.offsetHeight - window.innerHeight;
+  if (scrollableDistance <= 0) return 0;
+  const progress = Math.max(0, Math.min(1, (window.scrollY - heroTop) / scrollableDistance));
   return Math.floor(progress * (frameCount - 1));
 }
 
