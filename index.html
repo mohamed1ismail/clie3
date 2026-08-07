@@ -21,23 +21,37 @@ html{scroll-behavior:smooth;}
 </head>
 <body class="bg-background font-sans text-on-background antialiased">
 
-<!-- ===================== HEADER / NAV (COMPACT Minimal) ===================== -->
+<!-- ===================== HEADER / NAV (COMPACT Minimal - Mobile Fixed) ===================== -->
 <header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">
-  <div class="h-14 max-w-[1200px] mx-auto px-4 md:px-margin-desktop flex items-center justify-between">
-    <a href="#hero" class="flex items-center gap-3">
-      <img alt="East and West" class="w-8 h-8 rounded-full object-cover border border-primary/50" src="https://lh3.googleusercontent.com/aida/AP1WRLtGzLr6pdYXL-tqPzfxjn8BImof0PjvLC_rejwj7MtGDEsXko5UMtY9GPZamsSmk-pYsxsS20y2BEryCqxYZYa89q_zVZaHiX9wNgQHLLwqMS1Mm8OqwXAXbTOAip0ni6-LMz3Pe-ppXTGQY5U2bP07RSvev2bMxTlo6g6U442Cul2LKYKX0hkxZ_3ja74sR9Fn3pqS5CW_S9j46jF11YQXQ9mTzV0HiJc0LHI7W_Ob49UwiMPwUCFXZQ8ZrLDdW96bfo-pNPha_g"/>
-      <span class="font-display font-bold text-lg text-primary tracking-wide">East and West</span>
+  <div class="h-14 max-w-[1200px] mx-auto px-3 md:px-margin-desktop flex items-center justify-between gap-2">
+
+    <!-- Logo: icon always + name only on md+ -->
+    <a href="#hero" class="flex items-center gap-2 flex-shrink-0">
+      <img alt="East and West" class="w-8 h-8 rounded-full object-cover border border-primary/50 flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AP1WRLtGzLr6pdYXL-tqPzfxjn8BImof0PjvLC_rejwj7MtGDEsXko5UMtY9GPZamsSmk-pYsxsS20y2BEryCqxYZYa89q_zVZaHiX9wNgQHLLwqMS1Mm8OqwXAXbTOAip0ni6-LMz3Pe-ppXTGQY5U2bP07RSvev2bMxTlo6g6U442Cul2LKYKX0hkxZ_3ja74sR9Fn3pqS5CW_S9j46jF11YQXQ9mTzV0HiJc0LHI7W_Ob49UwiMPwUCFXZQ8ZrLDdW96bfo-pNPha_g"/>
+      <span class="hidden sm:block font-display font-bold text-base text-primary tracking-wide whitespace-nowrap">East & West</span>
     </a>
-    <nav class="flex items-center gap-6">
+
+    <!-- Nav links: hidden on mobile, shown on md+ -->
+    <nav class="hidden md:flex items-center gap-6">
       <a class="text-sm font-semibold text-primary border-b-2 border-primary pb-0.5 transition-colors" href="#hero">الرئيسية</a>
       <a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#menu">المنيو</a>
     </nav>
-    <div class="flex items-center gap-2">
-      <button onclick="openOrderModalById(1)" class="bg-primary text-black font-bold px-4 py-1.5 text-xs rounded hover:bg-primary-fixed transition-all shadow-[0_0_10px_rgba(242,202,80,0.2)]">اطلب الآن</button>
-      <a href="admin.html" title="لوحة التحكم" class="w-8 h-8 rounded border border-outline-variant/40 bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/60 transition-all">
-        <span class="material-symbols-outlined text-[18px]">dashboard</span>
+
+    <!-- Right side actions -->
+    <div class="flex items-center gap-2 flex-shrink-0">
+      <!-- Mobile: nav pills inline -->
+      <div class="flex md:hidden items-center gap-1">
+        <a href="#hero" class="text-xs font-bold text-on-surface-variant hover:text-primary px-2 py-1 rounded transition-colors">الرئيسية</a>
+        <a href="#menu" class="text-xs font-bold text-on-surface-variant hover:text-primary px-2 py-1 rounded transition-colors">المنيو</a>
+      </div>
+      <!-- Order button -->
+      <button onclick="openOrderModalById(1)" class="bg-primary text-black font-bold px-3 py-1.5 text-xs rounded hover:bg-primary-fixed transition-all shadow-[0_0_8px_rgba(242,202,80,0.2)] whitespace-nowrap">اطلب الآن</button>
+      <!-- Admin dashboard icon -->
+      <a href="admin.html" title="لوحة التحكم" class="w-7 h-7 rounded border border-outline-variant/40 bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/60 transition-all flex-shrink-0">
+        <span class="material-symbols-outlined text-[16px]">dashboard</span>
       </a>
     </div>
+
   </div>
 </header>
 
