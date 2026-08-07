@@ -48,50 +48,47 @@ html{scroll-behavior:smooth;}
 <!-- ===================== SECTION 1: HERO SIGNATURE ================= -->
 <!-- ================================================================== -->
 <div id="hero" class="flex flex-col w-full bg-surface text-on-surface">
-  <!-- Scrollytelling wrapper: 300vh so 300 frames animate across full scroll -->
-  <section id="hero-section" class="w-full relative" style="height: 300vh;">
-    <!-- Sticky container that stays on screen during the scroll -->
-    <div class="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
-      <!-- Full-screen canvas background -->
-      <div class="absolute inset-0 z-0 mix-blend-screen">
-        <canvas id="hero-canvas" class="w-full h-full"></canvas>
-      </div>
-      <!-- Gradient overlay on top of canvas -->
-      <div class="absolute inset-0 z-[1] bg-gradient-to-b from-surface/60 via-transparent to-surface/80 pointer-events-none"></div>
-      <!-- Content -->
-      <div class="relative z-10 w-full max-w-[1200px] px-margin-desktop pointer-events-none md:pointer-events-auto">
-        <div class="flex flex-col gap-6 max-w-lg">
-          <div class="flex items-center gap-4">
-            <div class="h-px w-12 bg-primary"></div>
-            <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">البرجر المميز</span>
+  <section id="hero-section" class="w-full relative min-h-[90vh] flex items-center justify-center py-16 overflow-hidden">
+    <!-- Full-screen canvas background -->
+    <div class="absolute inset-0 z-0 flex items-center justify-center opacity-90">
+      <canvas id="hero-canvas" class="w-full h-full object-cover"></canvas>
+    </div>
+    <!-- Dark subtle overlay for legibility -->
+    <div class="absolute inset-0 z-[1] bg-gradient-to-r from-surface/90 via-surface/70 to-surface/40 pointer-events-none"></div>
+    
+    <div class="relative z-10 w-full max-w-[1200px] px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center gap-4">
+          <div class="h-px w-12 bg-primary"></div>
+          <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">البرجر المميز</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg text-on-surface">سماش كلاسيك<br/><span class="text-primary italic font-serif">نانو برجر</span></h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+          برجر سماش كلاسيكي محضّر من قطعتين لحم أنجوس طازج مشوي على اللهب، مع الجبن السويسري الذائب والصلصة المميزة.
+        </p>
+        <div class="flex flex-col gap-4 mt-2">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">local_fire_department</span>
+            <span class="font-label-caps text-label-caps text-on-background">مشوي بمثالية على اللهب</span>
           </div>
-          <h1 class="font-display-lg text-display-lg text-on-surface">سماش كلاسيك<br/><span class="text-primary italic font-serif">نانو برجر</span></h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-            برجر سماش كلاسيكي محضّر من قطعتين لحم أنجوس طازج مشوي على اللهب، مع الجبن السويسري الذائب والصلصة المميزة.
-          </p>
-          <div class="flex flex-col gap-4 mt-4">
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">local_fire_department</span>
-              <span class="font-label-caps text-label-caps text-on-background">مشوي بمثالية على اللهب</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">eco</span>
-              <span class="font-label-caps text-label-caps text-on-background">لحم أنجوس بقري طازج 100%</span>
-            </div>
-          </div>
-          <div class="mt-8 flex items-center gap-8">
-            <span class="font-headline-md text-headline-md text-primary" id="hero-featured-price">120 ج.م</span>
-            <button onclick="openOrderModalById(1)" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase flex items-center gap-2">
-              <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
-              اطلب الآن
-            </button>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">eco</span>
+            <span class="font-label-caps text-label-caps text-on-background">لحم أنجوس بقري طازج 100%</span>
           </div>
         </div>
+        <div class="mt-6 flex items-center gap-8">
+          <span class="font-headline-md text-headline-md text-primary" id="hero-featured-price">120 ج.م</span>
+          <button onclick="openOrderModalById(1)" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+            اطلب الآن
+          </button>
+        </div>
       </div>
-      <!-- Scroll Indicator -->
-      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-surface/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20 text-[11px] font-label-caps text-primary flex items-center gap-1.5 shadow-md pointer-events-none">
-        <span class="material-symbols-outlined text-[14px] animate-bounce">south</span> مرر للأسفل لرؤية البرجر يتجمع
-      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 bg-surface/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20 text-[11px] font-label-caps text-primary flex items-center gap-1.5 shadow-md pointer-events-none">
+      <span class="material-symbols-outlined text-[14px] animate-bounce">south</span> مرر للأسفل لاستعراض قائمة المنيو
     </div>
   </section>
 </div>
@@ -437,40 +434,27 @@ function resizeCanvas() {
 }
 
 function currentFrameIndex() {
-  // Progress relative to the hero section only
-  const heroSection = document.getElementById('hero-section');
-  if (!heroSection) {
-    const scrollFraction = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    return Math.max(0, Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount)));
-  }
-  const heroTop = heroSection.offsetTop;
-  const heroHeight = heroSection.offsetHeight;
-  // Progress: 0 at start of hero, 1 at end of hero
-  const progress = Math.max(0, Math.min(1, (window.scrollY - heroTop) / heroHeight));
-  return Math.max(0, Math.min(frameCount - 1, Math.floor(progress * frameCount)));
+  const progress = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 1.2)));
+  return Math.floor(progress * (frameCount - 1));
 }
 
 function renderFrame(index) {
   if (!ctx || !canvas || !images[index]) return;
   const img = images[index];
   
-  // Draw when loaded
   if (img.complete) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Cover logic (zoom to fill entire canvas area)
     const imgRatio = img.width / img.height;
     const canvasRatio = canvas.width / canvas.height;
     let drawWidth, drawHeight, drawX, drawY;
 
     if (imgRatio < canvasRatio) {
-      // Width is the limiting factor
       drawWidth = canvas.width;
       drawHeight = canvas.width / imgRatio;
       drawX = 0;
       drawY = (canvas.height - drawHeight) / 2;
     } else {
-      // Height is the limiting factor
       drawHeight = canvas.height;
       drawWidth = canvas.height * imgRatio;
       drawX = (canvas.width - drawWidth) / 2;
@@ -483,29 +467,9 @@ function renderFrame(index) {
   }
 }
 
-// Auto-scroll to menu when hero animation finishes
-let heroScrollDone = false;
-
 // Attach listeners
 window.addEventListener('scroll', () => {
   requestAnimationFrame(() => renderFrame(currentFrameIndex()));
-
-  // Auto-scroll to menu when hero scrollytelling completes
-  if (!heroScrollDone) {
-    const heroSection = document.getElementById('hero-section');
-    if (heroSection) {
-      const heroTop = heroSection.offsetTop;
-      const heroHeight = heroSection.offsetHeight;
-      const progress = (window.scrollY - heroTop) / heroHeight;
-      if (progress >= 0.99) {
-        heroScrollDone = true;
-        const menuEl = document.getElementById('menu');
-        if (menuEl) {
-          menuEl.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
-  }
 });
 
 // Drag to rotate logic
