@@ -1,45 +1,47 @@
 <html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>East and West — مطعم شرق وغرب</title>
 <meta name="description" content="مطعم إيست آند ويست — تجربة طهي فاخرة تجمع بين أصالة الشرق وحداثة الغرب"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&amp;family=Manrope:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700;800&family=Libre+Caslon+Text&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;background-color:#131313;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
+@layer base{
+  html,body{margin:0;padding:0;font-family:'Tajawal', 'Cairo', sans-serif;}
+  body{overscroll-behavior:none;background-color:#131313;color:#e2e2e2;}
+  h1,h2,h3,h4,.font-headline-md,.font-display-lg{font-family:'Cairo', sans-serif;}
+}
 ::-webkit-scrollbar{display:none;}
 html{scroll-behavior:smooth;}
-.leather-grain{position:relative;}.leather-grain::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url('https://www.transparenttextures.com/patterns/leather.png');opacity:0.03;pointer-events:none;}
-.dotted-leader{background-image:linear-gradient(to right, #4d4635 50%, transparent 50%);background-position:0 0.85em;background-repeat:repeat-x;background-size:8px 1px;}
-/* Menu loading spinner */
-.menu-spin{width:32px;height:32px;border:2px solid #4d4635;border-top-color:#D4AF37;border-radius:50%;animation:mspin 1s linear infinite;display:inline-block;}
+.leather-grain{position:relative;}
+.leather-grain::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url('https://www.transparenttextures.com/patterns/leather.png');opacity:0.03;pointer-events:none;}
+.menu-spin{width:28px;height:28px;border:2px solid #4d4635;border-top-color:#D4AF37;border-radius:50%;animation:mspin 1s linear infinite;display:inline-block;}
 @keyframes mspin{to{transform:rotate(360deg);}}
 </style>
 <script src="https://cdn.tailwindcss.com"></script>
-<script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface":"#131313","surface-variant":"#353535","secondary-fixed-dim":"#c8c6c5","on-primary-container":"#554300","surface-container-low":"#1b1b1b","surface-container":"#1f1f1f","on-secondary":"#313030","on-background":"#e2e2e2","error":"#ffb4ab","primary-fixed-dim":"#e9c349","secondary":"#c8c6c5","primary-container":"#d4af37","on-surface-variant":"#d0c5af","tertiary-fixed":"#e2e2e2","secondary-fixed":"#e5e2e1","primary":"#f2ca50","on-tertiary-fixed-variant":"#454747","primary-fixed":"#ffe088","outline-variant":"#4d4635","surface-container-highest":"#353535","on-secondary-fixed-variant":"#474646","error-container":"#93000a","on-primary-fixed-variant":"#574500","surface-dim":"#131313","inverse-primary":"#735c00","on-secondary-fixed":"#1c1b1b","outline":"#99907c","on-tertiary":"#2f3131","on-surface":"#e2e2e2","on-primary-fixed":"#241a00","secondary-container":"#4a4949","surface-container-lowest":"#0e0e0e","surface-tint":"#e9c349","on-secondary-container":"#bab8b7","surface-container-high":"#2a2a2a","surface-bright":"#393939","on-error-container":"#ffdad6","tertiary-fixed-dim":"#c6c6c7","on-tertiary-container":"#434546","tertiary-container":"#b2b3b3","tertiary":"#cecece","inverse-on-surface":"#303030","on-tertiary-fixed":"#1a1c1c","on-primary":"#3c2f00","background":"#131313","inverse-surface":"#e2e2e2","on-error":"#690005"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-mobile":"20px","margin-desktop":"64px","unit":"8px","gutter":"24px","container-max":"1200px"},"fontFamily":{"body-lg":["Manrope"],"display-lg-mobile":["Libre Caslon Text"],"label-caps":["Manrope"],"headline-md":["Libre Caslon Text"],"display-lg":["Libre Caslon Text"],"body-md":["Manrope"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-lg-mobile":["40px",{"lineHeight":"48px","fontWeight":"400"}],"label-caps":["12px",{"lineHeight":"16px","letterSpacing":"0.15em","fontWeight":"700"}],"headline-md":["32px",{"lineHeight":"40px","fontWeight":"400"}],"display-lg":["64px",{"lineHeight":"72px","letterSpacing":"-0.02em","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script>
+<script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface":"#131313","surface-variant":"#353535","surface-container-low":"#1b1b1b","surface-container":"#1f1f1f","on-background":"#e2e2e2","primary":"#f2ca50","primary-fixed":"#ffe088","outline-variant":"#3a3427","on-surface-variant":"#d0c5af","on-surface":"#e2e2e2","background":"#131313"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"16px","margin-desktop":"48px","container-max":"1200px"},"fontFamily":{"sans":["Tajawal","Cairo","sans-serif"],"display":["Cairo","sans-serif"]}}}}</script>
 </head>
-<body class="bg-background font-body-md text-on-background">
+<body class="bg-background font-sans text-on-background antialiased">
 
-<!-- ===================== HEADER / NAV ===================== -->
-<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
-  <div class="h-20 max-w-[1200px] mx-auto px-margin-desktop flex items-center justify-between">
-    <a href="#hero" class="flex items-center gap-4">
-      <img alt="East and West" class="w-10 h-10 rounded-full object-cover border border-primary/50" src="https://lh3.googleusercontent.com/aida/AP1WRLtGzLr6pdYXL-tqPzfxjn8BImof0PjvLC_rejwj7MtGDEsXko5UMtY9GPZamsSmk-pYsxsS20y2BEryCqxYZYa89q_zVZaHiX9wNgQHLLwqMS1Mm8OqwXAXbTOAip0ni6-LMz3Pe-ppXTGQY5U2bP07RSvev2bMxTlo6g6U442Cul2LKYKX0hkxZ_3ja74sR9Fn3pqS5CW_S9j46jF11YQXQ9mTzV0HiJc0LHI7W_Ob49UwiMPwUCFXZQ8ZrLDdW96bfo-pNPha_g"/>
-      <span class="font-headline-md text-headline-md text-primary tracking-wider">East and West</span>
+<!-- ===================== HEADER / NAV (COMPACT Minimal) ===================== -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">
+  <div class="h-14 max-w-[1200px] mx-auto px-4 md:px-margin-desktop flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-3">
+      <img alt="East and West" class="w-8 h-8 rounded-full object-cover border border-primary/50" src="https://lh3.googleusercontent.com/aida/AP1WRLtGzLr6pdYXL-tqPzfxjn8BImof0PjvLC_rejwj7MtGDEsXko5UMtY9GPZamsSmk-pYsxsS20y2BEryCqxYZYa89q_zVZaHiX9wNgQHLLwqMS1Mm8OqwXAXbTOAip0ni6-LMz3Pe-ppXTGQY5U2bP07RSvev2bMxTlo6g6U442Cul2LKYKX0hkxZ_3ja74sR9Fn3pqS5CW_S9j46jF11YQXQ9mTzV0HiJc0LHI7W_Ob49UwiMPwUCFXZQ8ZrLDdW96bfo-pNPha_g"/>
+      <span class="font-display font-bold text-lg text-primary tracking-wide">East and West</span>
     </a>
-    <nav class="hidden md:flex items-center gap-gutter">
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#hero">الرئيسية</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#menu">المنيو</a>
+    <nav class="flex items-center gap-6">
+      <a class="text-sm font-semibold text-primary border-b-2 border-primary pb-0.5 transition-colors" href="#hero">الرئيسية</a>
+      <a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#menu">المنيو</a>
     </nav>
-    <div class="flex items-center gap-3">
-      <button onclick="openOrderModalById(1)" class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase">اطلب الآن</button>
-      <a href="admin.html" id="admin-dashboard-btn" title="لوحة التحكم" class="group w-10 h-10 rounded-sm border border-outline-variant/40 bg-surface-container flex items-center justify-center text-on-surface-variant hover:border-primary/60 hover:text-primary hover:bg-surface-container-high transition-all duration-200 shadow-sm" aria-label="Admin Dashboard">
-        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 0,'wght' 300;">dashboard</span>
+    <div class="flex items-center gap-2">
+      <button onclick="openOrderModalById(1)" class="bg-primary text-black font-bold px-4 py-1.5 text-xs rounded hover:bg-primary-fixed transition-all shadow-[0_0_10px_rgba(242,202,80,0.2)]">اطلب الآن</button>
+      <a href="admin.html" title="لوحة التحكم" class="w-8 h-8 rounded border border-outline-variant/40 bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/60 transition-all">
+        <span class="material-symbols-outlined text-[18px]">dashboard</span>
       </a>
     </div>
   </div>
 </header>
 
-<main class="w-full pt-20">
+<main class="w-full pt-14">
 
 <!-- ================================================================== -->
 <!-- ===================== SECTION 1: HERO SIGNATURE ================= -->
@@ -265,40 +267,56 @@ function renderMenu() {
     if (!catDishes.length) return '';
     const dishCards = catDishes.map(d => {
       const imgHtml = d.image_url
-        ? `<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${esc(d.image_url)}" alt="${esc(d.name)}" loading="lazy"/>`
-        : `<div class="w-full h-full flex items-center justify-center text-5xl bg-surface-container-high">🍔</div>`;
+        ? `<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${esc(d.image_url)}" alt="${esc(d.name)}" loading="lazy"/>`
+        : `<div class="w-full h-full flex items-center justify-center text-4xl bg-surface-container-high">🍔</div>`;
+      
       const sizesHtml = d.sizes && d.sizes.length
-        ? `<div class="flex flex-wrap gap-2 my-2">${d.sizes.map(s=>`<span class="text-[10px] font-label-caps text-primary/70 border border-primary/30 px-2 py-0.5 rounded-full">${esc(s.size_name)} ${Number(s.price).toLocaleString()} ج.م</span>`).join('')}</div>`
+        ? `<div class="flex flex-wrap gap-1.5 my-1">${d.sizes.map(s=>`<span class="text-[11px] font-medium text-primary/80 border border-primary/20 px-2 py-0.5 rounded">${esc(s.size_name)}: ${Number(s.price).toLocaleString()} ج.م</span>`).join('')}</div>`
         : '';
+
       return `
-        <div class="group bg-surface-container rounded-lg overflow-hidden border-t border-primary/30 shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col justify-between">
+        <div class="group bg-surface-container rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
           <div>
-            <div class="relative h-64 overflow-hidden">${imgHtml}</div>
-            <div class="p-6 flex flex-col gap-3 relative leather-grain">
-              <div class="flex justify-between items-start gap-4">
-                <h3 class="font-headline-md text-[22px] text-on-surface leading-tight">${esc(d.name)}</h3>
-                <span class="font-headline-md text-[18px] text-primary whitespace-nowrap">${Number(d.price).toLocaleString()} ج.م</span>
-              </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">${esc(d.description||'')}</p>
+            <!-- Image with fixed aspect-video (16:9) -->
+            <div class="relative w-full aspect-video overflow-hidden bg-black/40">
+              ${imgHtml}
+            </div>
+            <!-- Body Content -->
+            <div class="p-5 flex flex-col gap-3">
+              <!-- 1. Dish Name (Most Prominent) -->
+              <h3 class="font-display font-bold text-xl text-on-surface group-hover:text-primary transition-colors leading-snug">${esc(d.name)}</h3>
+              
+              <!-- 2. Short Description -->
+              <p class="text-sm text-on-surface-variant/90 leading-relaxed min-h-[40px]">${esc(d.description||'')}</p>
+              
+              <!-- 3. Sizes / Features -->
               ${sizesHtml}
+
+              <!-- 4. Price (Large and prominent with clean ج.م) -->
+              <div class="pt-2 flex items-baseline gap-1.5 border-t border-outline-variant/20 mt-1">
+                <span class="font-display font-extrabold text-2xl text-primary">${Number(d.price).toLocaleString()}</span>
+                <span class="text-xs font-semibold text-primary/80">ج.م</span>
+              </div>
             </div>
           </div>
-          <div class="px-6 pb-6 pt-2">
-            <button onclick="openOrderModalById(${d.id})" class="w-full border border-primary/50 text-primary py-2.5 font-label-caps text-label-caps rounded-sm hover:bg-primary/10 transition-colors uppercase flex items-center justify-center gap-2">
-              <span class="material-symbols-outlined text-[16px]">shopping_cart</span> اطلب الآن
+          
+          <!-- 5. Fixed Order Button -->
+          <div class="p-5 pt-0">
+            <button onclick="openOrderModalById(${d.id})" class="w-full bg-primary text-black font-bold py-2.5 px-4 text-sm rounded hover:bg-primary-fixed transition-all flex items-center justify-center gap-2 shadow-[0_0_10px_rgba(242,202,80,0.15)] active:scale-95">
+              <span class="material-symbols-outlined text-[18px]">shopping_cart</span> اطلب الآن
             </button>
           </div>
         </div>`;
     }).join('');
 
     return `
-      <section class="flex flex-col gap-12 scroll-mt-36" id="cat-${cat.id}">
-        <div class="flex items-center gap-6 justify-center">
-          <div class="h-px w-24 bg-gradient-to-r from-transparent to-primary"></div>
-          <h2 class="font-headline-md text-headline-md text-primary tracking-wide text-center">${esc(cat.name)}</h2>
-          <div class="h-px w-24 bg-gradient-to-l from-transparent to-primary"></div>
+      <section class="flex flex-col gap-8 scroll-mt-24" id="cat-${cat.id}">
+        <div class="flex items-center gap-4 justify-center">
+          <div class="h-px w-16 bg-gradient-to-r from-transparent to-primary"></div>
+          <h2 class="font-display font-bold text-2xl text-primary tracking-wide text-center">${esc(cat.name)}</h2>
+          <div class="h-px w-16 bg-gradient-to-l from-transparent to-primary"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${dishCards}</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">${dishCards}</div>
       </section>`;
   }).join('');
 }

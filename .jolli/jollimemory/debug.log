@@ -301,3 +301,41 @@
 [2026-08-07T22:57:08.233Z] INFO  [PrePushHook] [trace=0e6eb25ac5abc81d31ee990aeae12a1d] Recorded 1 commit(s) for later sync — not signed in to Jolli
 [2026-08-07T22:57:08.234Z] INFO  [StorageFactory] [trace=0e6eb25ac5abc81d31ee990aeae12a1d] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
 [2026-08-07T22:57:08.322Z] INFO  [StorageFactory] [trace=0e6eb25ac5abc81d31ee990aeae12a1d] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:58:59.403Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook started (source: message) ===
+[2026-08-07T22:58:59.467Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook finished ===
+[2026-08-07T22:58:59.828Z] INFO  [PostCommitHook] [trace=d606978e4c5c320bc9ec63f1655bc035] Detected operation: commit
+[2026-08-07T22:58:59.901Z] INFO  [PostCommitHook] [trace=d606978e4c5c320bc9ec63f1655bc035] Enqueued: type=commit hash=a07c496c
+[2026-08-07T22:58:59.901Z] INFO  [QueueWorker] [trace=d606978e4c5c320bc9ec63f1655bc035] Launching background worker
+[2026-08-07T22:58:59.906Z] INFO  [QueueWorker] [trace=d606978e4c5c320bc9ec63f1655bc035] Background worker spawned (PID: 34284)
+[2026-08-07T22:59:00.025Z] INFO  [QueueWorker] [trace=d606978e4c5c320bc9ec63f1655bc035] === Queue worker started === node=24.18.0 kind=vscode-plugin source=antigravity-ide pkgVer=0.99.10 cliVer=0.99.10 dist=c:\Users\narut\.antigravity-ide\extensions\jolli.jollimemory-vscode-0.99.10-universal\dist
+[2026-08-07T22:59:00.029Z] WARN  [LockPrimitives] [trace=d606978e4c5c320bc9ec63f1655bc035] Removing orphaned lock C:\Users\narut\.jolli\jollimemory\locks\vault-b0d8e0f4dd4d7c36ac8e54006cb985b1f6a38ecf7d0e6a003e30948555446330.lock (PID 33160 no longer running)
+[2026-08-07T22:59:00.031Z] INFO  [StorageFactory] [trace=d606978e4c5c320bc9ec63f1655bc035] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T22:59:00.120Z] INFO  [StorageFactory] [trace=d606978e4c5c320bc9ec63f1655bc035] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:59:00.121Z] WARN  [LockPrimitives] [trace=d606978e4c5c320bc9ec63f1655bc035] Removing orphaned lock D:\stitch_\.jolli\jollimemory\worker.lock (PID 33160 no longer running)
+[2026-08-07T22:59:00.130Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Processing queue entry: type=commit hash=46496a45
+[2026-08-07T22:59:00.156Z] INFO  [GitOps] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Commit 46496a45: Add 3D burger scrollytelling frames and link direct ordering
+[2026-08-07T22:59:00.156Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Commit: 46496a45 - Add 3D burger scrollytelling frames and link direct ordering system to admin (24ms)
+[2026-08-07T22:59:00.213Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] No active sessions found — will infer topics from diff if available
+[2026-08-07T22:59:00.365Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Git diff: 301 files changed, +331 -37 (151ms)
+[2026-08-07T22:59:00.563Z] WARN  [GitOps] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Diff exceeds 60000-char budget (98326 chars) — prepending --stat file list and truncating body
+[2026-08-07T22:59:00.573Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Prompt blocks: plans=0 notes=0 references=0 (+0 track-only archived, not prompted) (AI soft-excluded 0)
+[2026-08-07T22:59:00.573Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Generating summary for commit 46496a45
+[2026-08-07T22:59:00.573Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Context: transcript=0, files=301, lines=331+37
+[2026-08-07T22:59:00.574Z] WARN  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] First API attempt failed: No LLM provider available. Set an Anthropic API key (ANTHROPIC_API_KEY) or configure a Jolli Space API key (jolliApiKey).. Retrying in 2000ms...
+[2026-08-07T22:59:01.436Z] INFO  [PrePushHook] [trace=6a4883da26c8df079a38473745b64bbd] pre-push hook: remote=origin budget=3000ms
+[2026-08-07T22:59:01.503Z] INFO  [PushPendingStore] [trace=6a4883da26c8df079a38473745b64bbd] Enqueued 1 new push-pending entries (branch=main)
+[2026-08-07T22:59:01.504Z] INFO  [PrePushHook] [trace=6a4883da26c8df079a38473745b64bbd] pre-push: recorded 1 commit(s) across 1 pushed ref(s)
+[2026-08-07T22:59:01.534Z] INFO  [PrePushHook] [trace=6a4883da26c8df079a38473745b64bbd] Recorded 1 commit(s) for later sync — not signed in to Jolli
+[2026-08-07T22:59:01.535Z] INFO  [StorageFactory] [trace=6a4883da26c8df079a38473745b64bbd] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T22:59:01.612Z] INFO  [StorageFactory] [trace=6a4883da26c8df079a38473745b64bbd] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:59:02.574Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Generating summary for commit 46496a45
+[2026-08-07T22:59:02.574Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Context: transcript=0, files=301, lines=331+37
+[2026-08-07T22:59:02.574Z] ERROR [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] API call failed after retry: No LLM provider available. Set an Anthropic API key (ANTHROPIC_API_KEY) or configure a Jolli Space API key (jolliApiKey).
+[2026-08-07T22:59:02.574Z] WARN  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Saving summary with empty topics + llm-failed marker for commit 46496a45
+[2026-08-07T22:59:02.576Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] API summary generated (2.0s)
+[2026-08-07T22:59:02.577Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Plan registry scan: found 0 uncommitted slug(s) on main: []
+[2026-08-07T22:59:02.577Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Plan association: detected 0 slug(s) from transcripts: []
+[2026-08-07T22:59:02.578Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Note registry scan: found 0 uncommitted note(s) on main: []
+[2026-08-07T22:59:02.578Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Note association: detected 0 note(s): []
+[2026-08-07T22:59:02.579Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Reference association: detected 0 ref(s) for branch main
+[2026-08-07T22:59:02.586Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Summary built for 46496a45: recap=no, topics=0, plans=absent, notes=absent, references=absent
