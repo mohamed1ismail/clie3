@@ -92,3 +92,28 @@
 [2026-08-07T22:18:11.066Z] INFO  [PrePushHook] [trace=82770eb447cff8b970d6de0b7d8adbbf] Recorded 1 commit(s) for later sync — not signed in to Jolli
 [2026-08-07T22:18:11.067Z] INFO  [StorageFactory] [trace=82770eb447cff8b970d6de0b7d8adbbf] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
 [2026-08-07T22:18:11.142Z] INFO  [StorageFactory] [trace=82770eb447cff8b970d6de0b7d8adbbf] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:24:37.777Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook started (source: message) ===
+[2026-08-07T22:24:37.846Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook finished ===
+[2026-08-07T22:24:38.190Z] INFO  [PostCommitHook] [trace=ba22c999baad47d2fc7a0ab2fe291442] Detected operation: commit
+[2026-08-07T22:24:38.247Z] INFO  [PostCommitHook] [trace=ba22c999baad47d2fc7a0ab2fe291442] Enqueued: type=commit hash=735a2e9a
+[2026-08-07T22:24:38.248Z] INFO  [QueueWorker] [trace=ba22c999baad47d2fc7a0ab2fe291442] Launching background worker
+[2026-08-07T22:24:38.252Z] INFO  [QueueWorker] [trace=ba22c999baad47d2fc7a0ab2fe291442] Background worker spawned (PID: 4384)
+[2026-08-07T22:24:39.638Z] INFO  [PrePushHook] [trace=1c1ba4eb1fbd1af34327556b43010870] pre-push hook: remote=origin budget=3000ms
+[2026-08-07T22:24:39.723Z] INFO  [PushPendingStore] [trace=1c1ba4eb1fbd1af34327556b43010870] Enqueued 1 new push-pending entries (branch=main)
+[2026-08-07T22:24:39.726Z] INFO  [PrePushHook] [trace=1c1ba4eb1fbd1af34327556b43010870] pre-push: recorded 1 commit(s) across 1 pushed ref(s)
+[2026-08-07T22:24:39.835Z] INFO  [QueueWorker] [trace=ba22c999baad47d2fc7a0ab2fe291442] === Queue worker started === node=24.18.0 kind=vscode-plugin source=antigravity-ide pkgVer=0.99.10 cliVer=0.99.10 dist=c:\Users\narut\.antigravity-ide\extensions\jolli.jollimemory-vscode-0.99.10-universal\dist
+[2026-08-07T22:24:39.773Z] INFO  [PrePushHook] [trace=1c1ba4eb1fbd1af34327556b43010870] Recorded 1 commit(s) for later sync — not signed in to Jolli
+[2026-08-07T22:24:39.773Z] INFO  [StorageFactory] [trace=1c1ba4eb1fbd1af34327556b43010870] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T22:24:39.850Z] INFO  [StorageFactory] [trace=1c1ba4eb1fbd1af34327556b43010870] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:24:39.839Z] INFO  [StorageFactory] [trace=ba22c999baad47d2fc7a0ab2fe291442] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T22:24:39.920Z] INFO  [StorageFactory] [trace=ba22c999baad47d2fc7a0ab2fe291442] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:24:39.928Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Processing queue entry: type=commit hash=46496a45
+[2026-08-07T22:24:39.954Z] INFO  [GitOps] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Commit 46496a45: Add 3D burger scrollytelling frames and link direct ordering
+[2026-08-07T22:24:39.955Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Commit: 46496a45 - Add 3D burger scrollytelling frames and link direct ordering system to admin (23ms)
+[2026-08-07T22:24:40.047Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] No active sessions found — will infer topics from diff if available
+[2026-08-07T22:24:40.201Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Git diff: 301 files changed, +331 -37 (154ms)
+[2026-08-07T22:24:40.367Z] WARN  [GitOps] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Diff exceeds 60000-char budget (98326 chars) — prepending --stat file list and truncating body
+[2026-08-07T22:24:40.372Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Prompt blocks: plans=0 notes=0 references=0 (+0 track-only archived, not prompted) (AI soft-excluded 0)
+[2026-08-07T22:24:40.373Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Generating summary for commit 46496a45
+[2026-08-07T22:24:40.373Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Context: transcript=0, files=301, lines=331+37
+[2026-08-07T22:24:40.373Z] WARN  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] First API attempt failed: No LLM provider available. Set an Anthropic API key (ANTHROPIC_API_KEY) or configure a Jolli Space API key (jolliApiKey).. Retrying in 2000ms...
