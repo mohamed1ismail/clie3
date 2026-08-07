@@ -339,7 +339,7 @@
       <!-- PAGE: TABLES -->
       <div id="page-tables" class="page p-8">
         <div class="flex items-center justify-between mb-6">
-          <p class="text-sm text-muted">Click a table to view/download its QR code</p>
+          <p class="text-sm text-muted">إدارة طاولات المطعم — تعديل الحالة والسعة</p>
           <button class="btn-primary" onclick="openTableModal()">
             <span class="icon" style="font-size:16px;">add</span> Add Table
           </button>
@@ -577,22 +577,6 @@
   </div>
 </div>
 
-<!-- QR Modal -->
-<div id="modal-qr" class="modal-overlay hidden">
-  <div class="modal" style="max-width:380px;">
-    <div class="modal-header">
-      <h3 class="text-heading font-semibold text-sm" id="qr-modal-title">QR Code</h3>
-      <button onclick="closeModal('modal-qr')" class="text-muted hover:text-heading"><span class="icon">close</span></button>
-    </div>
-    <div class="modal-body text-center flex flex-col items-center gap-4">
-      <div id="qr-container" class="p-4 rounded-xl" style="background:#fff;display:inline-block;"></div>
-      <p class="text-xs text-muted">Scan with any QR reader to open the menu for this table.</p>
-      <a id="qr-download-link" href="#" download class="btn-primary">
-        <span class="icon" style="font-size:15px;">download</span> Download QR
-      </a>
-    </div>
-  </div>
-</div>
 
 <!-- Order Detail Modal -->
 <div id="modal-order" class="modal-overlay hidden">
@@ -1793,7 +1777,7 @@ async function loadTables() {
     };
     el.innerHTML = tables.map(t => {
       const s = statusStyle[t.status] || statusStyle.available;
-      return `<div class="qr-card cursor-pointer hover:border-gold-dim transition-all" style="border-color:${s.border};background:${s.bg};" onclick="showQR(${t.id},'${esc(t.table_number)}')">
+      return `<div class="qr-card" style="border-color:${s.border};background:${s.bg};">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#1E1E1E;border:1px solid #2A2A2A;">
           <span class="icon" style="font-size:22px;color:#D4AF37;">table_restaurant</span>
         </div>
@@ -1801,12 +1785,12 @@ async function loadTables() {
         <div class="flex items-center gap-1.5 text-xs" style="color:${s.dot};">
           <span style="width:6px;height:6px;border-radius:50%;background:${s.dot};display:inline-block;"></span>${s.label}
         </div>
-        <div class="text-xs text-muted">Cap: ${t.capacity}</div>
+        <div class="text-xs text-muted">السعة: ${t.capacity}</div>
         <div class="flex gap-2 mt-1">
-          <button class="btn-ghost" style="padding:3px 8px;font-size:10px;" onclick="event.stopPropagation();editTable(${JSON.stringify(t).replace(/'/g,'&#39;')})">
+          <button class="btn-ghost" style="padding:3px 8px;font-size:10px;" onclick="editTable(${JSON.stringify(t).replace(/'/g,'&#39;')})">
             <span class="icon" style="font-size:13px;">edit</span>
           </button>
-          <button class="btn-danger" style="padding:3px 8px;font-size:10px;" onclick="event.stopPropagation();deleteTable(${t.id},'${esc(t.table_number)}')">
+          <button class="btn-danger" style="padding:3px 8px;font-size:10px;" onclick="deleteTable(${t.id},'${esc(t.table_number)}')">
             <span class="icon" style="font-size:13px;">delete</span>
           </button>
         </div>
