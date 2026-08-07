@@ -241,13 +241,11 @@ if (!localStorage.getItem('ew_seeded')) {
     {id:6,name:'شوربة عدس دافئة',category_id:3,category_name:'شوربات',price:40,description:'شوربة عدس مهروسة مع الكمون والخبز المحمص وشرائح الليمون.',is_available:true,is_featured:false,image_url:'',sizes:[]},
     {id:7,name:'أم علي الشرقية الفاخرة',category_id:4,category_name:'حلويات',price:60,description:'مخبوزة بقطع الكرواسون والحليب الساخن والمكسرات وعلبة قشطة طازجة.',is_available:true,is_featured:true,image_url:'',sizes:[]},
   ]));
-  localStorage.setItem('ew_tables', JSON.stringify([
-    {id:1,table_number:'طاولة 1',capacity:2,status:'available'},
-    {id:2,table_number:'طاولة 2',capacity:4,status:'available'},
-    {id:3,table_number:'طاولة 3',capacity:4,status:'available'},
-    {id:4,table_number:'طاولة 4',capacity:6,status:'occupied'},
-    {id:5,table_number:'طاولة 5',capacity:2,status:'available'},
-  ]));
+  const defaultTables = [];
+  for (let i = 1; i <= 20; i++) {
+    defaultTables.push({id: i, table_number: `طاولة ${i}`, capacity: (i % 2 === 0 ? 4 : 2), status: 'available'});
+  }
+  localStorage.setItem('ew_tables', JSON.stringify(defaultTables));
   localStorage.setItem('ew_offers', JSON.stringify([
     {id:1,title:'عرض الصيف من نانو',description:'خصم خاص ١٥٪ على كل وجبات البرجر طوال شهر أغسطس',discount_percentage:15,code:'NANO15',is_active:true},
   ]));
@@ -348,8 +346,14 @@ function openOrderModalById(id) {
   document.getElementById('order-qty').value = 1;
   document.getElementById('order-notes').value = '';
 
-  // Load Tables Options
-  const tables = getList('ew_tables');
+  // Load Tables Options (Ensure 20 tables available)
+  let tables = getList('ew_tables');
+  if (!tables || tables.length < 20) {
+    tables = [];
+    for (let i = 1; i <= 20; i++) {
+      tables.push({id: i, table_number: `طاولة ${i}`});
+    }
+  }
   const tableSelect = document.getElementById('order-table');
   tableSelect.innerHTML = '<option value="">توصيل خارجي / دليفري</option>' + 
     tables.map(t => `<option value="${t.id}">${esc(t.table_number)}</option>`).join('');

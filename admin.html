@@ -1093,6 +1093,13 @@ async function api(method, endpoint, body = null, isForm = false) {
   // TABLES
   if (path === '/tables') {
     let tables = getList('ew_tables');
+    if (!tables || tables.length < 20) {
+      tables = [];
+      for (let i = 1; i <= 20; i++) {
+        tables.push({id: i, table_number: `طاولة ${i}`, capacity: (i % 2 === 0 ? 4 : 2), status: 'available'});
+      }
+      setList('ew_tables', tables);
+    }
     if (method === 'GET') return { success: true, data: tables };
     if (method === 'POST') {
       const newTable = {
