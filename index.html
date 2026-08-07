@@ -28,13 +28,10 @@ html{scroll-behavior:smooth;}
     </a>
     <nav class="hidden md:flex items-center gap-gutter">
       <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#hero">الرئيسية</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#about">من نحن</a>
       <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#menu">المنيو</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#reviews">التقييمات</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#contact">التواصل</a>
     </nav>
     <div class="flex items-center gap-3">
-      <a href="#reserve" class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase">احجز الآن</a>
+      <button onclick="openOrderModalById(1)" class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase">اطلب الآن</button>
       <a href="admin.html" id="admin-dashboard-btn" title="لوحة التحكم" class="group w-10 h-10 rounded-sm border border-outline-variant/40 bg-surface-container flex items-center justify-center text-on-surface-variant hover:border-primary/60 hover:text-primary hover:bg-surface-container-high transition-all duration-200 shadow-sm" aria-label="Admin Dashboard">
         <span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 0,'wght' 300;">dashboard</span>
       </a>
@@ -535,39 +532,10 @@ function loadContactInfo() {
   }
 }
 
-// ─── RATING RING ANIMATION ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  const target = document.getElementById('rating-number');
-  if (!target) return;
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const circle = document.getElementById('rating-circle');
-        const percent = 98;
-        const circumference = 2 * Math.PI * 45;
-        const offset = circumference - (percent / 100) * circumference;
-        if (circle) circle.style.strokeDashoffset = offset;
-        const numberEl = document.getElementById('rating-number');
-        let current = 0;
-        const targetVal = 4.9;
-        const steps = 60;
-        const stepTime = 1500 / steps;
-        const increment = targetVal / steps;
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= targetVal) { current = targetVal; clearInterval(timer); }
-          if (numberEl) numberEl.textContent = current.toFixed(1);
-        }, stepTime);
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.5 });
-  observer.observe(target);
-
   // INIT
   preloadImages();
   renderMenu();
-  loadContactInfo();
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
   
