@@ -1,0 +1,94 @@
+[2026-08-07T21:39:50.585Z] INFO  [skills] detectSkills found 0 active (0 in registry)
+[2026-08-07T21:39:51.260Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T21:39:51.421Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T21:39:51.426Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T21:39:51.564Z] INFO  [bridge] Own dist-paths/antigravity-ide missing, stale, or pointing elsewhere — re-enabling
+[2026-08-07T21:39:51.564Z] INFO  [bridge] enable() called
+[2026-08-07T21:39:51.649Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T21:39:51.829Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T21:39:51.897Z] INFO  [Installer] Installing Jolli Memory hooks
+[2026-08-07T21:39:52.168Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T21:39:52.363Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T21:39:52.564Z] INFO  [bridge] Merged mode activated {"branch":"main","creationPoint":"9260295d","author":"mohamed1ismail"}
+[2026-08-07T21:39:52.593Z] INFO  [SchemaV5Migration] Storage backend not initialized yet — skipping schema v5 migration (no data to migrate)
+[2026-08-07T21:39:52.593Z] INFO  [activate] Schema v5 migration: alreadyDone=false fresh=true migrated=0 skipped=0
+[2026-08-07T21:39:53.124Z] WARN  [ReadStorageResolver] createReadStorage: folder lacks index.json — falling back to orphan branch (migration incomplete, or folder wiped)
+[2026-08-07T21:39:54.130Z] INFO  [DispatchScripts] Wrote resolve-dist-path, run-hook, and run-cli scripts to C:\Users\narut\.jolli\jollimemory
+[2026-08-07T21:39:54.138Z] INFO  [DistPathWriter] Wrote dist-paths/antigravity-ide (version=0.99.10, distDir=c:\Users\narut\.antigravity-ide\extensions\jolli.jollimemory-vscode-0.99.10-universal\dist)
+[2026-08-07T21:39:54.196Z] INFO  [SkillInstaller] Wrote SKILL.md (revision 2) to D:\stitch_\.agents\skills\jolli-recall\SKILL.md
+[2026-08-07T21:39:54.199Z] INFO  [SkillInstaller] Wrote SKILL.md (revision 2) to D:\stitch_\.agents\skills\jolli-search\SKILL.md
+[2026-08-07T21:39:54.206Z] INFO  [SkillInstaller] Wrote SKILL.md (revision 5) to D:\stitch_\.agents\skills\jolli-local-run\SKILL.md
+[2026-08-07T21:39:54.209Z] INFO  [SkillInstaller] Wrote SKILL.md (revision 4) to D:\stitch_\.agents\skills\jolli-remote-run\SKILL.md
+[2026-08-07T21:39:54.213Z] INFO  [SkillInstaller] Wrote SKILL.md (revision 6) to D:\stitch_\.agents\skills\jolli\SKILL.md
+[2026-08-07T21:39:54.342Z] INFO  [GitExclude] Updated D:\stitch_\.git\info\exclude with 8 Jolli skill exclude paths
+[2026-08-07T21:39:54.345Z] INFO  [McpRegistration] Registered MCP server in D:\stitch_\.mcp.json
+[2026-08-07T21:39:54.348Z] INFO  [JsonMcpWriter] Registered MCP server in D:\stitch_\.cursor\mcp.json
+[2026-08-07T21:39:54.361Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T21:39:54.362Z] INFO  [plans] detectPlans found 0 plans (0 in registry)
+[2026-08-07T21:39:54.362Z] INFO  [notes] detectNotes found 0 notes (0 in registry)
+[2026-08-07T21:39:54.362Z] INFO  [references] detectReferences(*) found 0 (0 in registry)
+[2026-08-07T21:39:54.362Z] INFO  [skills] detectSkills found 0 active (0 in registry)
+[2026-08-07T21:39:54.463Z] INFO  [JsonMcpWriter] Registered MCP server in C:\Users\narut\.gemini\settings.json
+[2026-08-07T21:39:54.493Z] INFO  [CodexTomlWriter] Registered Codex MCP server in C:\Users\narut\.codex\config.toml
+[2026-08-07T21:39:54.532Z] INFO  [JsonMcpWriter] Registered MCP server in C:\Users\narut\.config\opencode\opencode.json
+[2026-08-07T21:39:54.578Z] INFO  [JsonMcpWriter] Registered MCP server in C:\Users\narut\AppData\Roaming\Code\User\mcp.json
+[2026-08-07T21:39:54.612Z] INFO  [JsonMcpWriter] Registered MCP server in C:\Users\narut\AppData\Roaming\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json
+[2026-08-07T21:39:54.618Z] INFO  [JsonMcpWriter] Registered MCP server in C:\Users\narut\.config\devin\config.json
+[2026-08-07T21:39:54.626Z] INFO  [JsonMcpWriter] Registered MCP server in C:\Users\narut\.gemini\config\mcp_config.json
+[2026-08-07T21:39:54.633Z] INFO  [GitHookInstaller] Git post-commit hook installed
+[2026-08-07T21:39:54.639Z] INFO  [GitHookInstaller] Git post-rewrite hook installed
+[2026-08-07T21:39:54.643Z] INFO  [GitHookInstaller] Git prepare-commit-msg hook installed
+[2026-08-07T21:39:54.649Z] INFO  [GitHookInstaller] Git post-merge hook installed
+[2026-08-07T21:39:54.655Z] INFO  [GitHookInstaller] Git pre-push hook installed
+[2026-08-07T21:39:54.658Z] INFO  [GeminiHookInstaller] Gemini AfterAgent hook installed
+[2026-08-07T21:39:54.660Z] INFO  [Installer] Skipping v5 migration on vscode-extension source — Extension.ts owns it with UI
+[2026-08-07T21:39:54.660Z] INFO  [Installer] Installation complete
+[2026-08-07T21:39:54.664Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T21:40:09.661Z] INFO  [Installer] Status: enabled=false, claude=false, git=false, geminiHook=false, worktreeHooks=false, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T21:40:09.661Z] INFO  [Installer] Status: enabled=false, claude=true, git=false, geminiHook=false, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T21:40:09.680Z] INFO  [initialLoad] All panels loaded — updating status bar
+[2026-08-07T21:40:09.680Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T21:40:09.856Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T21:40:09.859Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T21:40:11.178Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T21:40:11.424Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T21:40:11.432Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T21:40:11.436Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T21:40:11.690Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T21:40:13.057Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T22:13:14.403Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook started (source: message) ===
+[2026-08-07T22:13:14.486Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook finished ===
+[2026-08-07T22:13:16.611Z] INFO  [PostCommitHook] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Detected operation: commit
+[2026-08-07T22:13:16.674Z] INFO  [PostCommitHook] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Enqueued: type=commit hash=46496a45
+[2026-08-07T22:13:16.674Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Launching background worker
+[2026-08-07T22:13:16.681Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Background worker spawned (PID: 25992)
+[2026-08-07T22:13:26.347Z] INFO  [PrePushHook] [trace=65253a47f08742b18d5ad28f05c712fe] pre-push hook: remote=origin budget=3000ms
+[2026-08-07T22:13:26.409Z] INFO  [PushPendingStore] [trace=65253a47f08742b18d5ad28f05c712fe] Enqueued 1 new push-pending entries (branch=main)
+[2026-08-07T22:13:26.411Z] INFO  [PrePushHook] [trace=65253a47f08742b18d5ad28f05c712fe] pre-push: recorded 1 commit(s) across 1 pushed ref(s)
+[2026-08-07T22:13:26.438Z] INFO  [PrePushHook] [trace=65253a47f08742b18d5ad28f05c712fe] Recorded 1 commit(s) for later sync — not signed in to Jolli
+[2026-08-07T22:13:26.439Z] INFO  [StorageFactory] [trace=65253a47f08742b18d5ad28f05c712fe] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T22:13:26.520Z] INFO  [StorageFactory] [trace=65253a47f08742b18d5ad28f05c712fe] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:15:16.388Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook started (source: message) ===
+[2026-08-07T22:15:16.455Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook finished ===
+[2026-08-07T22:15:16.779Z] INFO  [PostCommitHook] [trace=9d604ebdc872acc40385eb4d25872f7f] Detected operation: commit
+[2026-08-07T22:15:16.829Z] INFO  [PostCommitHook] [trace=9d604ebdc872acc40385eb4d25872f7f] Enqueued: type=commit hash=0d73f1f6
+[2026-08-07T22:15:16.829Z] INFO  [QueueWorker] [trace=9d604ebdc872acc40385eb4d25872f7f] Launching background worker
+[2026-08-07T22:15:16.833Z] INFO  [QueueWorker] [trace=9d604ebdc872acc40385eb4d25872f7f] Background worker spawned (PID: 34300)
+[2026-08-07T22:15:27.369Z] INFO  [PrePushHook] [trace=769e742a914d511eb8cf0c8d623b66ca] pre-push hook: remote=origin budget=3000ms
+[2026-08-07T22:15:27.435Z] INFO  [PushPendingStore] [trace=769e742a914d511eb8cf0c8d623b66ca] Enqueued 1 new push-pending entries (branch=main)
+[2026-08-07T22:15:27.436Z] INFO  [PrePushHook] [trace=769e742a914d511eb8cf0c8d623b66ca] pre-push: recorded 1 commit(s) across 1 pushed ref(s)
+[2026-08-07T22:15:27.470Z] INFO  [PrePushHook] [trace=769e742a914d511eb8cf0c8d623b66ca] Recorded 1 commit(s) for later sync — not signed in to Jolli
+[2026-08-07T22:15:27.471Z] INFO  [StorageFactory] [trace=769e742a914d511eb8cf0c8d623b66ca] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T22:15:27.547Z] INFO  [StorageFactory] [trace=769e742a914d511eb8cf0c8d623b66ca] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:17:12.557Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook started (source: message) ===
+[2026-08-07T22:17:12.623Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook finished ===
+[2026-08-07T22:17:12.949Z] INFO  [PostCommitHook] [trace=46ed9ede88a435369d6fe1e473ba115d] Detected operation: commit
+[2026-08-07T22:17:13.003Z] INFO  [PostCommitHook] [trace=46ed9ede88a435369d6fe1e473ba115d] Enqueued: type=commit hash=8e0beb93
+[2026-08-07T22:17:13.003Z] INFO  [QueueWorker] [trace=46ed9ede88a435369d6fe1e473ba115d] Launching background worker
+[2026-08-07T22:17:13.008Z] INFO  [QueueWorker] [trace=46ed9ede88a435369d6fe1e473ba115d] Background worker spawned (PID: 27828)
+[2026-08-07T22:18:10.962Z] INFO  [PrePushHook] [trace=82770eb447cff8b970d6de0b7d8adbbf] pre-push hook: remote=origin budget=3000ms
+[2026-08-07T22:18:11.036Z] INFO  [PushPendingStore] [trace=82770eb447cff8b970d6de0b7d8adbbf] Enqueued 1 new push-pending entries (branch=main)
+[2026-08-07T22:18:11.039Z] INFO  [PrePushHook] [trace=82770eb447cff8b970d6de0b7d8adbbf] pre-push: recorded 1 commit(s) across 1 pushed ref(s)
+[2026-08-07T22:18:11.066Z] INFO  [PrePushHook] [trace=82770eb447cff8b970d6de0b7d8adbbf] Recorded 1 commit(s) for later sync — not signed in to Jolli
+[2026-08-07T22:18:11.067Z] INFO  [StorageFactory] [trace=82770eb447cff8b970d6de0b7d8adbbf] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T22:18:11.142Z] INFO  [StorageFactory] [trace=82770eb447cff8b970d6de0b7d8adbbf] Storage mode: dual-write (primary=orphan, shadow=folder)
