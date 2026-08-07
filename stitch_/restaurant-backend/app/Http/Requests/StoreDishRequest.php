@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class StoreDishRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'category_id'       => ['required', 'exists:categories,id'],
+            'name'              => ['required', 'string', 'max:255'],
+            'slug'              => ['nullable', 'string', 'max:255'],
+            'description'       => ['nullable', 'string'],
+            'price'             => ['required', 'numeric', 'min:0'],
+            'image'             => ['nullable', 'image', 'max:5120'],
+            'is_available'      => ['nullable', 'boolean'],
+            'is_featured'       => ['nullable', 'boolean'],
+            'calories'          => ['nullable', 'integer', 'min:0'],
+            'prep_time_minutes' => ['nullable', 'integer', 'min:0'],
+            'ingredients'       => ['nullable', 'array'],
+            // Sizes are optional — if omitted the dish uses its base price only
+            'sizes'                    => ['nullable', 'array'],
+            'sizes.*.size_name'        => ['required_with:sizes', 'string', 'max:100'],
+            'sizes.*.price'            => ['required_with:sizes', 'numeric', 'min:0'],
+            'sizes.*.is_default'       => ['nullable', 'boolean'],
+        ];
+    }
+}

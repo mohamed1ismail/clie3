@@ -1,0 +1,703 @@
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>East and West — مطعم شرق وغرب</title>
+<meta name="description" content="مطعم إيست آند ويست — تجربة طهي فاخرة تجمع بين أصالة الشرق وحداثة الغرب"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&amp;family=Manrope:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;background-color:#131313;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
+::-webkit-scrollbar{display:none;}
+html{scroll-behavior:smooth;}
+.leather-grain{position:relative;}.leather-grain::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url('https://www.transparenttextures.com/patterns/leather.png');opacity:0.03;pointer-events:none;}
+.dotted-leader{background-image:linear-gradient(to right, #4d4635 50%, transparent 50%);background-position:0 0.85em;background-repeat:repeat-x;background-size:8px 1px;}
+/* Menu loading spinner */
+.menu-spin{width:32px;height:32px;border:2px solid #4d4635;border-top-color:#D4AF37;border-radius:50%;animation:mspin 1s linear infinite;display:inline-block;}
+@keyframes mspin{to{transform:rotate(360deg);}}
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface":"#131313","surface-variant":"#353535","secondary-fixed-dim":"#c8c6c5","on-primary-container":"#554300","surface-container-low":"#1b1b1b","surface-container":"#1f1f1f","on-secondary":"#313030","on-background":"#e2e2e2","error":"#ffb4ab","primary-fixed-dim":"#e9c349","secondary":"#c8c6c5","primary-container":"#d4af37","on-surface-variant":"#d0c5af","tertiary-fixed":"#e2e2e2","secondary-fixed":"#e5e2e1","primary":"#f2ca50","on-tertiary-fixed-variant":"#454747","primary-fixed":"#ffe088","outline-variant":"#4d4635","surface-container-highest":"#353535","on-secondary-fixed-variant":"#474646","error-container":"#93000a","on-primary-fixed-variant":"#574500","surface-dim":"#131313","inverse-primary":"#735c00","on-secondary-fixed":"#1c1b1b","outline":"#99907c","on-tertiary":"#2f3131","on-surface":"#e2e2e2","on-primary-fixed":"#241a00","secondary-container":"#4a4949","surface-container-lowest":"#0e0e0e","surface-tint":"#e9c349","on-secondary-container":"#bab8b7","surface-container-high":"#2a2a2a","surface-bright":"#393939","on-error-container":"#ffdad6","tertiary-fixed-dim":"#c6c6c7","on-tertiary-container":"#434546","tertiary-container":"#b2b3b3","tertiary":"#cecece","inverse-on-surface":"#303030","on-tertiary-fixed":"#1a1c1c","on-primary":"#3c2f00","background":"#131313","inverse-surface":"#e2e2e2","on-error":"#690005"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-mobile":"20px","margin-desktop":"64px","unit":"8px","gutter":"24px","container-max":"1200px"},"fontFamily":{"body-lg":["Manrope"],"display-lg-mobile":["Libre Caslon Text"],"label-caps":["Manrope"],"headline-md":["Libre Caslon Text"],"display-lg":["Libre Caslon Text"],"body-md":["Manrope"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-lg-mobile":["40px",{"lineHeight":"48px","fontWeight":"400"}],"label-caps":["12px",{"lineHeight":"16px","letterSpacing":"0.15em","fontWeight":"700"}],"headline-md":["32px",{"lineHeight":"40px","fontWeight":"400"}],"display-lg":["64px",{"lineHeight":"72px","letterSpacing":"-0.02em","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script>
+</head>
+<body class="bg-background font-body-md text-on-background">
+
+<!-- ===================== HEADER / NAV ===================== -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+  <div class="h-20 max-w-[1200px] mx-auto px-margin-desktop flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-4">
+      <img alt="East and West" class="w-10 h-10 rounded-full object-cover border border-primary/50" src="https://lh3.googleusercontent.com/aida/AP1WRLtGzLr6pdYXL-tqPzfxjn8BImof0PjvLC_rejwj7MtGDEsXko5UMtY9GPZamsSmk-pYsxsS20y2BEryCqxYZYa89q_zVZaHiX9wNgQHLLwqMS1Mm8OqwXAXbTOAip0ni6-LMz3Pe-ppXTGQY5U2bP07RSvev2bMxTlo6g6U442Cul2LKYKX0hkxZ_3ja74sR9Fn3pqS5CW_S9j46jF11YQXQ9mTzV0HiJc0LHI7W_Ob49UwiMPwUCFXZQ8ZrLDdW96bfo-pNPha_g"/>
+      <span class="font-headline-md text-headline-md text-primary tracking-wider">East and West</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-gutter">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#hero">الرئيسية</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#about">من نحن</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#menu">المنيو</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#reviews">التقييمات</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#contact">التواصل</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#reserve" class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase">احجز الآن</a>
+      <a href="admin.html" id="admin-dashboard-btn" title="لوحة التحكم" class="group w-10 h-10 rounded-sm border border-outline-variant/40 bg-surface-container flex items-center justify-center text-on-surface-variant hover:border-primary/60 hover:text-primary hover:bg-surface-container-high transition-all duration-200 shadow-sm" aria-label="Admin Dashboard">
+        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 0,'wght' 300;">dashboard</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="w-full pt-20">
+
+<!-- ================================================================== -->
+<!-- ===================== SECTION 1: HERO SIGNATURE ================= -->
+<!-- ================================================================== -->
+<div id="hero" class="flex flex-col w-full bg-surface text-on-surface scroll-mt-24">
+  <section class="w-full relative py-32 overflow-hidden flex items-center justify-center min-h-[70vh]">
+    <div class="absolute inset-0 z-0 bg-surface-container opacity-50 leather-grain"></div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+    <div class="relative z-10 w-full max-w-[1200px] px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div class="flex flex-col gap-6 order-2 md:order-1">
+        <div class="flex items-center gap-4">
+          <div class="h-px w-12 bg-primary"></div>
+          <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">الطبق المميز</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg text-on-surface">دجاج مشوي<br/><span class="text-primary italic font-serif">على اللهب</span></h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+          دجاج مشوي بعناية فائقة، متبل بخلطتنا السرية من التوابل الشرقية والغربية. عصاري من الداخل ومقرمش من الخارج.
+        </p>
+        <div class="flex flex-col gap-4 mt-4">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">local_fire_department</span>
+            <span class="font-label-caps text-label-caps text-on-background">مشوي بمثالية</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">eco</span>
+            <span class="font-label-caps text-label-caps text-on-background">مكونات طازجة</span>
+          </div>
+        </div>
+        <div class="mt-8 flex items-center gap-8">
+          <span class="font-headline-md text-headline-md text-primary" id="hero-featured-price">120 ج.م</span>
+          <a href="#menu" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">menu_book</span>
+            استكشف المنيو
+          </a>
+        </div>
+      </div>
+      <div class="relative order-1 md:order-2">
+        <div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"></div>
+        <img alt="Signature Grilled Chicken" class="relative z-10 w-full object-cover rounded-xl shadow-2xl border border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjHfisiBLfpoGAiV3Zy1fsmLWhCv9kOE5jMorENMH8Ppm_jTdIJHbpROVKx7KKLqYijseartdzQqnRuVvZnRlors9pyvRTQbomKz_t2jeJHgqPfAMCOx8Gp4lgCqHjKMZm8nglbYZVShKRGvWkKiK673Cw0Z3BQV2Sl8S3jZEaZRHNmC_8RXH3HFsA4bKJe9pFEtvcUMNy1AhA_b3g9bpRi5Ez8T1e_inLW1T1_QpMLb69QQ4TeCQ9k75o_Nv4c2vc5g"/>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== DIAMOND COMPASS DIVIDER ===================== -->
+<div class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-20">
+  <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-outline-variant/50 to-transparent relative max-w-sm">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center z-10 bg-surface">
+      <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 6px rgba(212,175,55,0.5));">
+        <path d="M20 0L22.4 17.6L40 20L22.4 22.4L20 40L17.6 22.4L0 20L17.6 17.6L20 0Z" fill="#D4AF37" fill-opacity="0.55" stroke="#D4AF37" stroke-width="1"/>
+        <circle cx="20" cy="20" r="3" fill="#D4AF37"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================== -->
+<!-- ===================== SECTION 2: ABOUT ========================== -->
+<!-- ================================================================== -->
+<div id="about" class="flex flex-col w-full font-body-lg text-body-lg text-on-background bg-background scroll-mt-24">
+  <div class="relative w-full h-[500px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1mR412X60r3qSgb2g6juQlV6w4eWVKHIfLrHgMVEMFgtUIvJclwm2vBGk7iSUGpsPl4x1ZgqH-Kqa9DnoF_NXvTm1nV61BBfsjvqMY_8N-xNdZK6JwZGjTRf1Gv-KY67nma--hv7iN7o7-vjv4eCQ7ahMoxCgDy49zBoaYdd2QCenfPeAKlZz8q3vbUmCUzuvkEcCF7Rb4SflUq_9h1EsmgTd5m2x15alMRyMyJRUBwCBR0BxwYUo')"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+    <div class="relative z-10 max-w-container-max mx-auto px-margin-desktop text-center flex flex-col items-center gap-6">
+      <div class="flex items-center gap-4">
+        <div class="h-px w-16 bg-gradient-to-r from-transparent to-primary"></div>
+        <span class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase">عالم المطعم</span>
+        <div class="h-px w-16 bg-gradient-to-l from-transparent to-primary"></div>
+      </div>
+      <h1 class="font-display-lg text-display-lg text-primary drop-shadow-[0_4px_20px_rgba(242,202,80,0.3)]">التقاء العوالم</h1>
+      <p class="font-headline-md text-headline-md text-on-surface-variant max-w-3xl">حيث تعانق الأصالة الشرقية أناقة الغرب المعاصرة في تجربة طهي استثنائية.</p>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-margin-desktop w-full py-24 flex flex-col gap-24">
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+      <div class="md:col-span-5 flex flex-col gap-8 relative z-10">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-px bg-primary/50"></div>
+          <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">قصتنا</span>
+        </div>
+        <h2 class="font-display-lg text-display-lg text-on-surface leading-tight">رحلة بدأت <br/><span class="text-on-surface-variant">بشغف التذوق</span></h2>
+        <div class="flex flex-col gap-6 font-body-lg text-body-lg text-on-surface-variant/80">
+          <p>تأسس مطعم إيست آند ويست من رؤية مشتركة لاثنين من الطهاة الحائزين على نجمة ميشلان، أحدهما من قلب دمشق القديمة والآخر من شوارع باريس النابضة بالحياة. كانت الفكرة بسيطة لكنها جريئة: ماذا لو استطعنا تقديم سيمفونية متناغمة تجمع بين التوابل الشرقية الدافئة وتقنيات الطهي الفرنسية الدقيقة؟</p>
+          <p>منذ افتتاح أبوابنا، سعينا لتقديم أكثر من مجرد وجبة. نحن نقدم سردية بصرية وتذوقية تعكس تمازج الثقافات، حيث كل طبق يروي حكاية رحلة عبر القارات، مصممة خصيصاً لإرضاء الحواس.</p>
+        </div>
+      </div>
+      <div class="md:col-span-6 md:col-start-7 relative">
+        <div class="absolute -inset-4 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl opacity-50"></div>
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-2xl bg-surface-container-low border border-primary/20">
+          <img class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxdbYXBpMWCPdjpsZd4MEf7vjqgqpPtF2QTWZw0QBi5Fu2LxsOWVn-qMXGB7R3qFMj-GPMzPyN7F8KaySMmCmzBPP8BGL6sg-omSO5uUK_UksG2kdQDAd5GcsptrPSFXzBfAuAFGmBPr3WPcR14V__AYLrJbu7FB9sIPr337g_FDhX00T3J3fa5niFtrY4CLXlEGgaMiF1_BiGnab0bEhk9-7GffKDi0u41BuqxAJZ56Q5uhzia25g"/>
+        </div>
+        <div class="absolute -bottom-8 -left-8 bg-surface-container p-6 rounded-lg shadow-xl border border-outline-variant/30 max-w-[240px]">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="font-headline-md text-headline-md text-on-surface">15+</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">عاماً من التميز في عالم الطهي الفاخر</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="w-full flex justify-center py-4">
+      <svg fill="none" height="36" viewBox="0 0 40 40" width="36" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 0L22.4 17.6L40 20L22.4 22.4L20 40L17.6 22.4L0 20L17.6 17.6L20 0Z" fill="#D4AF37" opacity="0.5"></path>
+      </svg>
+    </div>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-24 relative">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent hidden md:block"></div>
+      <div class="flex flex-col gap-12 group">
+        <div class="flex justify-between items-start">
+          <span class="text-6xl font-display-lg text-surface-variant group-hover:text-primary transition-colors duration-500">01</span>
+          <span class="material-symbols-outlined text-4xl text-primary/70">visibility</span>
+        </div>
+        <div>
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-4">رؤيتنا المستقبلية</h3>
+          <p class="font-body-lg text-body-lg text-on-surface-variant/80">أن نكون الوجهة الأولى عالمياً للذواقة الباحثين عن تجربة طهي تتجاوز الحدود الجغرافية. نهدف إلى إعادة تعريف مفهوم "الاندماج" من خلال الابتكار المستمر واحترام الجذور التاريخية لكل مكون نستخدمه.</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 group">
+        <div class="flex justify-between items-start">
+          <span class="text-6xl font-display-lg text-surface-variant group-hover:text-primary transition-colors duration-500">02</span>
+          <span class="material-symbols-outlined text-4xl text-primary/70">workspace_premium</span>
+        </div>
+        <div>
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-4">معايير الجودة</h3>
+          <p class="font-body-lg text-body-lg text-on-surface-variant/80">لا نساوم أبداً على المكونات. نستورد التوابل النادرة من الأسواق العتيقة في الشرق، بينما نعتمد على أفضل المزارع العضوية في الغرب لضمان طزاجة الخضروات واللحوم. كل طبق يمر باختبارات صارمة قبل أن يصل إلى مائدتكم.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ===================== DIAMOND COMPASS DIVIDER ===================== -->
+<div id="menu" class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-20 scroll-mt-32">
+  <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-outline-variant/50 to-transparent relative max-w-sm">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center z-10 bg-surface">
+      <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 6px rgba(212,175,55,0.5));">
+        <path d="M20 0L22.4 17.6L40 20L22.4 22.4L20 40L17.6 22.4L0 20L17.6 17.6L20 0Z" fill="#D4AF37" fill-opacity="0.55" stroke="#D4AF37" stroke-width="1"/>
+        <circle cx="20" cy="20" r="3" fill="#D4AF37"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================== -->
+<!-- ===================== SECTION 3: MENU (DYNAMIC) ================ -->
+<!-- ================================================================== -->
+<div class="flex flex-col w-full bg-surface text-on-surface">
+  <!-- Sticky category nav -->
+  <section class="w-full sticky top-20 z-40 bg-surface/95 backdrop-blur-md border-y border-outline-variant/30 py-4">
+    <div id="menu-cat-nav" class="max-w-[1200px] mx-auto px-margin-desktop flex justify-center gap-8 md:gap-16 flex-wrap">
+      <div class="menu-spin"></div>
+    </div>
+  </section>
+
+  <div class="w-full max-w-[1200px] mx-auto px-margin-desktop py-24 flex flex-col gap-32" id="menu-sections">
+    <!-- Filled by JS -->
+    <div class="flex items-center justify-center py-20 gap-4 text-on-surface-variant">
+      <div class="menu-spin"></div>
+      <span class="font-label-caps text-label-caps">جارٍ تحميل المنيو...</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== DIAMOND COMPASS DIVIDER ===================== -->
+<div id="reviews" class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-20 scroll-mt-32">
+  <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-outline-variant/50 to-transparent relative max-w-sm">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center z-10 bg-surface">
+      <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 6px rgba(212,175,55,0.5));">
+        <path d="M20 0L22.4 17.6L40 20L22.4 22.4L20 40L17.6 22.4L0 20L17.6 17.6L20 0Z" fill="#D4AF37" fill-opacity="0.55" stroke="#D4AF37" stroke-width="1"/>
+        <circle cx="20" cy="20" r="3" fill="#D4AF37"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================== -->
+<!-- ===================== SECTION 4: REVIEWS ======================== -->
+<!-- ================================================================== -->
+<div class="flex flex-col w-full relative overflow-hidden scroll-mt-24">
+  <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-radial from-primary/5 via-transparent to-transparent opacity-50 pointer-events-none transform translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-radial from-primary/5 via-transparent to-transparent opacity-30 pointer-events-none transform -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+
+  <section class="max-w-container-max mx-auto w-full px-margin-desktop py-20 relative z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-16">
+      <div class="flex-1 flex flex-col gap-6 items-start">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary"></div>
+          <span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]">تجارب استثنائية</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg text-on-surface">أصداء <br/><span class="text-on-surface-variant italic font-serif">الذواقة</span></h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mt-4 leading-relaxed">
+          نفخر بتقديم تجربة طهي تتجاوز التوقعات. كل طبق هو قصة، وكل زيارة هي ذكرى محفورة في أذهان ضيوفنا. اكتشف ما يقولونه عن رحلتهم معنا.
+        </p>
+        <button class="mt-8 relative group overflow-hidden bg-primary text-on-primary px-10 py-4 rounded-sm font-label-caps text-label-caps uppercase tracking-widest transition-transform duration-300 hover:scale-105 shadow-[0_0_20px_rgba(242,202,80,0.15)] hover:shadow-[0_0_30px_rgba(242,202,80,0.3)]">
+          <span class="relative z-10 flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">edit_square</span>
+            أضف تقييمك
+          </span>
+          <div class="absolute inset-0 bg-primary-fixed transform scale-x-0 group-hover:scale-x-100 transition-transform origin-right duration-500 ease-out z-0"></div>
+        </button>
+      </div>
+      <div class="flex-1 flex justify-center relative">
+        <div class="relative w-[300px] h-[300px] flex items-center justify-center rounded-full bg-surface-container-low border border-outline-variant/30 shadow-2xl before:absolute before:-inset-[1px] before:rounded-full before:bg-gradient-to-b before:from-primary/40 before:to-transparent before:z-[-1]">
+          <svg class="absolute inset-0 w-full h-full -rotate-90 text-primary opacity-20" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" fill="none" r="48" stroke="currentColor" stroke-dasharray="2 4" stroke-width="0.5"></circle>
+          </svg>
+          <svg class="absolute inset-0 w-full h-full -rotate-90 drop-shadow-[0_0_10px_rgba(242,202,80,0.3)]" viewBox="0 0 100 100">
+            <circle class="text-surface-variant" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="2"></circle>
+            <circle class="text-primary transition-all duration-1500 ease-out" cx="50" cy="50" fill="none" id="rating-circle" r="45" stroke="currentColor" stroke-dasharray="282.7" stroke-dashoffset="282.7" stroke-linecap="round" stroke-width="3"></circle>
+          </svg>
+          <div class="flex flex-col items-center text-center z-10">
+            <span class="font-display-lg text-[80px] leading-none text-on-surface mb-2 tracking-tighter" id="rating-number">0.0</span>
+            <div class="flex gap-1 text-primary mb-3">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+            </div>
+            <span class="font-label-caps text-label-caps text-on-surface-variant/60 uppercase">من أصل 1,248 تقييم</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full max-w-container-max mx-auto flex items-center justify-center py-8 opacity-60">
+    <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-outline-variant/50"></div>
+    <div class="mx-6 text-primary flex items-center justify-center transform rotate-45 w-4 h-4 border border-primary/50">
+      <div class="w-1.5 h-1.5 bg-primary"></div>
+    </div>
+    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-outline-variant/50"></div>
+  </div>
+
+  <section class="max-w-container-max mx-auto w-full px-margin-desktop pb-24 relative z-10">
+    <div class="flex flex-wrap items-center gap-4 mb-12">
+      <span class="font-label-caps text-label-caps text-on-surface-variant mr-4">تصفية حسب:</span>
+      <button class="px-5 py-2 rounded-full border border-primary text-primary font-label-caps text-label-caps bg-primary/10 transition-colors">الكل</button>
+      <button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-primary transition-colors font-label-caps text-label-caps">أعلى تقييم</button>
+      <button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-primary transition-colors font-label-caps text-label-caps">الأحدث</button>
+      <button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-primary transition-colors font-label-caps text-label-caps">مع صور</button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article class="col-span-1 md:col-span-2 lg:col-span-2 flex flex-col md:flex-row bg-surface-container-low rounded-sm shadow-xl relative overflow-hidden group">
+        <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-primary via-primary/50 to-transparent"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] opacity-[0.03] pointer-events-none"></div>
+        <div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3TtU5cLSLjKyqsKx0bGvoBuubYl0IibLZkBA-RU8xnYxKPjoJGSFKYNZ56EmazsS8kqj0lcE3dc_bZHk-yoTxby_MsBNb1I49okO_MV8h7Pij_CK5c_vGRcvVi-pBSHsSlHUDru9kmVK99BtAsQV-D3K68TJPkW1r3AZDfHQamL1rTLx2Q4ZmaLCdB3DdfUFE-Xb7LQqhd-ehDcXINLpmIODoAuzWzExdq75hofnKz3XKEE_5gn3C"/>
+          <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-surface-container-low via-surface-container-low/50 to-transparent"></div>
+        </div>
+        <div class="flex-1 p-8 md:p-12 flex flex-col justify-center relative z-10">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex gap-1 text-primary">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <span class="font-label-caps text-label-caps text-on-surface-variant/60">منذ يومين</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-4 line-clamp-1">"تحفة فنية في كل طبق"</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-8">لم تكن مجرد وجبة عشاء، بل كانت رحلة حسية متكاملة. انسجام النكهات الشرقية مع تقنيات الطهي الغربية خلق تجربة لا تُنسى. الخدمة كانت راقية جداً والجو العام يبعث على الفخامة الهادئة.</p>
+          <div class="flex items-center gap-4 mt-auto">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant/30 text-on-surface font-headline-md text-[16px]">F</div>
+            <div><p class="font-body-md text-body-md text-on-surface leading-tight">فهد العتيبي</p><span class="font-label-caps text-[10px] text-primary/70 uppercase">ضيف مميز</span></div>
+          </div>
+        </div>
+      </article>
+      <article class="bg-surface-container-low rounded-sm shadow-lg p-8 relative overflow-hidden group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow duration-300 flex flex-col">
+        <div class="absolute top-0 right-0 w-[2px] h-12 bg-primary"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] opacity-[0.03] pointer-events-none"></div>
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex gap-1 text-primary">
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]">star</span>
+          </div>
+          <span class="font-label-caps text-label-caps text-on-surface-variant/60 uppercase">أسبوع مضى</span>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed flex-1">أجواء المطعم ساحرة جداً والإضاءة الخافتة تضفي طابعاً رومانسياً. قائمة النبيذ ممتازة واللحوم مطهوة بدرجة مثالية. الأسعار مرتفعة قليلاً لكنها تستحق التجربة لمناسبة خاصة.</p>
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-outline-variant/20">
+          <div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-headline-md text-[14px]">S</div>
+          <p class="font-body-md text-body-md text-on-surface text-[14px]">سارة محمد</p>
+        </div>
+      </article>
+      <article class="bg-surface-container-low rounded-sm shadow-lg p-8 relative overflow-hidden group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow duration-300 flex flex-col">
+        <div class="absolute top-0 right-0 w-[2px] h-12 bg-primary"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] opacity-[0.03] pointer-events-none"></div>
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex gap-1 text-primary">
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <span class="font-label-caps text-label-caps text-on-surface-variant/60 uppercase">3 أسابيع</span>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed flex-1">الاهتمام بالتفاصيل مذهل. من طريقة تقديم الخبز الطازج في البداية إلى طبق الحلا الختامي. الكمأة السوداء مع الباستا كانت من عالم آخر!</p>
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-outline-variant/20">
+          <div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-headline-md text-[14px]">K</div>
+          <p class="font-body-md text-body-md text-on-surface text-[14px]">خالد الرشيد</p>
+        </div>
+      </article>
+      <article class="col-span-1 md:col-span-2 bg-surface-container-low rounded-sm shadow-lg p-8 md:p-12 relative overflow-hidden group">
+        <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-primary via-primary/50 to-transparent"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] opacity-[0.03] pointer-events-none"></div>
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-brand-gold font-headline-md border border-outline-variant/30">N</div>
+            <div>
+              <p class="font-body-md text-body-md text-on-surface">نورة العبدالله</p>
+              <div class="flex gap-1 text-primary mt-1">
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+            </div>
+          </div>
+          <span class="font-label-caps text-label-caps text-on-surface-variant/60 uppercase">شهر مضى</span>
+        </div>
+        <h4 class="font-headline-md text-headline-md text-on-surface mb-4">"ملاذي المفضل في المدينة"</h4>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-lg">كلما أردت الهروب من صخب الحياة والاستمتاع بوجبة تصنع بحب وعناية فائقة، يكون إيست آند ويست هو وجهتي الأولى. الشيف لديه قدرة عجيبة على مزج التوابل العربية التقليدية مع المكونات الأوروبية الفاخرة بطريقة لا تطغى فيها نكهة على أخرى. خدمة الطاولة لبعض الأطباق تضيف لمسة مسرحية رائعة للعشاء.</p>
+      </article>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== DIAMOND COMPASS DIVIDER ===================== -->
+<div id="contact" class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-20 scroll-mt-32">
+  <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-outline-variant/50 to-transparent relative max-w-sm">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center z-10 bg-surface">
+      <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 6px rgba(212,175,55,0.5));">
+        <path d="M20 0L22.4 17.6L40 20L22.4 22.4L20 40L17.6 22.4L0 20L17.6 17.6L20 0Z" fill="#D4AF37" fill-opacity="0.55" stroke="#D4AF37" stroke-width="1"/>
+        <circle cx="20" cy="20" r="3" fill="#D4AF37"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================== -->
+<!-- ===================== SECTION 5: CONTACT / RESERVE ============== -->
+<!-- ================================================================== -->
+<div id="reserve" class="flex flex-col w-full px-margin-desktop py-10 gap-28 scroll-mt-24">
+  <section class="grid grid-cols-12 gap-gutter items-center">
+    <div class="col-span-12 lg:col-span-5 flex flex-col gap-8 z-10 relative">
+      <div class="absolute -top-12 -left-12 w-64 h-64 bg-primary/10 rounded-full blur-[80px] pointer-events-none"></div>
+      <div class="flex flex-col gap-2">
+        <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">تواصل معنا</span>
+        <h1 class="font-display-lg text-display-lg text-on-background">في خدمتك دائماً</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mt-4">نحن هنا للإجابة على استفساراتك، وتلقي حجوزاتك، وضمان تجربة طعام استثنائية لك ولضيوفك.</p>
+      </div>
+      <div class="flex flex-col gap-5 mt-2" id="contact-social-list">
+        <!-- Filled by JS from localStorage -->
+        <a class="group flex items-start gap-6 p-6 bg-surface-container rounded-xl hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden border border-outline-variant/30 hover:border-primary/50 shadow-sm hover:shadow-[0_0_20px_rgba(242,202,80,0.1)]" href="tel:+201001234567">
+          <div class="w-12 h-12 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">الحجز والاستعلام</span>
+            <span class="font-headline-md text-headline-md text-on-background" id="contact-phone-val" dir="ltr">+201001234567</span>
+          </div>
+        </a>
+        <a class="group flex items-start gap-6 p-6 bg-surface-container rounded-xl hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden border border-outline-variant/30 hover:border-primary/50 shadow-sm hover:shadow-[0_0_20px_rgba(242,202,80,0.1)]" href="#" id="contact-whatsapp-link">
+          <div class="w-12 h-12 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">واتساب</span>
+            <span class="font-headline-md text-headline-md text-on-background" id="contact-whatsapp-val" dir="ltr">+201001234567</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-7 h-[600px] relative rounded-2xl overflow-hidden border border-outline-variant/30 shadow-xl group">
+      <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10 pointer-events-none opacity-60"></div>
+      <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbUSHnSdiejkIDHM4w-1oQfZkN8_xflLIBgtg4_7iOTbeoFIVTd4V5dX94tzpbKkNGTXtNkAloj1K0SYqWGc36r1S-ETaierSdh3P4QpyuX9fb7_-sDTQ7UNVC_EmvisdQ_ApcjLF392mML5XzlAbx_TBoJZYCn6LJk20IXHOzQJ8qYGGR1XOWsp_egJYk7uousRj0E4fMTFwR6tHE85WJ7SEov7qoaxklhyOJV2ZtMk7gNtyMX80g')"></div>
+      <div class="absolute bottom-8 right-8 left-8 z-20 flex justify-between items-end">
+        <div class="bg-surface-container/90 backdrop-blur-md p-6 rounded-xl border border-outline-variant/50 shadow-lg max-w-sm">
+          <span class="font-headline-md text-headline-md text-primary mb-2 block">القاهرة، مصر</span>
+          <p class="font-body-md text-body-md text-on-surface-variant">وسط البلد<br/>مفتوح من ١٢ ظهراً حتى ١٢ منتصف الليل</p>
+          <div class="mt-4 pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">أوقات العمل</span>
+            <span class="font-body-md text-body-md text-on-background" dir="ltr">12:00 PM - 12:00 AM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="flex items-center justify-center my-8">
+    <div class="w-full max-w-[220px] h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent relative">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rotate-45 border border-primary bg-surface z-10"></div>
+    </div>
+  </div>
+
+  <!-- RESERVATION FORM -->
+  <section id="reservation-form" class="relative overflow-hidden bg-surface-container rounded-lg shadow-2xl border border-primary/20 p-8 md:p-12 leather-grain scroll-mt-32">
+    <div class="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-primary via-primary/30 to-transparent"></div>
+    <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary-container/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2"></div>
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 relative z-10">
+      <div>
+        <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">الحجز المباشر</span>
+        <h3 class="font-display-lg text-display-lg text-on-surface mt-2">احجز طاولة الليلة</h3>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">نضمن لك تجربة لا تُنسى مع تخصيص جميع التفاصيل حسب رغبتك.</p>
+    </div>
+    <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+      <div class="flex flex-col gap-2">
+        <label class="font-label-caps text-label-caps text-primary/80 uppercase tracking-wider pl-1">الاسم</label>
+        <div class="relative border-b border-primary/40 focus-within:border-primary transition-colors">
+          <input type="text" placeholder="اسمك الكامل" class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none placeholder:text-on-surface-variant/40 focus:bg-surface-container-low transition-colors rounded-sm"/>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label class="font-label-caps text-label-caps text-primary/80 uppercase tracking-wider pl-1">الهاتف</label>
+        <div class="relative border-b border-primary/40 focus-within:border-primary transition-colors">
+          <input type="tel" placeholder="+20 10 0000 0000" class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none placeholder:text-on-surface-variant/40 focus:bg-surface-container-low transition-colors rounded-sm"/>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label class="font-label-caps text-label-caps text-primary/80 uppercase tracking-wider pl-1">التاريخ</label>
+        <div class="relative border-b border-primary/40 focus-within:border-primary transition-colors">
+          <input type="date" class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none focus:bg-surface-container-low transition-colors rounded-sm"/>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label class="font-label-caps text-label-caps text-primary/80 uppercase tracking-wider pl-1">عدد الضيوف</label>
+        <div class="relative border-b border-primary/40 focus-within:border-primary transition-colors">
+          <select class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none focus:bg-surface-container-low transition-colors rounded-sm">
+            <option>2 ضيوف</option><option>3 ضيوف</option><option>4 ضيوف</option><option>5 ضيوف</option><option>6 ضيوف</option><option>7+ (غرفة خاصة)</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2 lg:col-span-4">
+        <label class="font-label-caps text-label-caps text-primary/80 uppercase tracking-wider pl-1">متطلبات خاصة</label>
+        <div class="relative border-b border-primary/40 focus-within:border-primary transition-colors">
+          <textarea rows="2" placeholder="مناسبة، قيود غذائية، تفضيلات جلوس…" class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none placeholder:text-on-surface-variant/40 focus:bg-surface-container-low transition-colors rounded-sm resize-none"></textarea>
+        </div>
+      </div>
+      <div class="lg:col-span-4 pt-4 flex items-center justify-between gap-4 flex-col sm:flex-row">
+        <p class="font-body-md text-body-md text-on-surface-variant/70 text-sm">سيقوم موظف الحجز بالتواصل معك خلال ٦٠ دقيقة.</p>
+        <button type="button" class="group relative overflow-hidden bg-primary text-on-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(242,202,80,0.15)] hover:shadow-[0_0_30px_rgba(242,202,80,0.3)] rounded-sm flex items-center gap-3">
+          <span class="relative z-10 flex items-center gap-3">
+            <span class="material-symbols-outlined text-[18px]">send</span>
+            تأكيد الحجز
+          </span>
+          <div class="absolute inset-0 bg-primary-fixed transform scale-x-0 group-hover:scale-x-100 transition-transform origin-right duration-500 ease-out z-0"></div>
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <section class="flex flex-col gap-16 relative pb-8">
+    <div class="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto">
+      <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">التزامنا</span>
+      <h2 class="font-display-lg text-display-lg text-on-background">معايير الجودة والصحة</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">صحتك وسلامتك هي أولويتنا القصوى. نطبق أقصى معايير النظافة والتعقيم في كل مرحلة من مراحل إعداد الطعام لضمان تجربة آمنة وفاخرة.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <div class="flex flex-col gap-6 p-8 bg-surface-container rounded-2xl border-t border-primary/20 shadow-lg relative overflow-hidden group hover:-translate-y-2 transition-all duration-500">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500"></div>
+        <div class="w-16 h-16 bg-surface-variant rounded-full flex items-center justify-center text-primary border border-outline-variant/30">
+          <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sanitizer</span>
+        </div>
+        <div><h3 class="font-headline-md text-headline-md text-on-background mb-2">تعقيم مستمر</h3><p class="font-body-md text-body-md text-on-surface-variant">نقوم بتعقيم جميع الأسطح والأدوات بشكل دوري ومكثف باستخدام مواد معتمدة عالمياً، لضمان بيئة خالية من الجراثيم.</p></div>
+      </div>
+      <div class="flex flex-col gap-6 p-8 bg-surface-container rounded-2xl border-t border-primary/20 shadow-lg relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 delay-100">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500"></div>
+        <div class="w-16 h-16 bg-surface-variant rounded-full flex items-center justify-center text-primary border border-outline-variant/30">
+          <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+        </div>
+        <div><h3 class="font-headline-md text-headline-md text-on-background mb-2">مكونات طازجة</h3><p class="font-body-md text-body-md text-on-surface-variant">نختار مكوناتنا بعناية فائقة يومياً من أفضل الموردين المحليين والعالميين، لضمان أعلى مستويات الجودة والنكهة الأصيلة.</p></div>
+      </div>
+      <div class="flex flex-col gap-6 p-8 bg-surface-container rounded-2xl border-t border-primary/20 shadow-lg relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 delay-200">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500"></div>
+        <div class="w-16 h-16 bg-surface-variant rounded-full flex items-center justify-center text-primary border border-outline-variant/30">
+          <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+        </div>
+        <div><h3 class="font-headline-md text-headline-md text-on-background mb-2">سلامة الغذاء</h3><p class="font-body-md text-body-md text-on-surface-variant">يخضع فريق العمل لتدريب مستمر على بروتوكولات سلامة الغذاء (HACCP)، ونضمن حفظ الأطعمة في درجات حرارة مثالية.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 pt-20 pb-10 leather-grain">
+  <div class="max-w-[1200px] mx-auto px-margin-desktop flex flex-col items-center gap-12">
+    <div class="flex flex-col items-center gap-4">
+      <a href="#hero" class="flex items-center gap-3">
+        <img alt="East & West" class="w-10 h-10 rounded-full object-cover border border-primary/50" src="https://lh3.googleusercontent.com/aida/AP1WRLtGzLr6pdYXL-tqPzfxjn8BImof0PjvLC_rejwj7MtGDEsXko5UMtY9GPZamsSmk-pYsxsS20y2BEryCqxYZYa89q_zVZaHiX9wNgQHLLwqMS1Mm8OqwXAXbTOAip0ni6-LMz3Pe-ppXTGQY5U2bP07RSvev2bMxTlo6g6U442Cul2LKYKX0hkxZ_3ja74sR9Fn3pqS5CW_S9j46jF11YQXQ9mTzV0HiJc0LHI7W_Ob49UwiMPwUCFXZQ8ZrLDdW96bfo-pNPha_g"/>
+        <span class="font-headline-md text-headline-md text-primary">East &amp; West</span>
+      </a>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-md text-center">رحلة طهي فاخرة تجمع بين عراقة الشرق وحداثة الغرب في أجواء مفعمة بالفخامة.</p>
+    </div>
+    <nav class="flex gap-8 flex-wrap justify-center">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#hero">الرئيسية</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#about">من نحن</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#menu">المنيو</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#reviews">التقييمات</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="#contact">التواصل</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="admin.html">لوحة التحكم</a>
+    </nav>
+    <div class="w-24 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+    <div class="text-label-caps font-label-caps text-on-surface-variant/60 uppercase tracking-widest text-center">جميع الحقوق محفوظة © 2026 إيست آند ويست</div>
+  </div>
+</footer>
+
+<script>
+// ─── LocalStorage helpers ───────────────────────────────────────────────────
+const getList = (k) => JSON.parse(localStorage.getItem(k) || '[]');
+const getObj  = (k) => JSON.parse(localStorage.getItem(k) || '{}');
+const esc = (s) => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+// ─── SEED if needed ─────────────────────────────────────────────────────────
+if (!localStorage.getItem('ew_seeded')) {
+  localStorage.setItem('ew_categories', JSON.stringify([
+    {id:1,name:'مشويات',slug:'grills',is_active:true},
+    {id:2,name:'مقبلات',slug:'starters',is_active:true},
+    {id:3,name:'شوربات',slug:'soups',is_active:true},
+    {id:4,name:'حلويات',slug:'desserts',is_active:true},
+    {id:5,name:'مشروبات',slug:'drinks',is_active:true},
+  ]));
+  localStorage.setItem('ew_dishes', JSON.stringify([
+    {id:1,name:'دجاج مشوي على اللهب',category_id:1,category_name:'مشويات',price:120,description:'دجاج طازج يُشوى على الفحم الحي مع بهارات خاصة',is_available:true,is_featured:true,image_url:'https://lh3.googleusercontent.com/aida-public/AB6AXuDT02CX-g6oEd18qZm24sWRUUEpA9wUfq-GDaznekQo6gaeetkr-tAuEDg9_trKx6jmF5xWWT5SgSKJ6FCYg2oD1BkJdsn7zqYVPflM3dy36Mp8ENhbFrFY_lGiupYHcj0R41Vo5KhtkfKq5_spXJ71ioG1hbtnJcQZtpJ-RFLVl5yjDrDAT3zfpJAvpTHukslO7vlbRxB6ab8QbeBiuCJWM1vY0jco56J6SvhHezrb7zEojfEvYDSI',sizes:[{size_name:'صغير',price:90,is_default:false},{size_name:'وسط',price:120,is_default:true},{size_name:'كبير',price:160,is_default:false}]},
+    {id:2,name:'كفتة لحم بلدي',category_id:1,category_name:'مشويات',price:95,description:'كفتة لحم بلدي طازجة مشوية على الفحم بنكهة مميزة',is_available:true,is_featured:false,image_url:'https://lh3.googleusercontent.com/aida-public/AB6AXuDd-NUO4VCuwd7-0B0DCjn6arr3KuG7534tN356mC9v5XVDqHA8GG-xSpMvn_39YCV3I-zE7KpYDzvIVOuhBiFyTzCgQNSVwljHfQrP8DuE-z2AB65JCZScyA8PQO9I2vZzgEDzsV-wqhFUS0-PAQfUhgR7SHaeIDjI6x8J-b4wWhhGtQ_0uRGmuqVy7JlICELyhEPimo8pC_5FXo5SzDdpvDp0WTuLjH12IajOfo_rIezeG_xLon3b',sizes:[{size_name:'صغير',price:95,is_default:true},{size_name:'كبير',price:150,is_default:false}]},
+    {id:3,name:'لحم ضاني تكا',category_id:1,category_name:'مشويات',price:180,description:'قطع لحم ضاني طرية محمرة على جمر متقد',is_available:true,is_featured:true,image_url:'https://lh3.googleusercontent.com/aida-public/AB6AXuAKooMoBdbotx6aOdKHUVd2kAxlaHLOyQ1uVHjo8uyAmnU2ja33foz36xBW_jfUSM5KRGC285aLFsYkOd1t-1hGZcx1WrFMZVmW5k8rcLiBpxEM6B6DlkXuTo-M5bGnRgQXupaXRwAW2loQ89k4aNnqiAXq3SD6JZUOBJZgF12qCW2bt0ztaX36ME2MN1U97MLWOpklRamcc15orwPRPkopCBH-14kkUmqj78jLAcQKg-N1zAqTZqXe',sizes:[]},
+    {id:4,name:'حمص بالزيت',category_id:2,category_name:'مقبلات',price:45,description:'حمص ناعم بزيت الزيتون والكمون',is_available:true,is_featured:false,image_url:'',sizes:[]},
+    {id:5,name:'سلطة فتوش',category_id:2,category_name:'مقبلات',price:50,description:'سلطة فتوش طازجة بالخضروات والخبز المقرمش',is_available:true,is_featured:false,image_url:'',sizes:[]},
+    {id:6,name:'شوربة عدس',category_id:3,category_name:'شوربات',price:40,description:'شوربة عدس دافئة بعصير الليمون والكمون',is_available:true,is_featured:false,image_url:'',sizes:[]},
+    {id:7,name:'أم علي',category_id:4,category_name:'حلويات',price:60,description:'أم علي بالقشطة والمكسرات والجوز تُقدَّم ساخنة',is_available:true,is_featured:true,image_url:'',sizes:[]},
+  ]));
+  localStorage.setItem('ew_offers', JSON.stringify([
+    {id:1,title:'عروض الصيف',description:'خصم خاص ١٥٪ على جميع المشويات',discount_percentage:15,code:'SUMMER2026',is_active:true},
+  ]));
+  localStorage.setItem('ew_social_links', JSON.stringify({
+    phone:'+201001234567',whatsapp:'+201001234567',
+    facebook:'https://facebook.com/eastandwest',
+    instagram:'https://instagram.com/eastandwest',
+    tiktok:'https://tiktok.com/@eastandwest',
+  }));
+  localStorage.setItem('ew_seeded','1');
+}
+
+// ─── RENDER DYNAMIC MENU ───────────────────────────────────────────────────
+function renderMenu() {
+  const cats    = getList('ew_categories').filter(c => c.is_active);
+  const dishes  = getList('ew_dishes').filter(d => d.is_available);
+
+  // Category nav
+  const nav = document.getElementById('menu-cat-nav');
+  nav.innerHTML = cats.map((c,i) =>
+    `<a class="font-label-caps text-label-caps ${i===0?'text-primary border-b-2 border-primary pb-1':'text-on-surface-variant hover:text-primary pb-1'} transition-colors uppercase" href="#cat-${c.id}">${esc(c.name)}</a>`
+  ).join('');
+
+  // Sections per category
+  const sections = document.getElementById('menu-sections');
+  if (!dishes.length) {
+    sections.innerHTML = `<div class="text-center py-20 text-on-surface-variant font-label-caps text-label-caps">لا توجد أطباق متاحة حالياً</div>`;
+    return;
+  }
+
+  sections.innerHTML = cats.map(cat => {
+    const catDishes = dishes.filter(d => d.category_id == cat.id);
+    if (!catDishes.length) return '';
+    const dishCards = catDishes.map(d => {
+      const imgHtml = d.image_url
+        ? `<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${esc(d.image_url)}" alt="${esc(d.name)}" loading="lazy"/>`
+        : `<div class="w-full h-full flex items-center justify-center text-5xl bg-surface-container-high">🍽️</div>`;
+      const sizesHtml = d.sizes && d.sizes.length
+        ? `<div class="flex flex-wrap gap-2 my-2">${d.sizes.map(s=>`<span class="text-[10px] font-label-caps text-primary/70 border border-primary/30 px-2 py-0.5 rounded-full">${esc(s.size_name)} ${Number(s.price).toLocaleString()} ج.م</span>`).join('')}</div>`
+        : '';
+      return `
+        <div class="group bg-surface-container rounded-lg overflow-hidden border-t border-primary/30 shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+          <div class="relative h-64 overflow-hidden">${imgHtml}</div>
+          <div class="p-6 flex flex-col gap-3 relative leather-grain h-full">
+            <div class="flex justify-between items-start gap-4">
+              <h3 class="font-headline-md text-[22px] text-on-surface leading-tight">${esc(d.name)}</h3>
+              <span class="font-headline-md text-[18px] text-primary whitespace-nowrap">${Number(d.price).toLocaleString()} ج.م</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant flex-grow">${esc(d.description||'')}</p>
+            ${sizesHtml}
+          </div>
+        </div>`;
+    }).join('');
+
+    return `
+      <section class="flex flex-col gap-12 scroll-mt-36" id="cat-${cat.id}">
+        <div class="flex items-center gap-6 justify-center">
+          <div class="h-px w-24 bg-gradient-to-r from-transparent to-primary"></div>
+          <h2 class="font-headline-md text-headline-md text-primary tracking-wide text-center">${esc(cat.name)}</h2>
+          <div class="h-px w-24 bg-gradient-to-l from-transparent to-primary"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${dishCards}</div>
+      </section>`;
+  }).join('');
+}
+
+// ─── LOAD SOCIAL LINKS INTO CONTACT SECTION ────────────────────────────────
+function loadContactInfo() {
+  const d = getObj('ew_social_links');
+  if (d.phone) {
+    const el = document.getElementById('contact-phone-val');
+    const link = el?.closest('a');
+    if (el) el.textContent = d.phone;
+    if (link) link.href = `tel:${d.phone}`;
+  }
+  if (d.whatsapp) {
+    const el = document.getElementById('contact-whatsapp-val');
+    const link = document.getElementById('contact-whatsapp-link');
+    if (el) el.textContent = d.whatsapp;
+    if (link) link.href = `https://wa.me/${d.whatsapp.replace(/[^0-9]/g,'')}`;
+  }
+}
+
+// ─── RATING RING ANIMATION ─────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const target = document.getElementById('rating-number');
+  if (!target) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const circle = document.getElementById('rating-circle');
+        const percent = 98;
+        const circumference = 2 * Math.PI * 45;
+        const offset = circumference - (percent / 100) * circumference;
+        if (circle) circle.style.strokeDashoffset = offset;
+        const numberEl = document.getElementById('rating-number');
+        let current = 0;
+        const targetVal = 4.9;
+        const steps = 60;
+        const stepTime = 1500 / steps;
+        const increment = targetVal / steps;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= targetVal) { current = targetVal; clearInterval(timer); }
+          if (numberEl) numberEl.textContent = current.toFixed(1);
+        }, stepTime);
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  observer.observe(target);
+
+  // INIT
+  renderMenu();
+  loadContactInfo();
+});
+</script>
+</body></html>

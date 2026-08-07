@@ -1,0 +1,896 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&amp;family=Manrope:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;background-color:#131313;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.leather-grain{position:relative;}.leather-grain::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url('https://www.transparenttextures.com/patterns/leather.png');opacity:0.04;pointer-events:none;}.brushed-metal{position:relative;}.brushed-metal::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url('https://www.transparenttextures.com/patterns/brushed-alum.png');opacity:0.03;pointer-events:none;}.dotted-leader{background-image:linear-gradient(to right, #4d4635 50%, transparent 50%);background-position:0 0.85em;background-repeat:repeat-x;background-size:8px 1px;}.gold-ghost-border{border-image:linear-gradient(to right, rgba(212,175,55,0.6), rgba(212,175,55,0)) 1;}.gold-glow{box-shadow:0 0 15px rgba(212,175,55,0.2);}.gold-glow-hover:hover{box-shadow:0 0 25px rgba(212,175,55,0.35);}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface":"#131313","surface-variant":"#353535","secondary-fixed-dim":"#c8c6c5","on-primary-container":"#554300","surface-container-low":"#1b1b1b","surface-container":"#1f1f1f","on-secondary":"#313030","on-background":"#e2e2e2","error":"#ffb4ab","primary-fixed-dim":"#e9c349","secondary":"#c8c6c5","primary-container":"#d4af37","on-surface-variant":"#d0c5af","tertiary-fixed":"#e2e2e2","secondary-fixed":"#e5e2e1","primary":"#f2ca50","on-tertiary-fixed-variant":"#454747","primary-fixed":"#ffe088","outline-variant":"#4d4635","surface-container-highest":"#353535","on-secondary-fixed-variant":"#474646","error-container":"#93000a","on-primary-fixed-variant":"#574500","surface-dim":"#131313","inverse-primary":"#735c00","on-secondary-fixed":"#1c1b1b","outline":"#99907c","on-tertiary":"#2f3131","on-surface":"#e2e2e2","on-primary-fixed":"#241a00","secondary-container":"#4a4949","surface-container-lowest":"#0e0e0e","surface-tint":"#e9c349","on-secondary-container":"#bab8b7","surface-container-high":"#2a2a2a","surface-bright":"#393939","on-error-container":"#ffdad6","tertiary-fixed-dim":"#c6c6c7","on-tertiary-container":"#434546","tertiary-container":"#b2b3b3","tertiary":"#cecece","inverse-on-surface":"#303030","on-tertiary-fixed":"#1a1c1c","on-primary":"#3c2f00","background":"#131313","inverse-surface":"#e2e2e2","on-error":"#690005","brand-gold":"#d4af37","brand-gold-muted":"#8C7332"},"borderRadius":{"sm":"0.125rem","DEFAULT":"0.25rem","md":"0.375rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"20px","margin-desktop":"64px","unit":"8px","gutter":"24px","container-max":"1200px"},"fontFamily":{"body-lg":["Manrope"],"display-lg-mobile":["Libre Caslon Text"],"label-caps":["Manrope"],"headline-md":["Libre Caslon Text"],"display-lg":["Libre Caslon Text"],"body-md":["Manrope"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-lg-mobile":["40px",{"lineHeight":"48px","fontWeight":"400"}],"label-caps":["12px",{"lineHeight":"16px","letterSpacing":"0.15em","fontWeight":"700"}],"headline-md":["32px",{"lineHeight":"40px","fontWeight":"400"}],"display-lg":["64px",{"lineHeight":"72px","letterSpacing":"-0.02em","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-background">
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+  <div class="h-20 max-w-[1200px] mx-auto px-margin-desktop flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="w-10 h-10 rounded-sm bg-surface-container border border-brand-gold/40 flex items-center justify-center">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:#d4af37">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-7.07l-2.83 2.83M9.76 14.24l-2.83 2.83m0-14.14l2.83 2.83m4.48 4.48l2.83 2.83"/>
+        </svg>
+      </div>
+      <span class="font-headline-md text-headline-md text-brand-gold tracking-widest">NOCTURNAL</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-gutter">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-brand-gold transition-colors uppercase" href="#about">Philosophy</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-brand-gold transition-colors uppercase" href="#menu">Menu</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-brand-gold transition-colors uppercase" href="#experience">Experience</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-brand-gold transition-colors uppercase" href="#testimonials">Voices</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-brand-gold transition-colors uppercase" href="#reserve">Reserve</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <button class="bg-brand-gold text-on-primary px-6 py-2 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all gold-glow-hover uppercase">Reserve Table</button>
+    </div>
+  </div>
+</header>
+
+<main class="w-full pt-20">
+<div class="flex flex-col w-full bg-surface text-on-surface">
+
+  <!-- =============== HERO =============== -->
+  <section id="hero" class="w-full relative py-40 overflow-hidden flex items-center justify-center min-h-[85vh]">
+    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30" style="background-image:url('https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=cinematic%20wide%20shot%20of%20a%20luxury%20candlelit%20restaurant%20dining%20room%20at%20night%2C%20deep%20shadows%2C%20velvet%20banquettes%2C%20brass%20accents%2C%20ambient%20warm%20golden%20light%2C%20moody%20and%20opulent%2C%20fine%20dining%20atmosphere%2C%20dark%20rich%20textures&image_size=landscape_16_9')"></div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-surface/60 via-surface/70 to-surface"></div>
+    <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-primary-container/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="relative z-10 w-full max-w-[1200px] mx-auto px-margin-desktop flex flex-col items-center text-center gap-8">
+      <div class="flex items-center gap-6">
+        <div class="h-px w-16 bg-gradient-to-r from-transparent to-brand-gold"></div>
+        <span class="font-label-caps text-label-caps text-brand-gold tracking-[0.3em] uppercase">Est. MMXV</span>
+        <div class="h-px w-16 bg-gradient-to-l from-transparent to-brand-gold"></div>
+      </div>
+      <h1 class="font-display-lg text-display-lg md:!text-[72px] text-on-surface leading-[0.95]">
+        Where Darkness<br/>
+        <span class="text-brand-gold italic">Awakens the Senses</span>
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+        A private culinary atelier crafted for the discerning. Step beyond velvet curtains into a sanctuary where candlelight gilds every plate, and global traditions converge under a single gilded roof.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center gap-6 mt-8">
+        <button class="group relative overflow-hidden bg-brand-gold text-on-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest transition-all duration-300 hover:scale-105 gold-glow-hover rounded-sm flex items-center gap-3">
+          <span class="relative z-10 flex items-center gap-3">
+            <span class="material-symbols-outlined text-[18px]">event_seat</span>
+            Reserve an Evening
+          </span>
+          <div class="absolute inset-0 bg-primary-fixed transform scale-x-0 group-hover:scale-x-100 transition-transform origin-right duration-500 ease-out z-0"></div>
+        </button>
+        <a href="#menu" class="flex items-center gap-3 px-10 py-4 border border-brand-gold/50 text-on-surface font-label-caps text-label-caps uppercase tracking-widest hover:bg-brand-gold/10 hover:border-brand-gold transition-colors rounded-sm">
+          <span class="material-symbols-outlined text-brand-gold text-[18px]">menu_book</span>
+          Explore Menu
+        </a>
+      </div>
+      <div class="grid grid-cols-3 gap-16 mt-20 pt-12 border-t border-outline-variant/20 w-full max-w-2xl">
+        <div class="flex flex-col items-center gap-2">
+          <span class="font-display-lg text-[48px] text-brand-gold leading-none">2</span>
+          <span class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase">Michelin Stars</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="font-display-lg text-[48px] text-brand-gold leading-none">42</span>
+          <span class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase">Curated Plates</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="font-display-lg text-[48px] text-brand-gold leading-none">8</span>
+          <span class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase">Private Rooms</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== DIAMOND COMPASS DIVIDER =============== -->
+  <div id="about" class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-24 scroll-mt-24">
+    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-outline-variant/50 to-transparent relative max-w-md">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center z-10 bg-surface">
+        <svg class="w-6 h-6 transform" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 8px rgba(212,175,55,0.4));">
+          <path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2L12 2Z" fill="rgba(212,175,55,0.25)"/>
+          <circle cx="12" cy="12" r="1.5" fill="#d4af37"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== ABOUT / PHILOSOPHY =============== -->
+  <section class="w-full max-w-[1200px] mx-auto px-margin-desktop py-16 scroll-mt-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+      <div class="md:col-span-5 flex flex-col gap-8 relative z-10">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-px bg-brand-gold/50"></div>
+          <span class="font-label-caps text-label-caps text-brand-gold uppercase tracking-[0.25em]">Our Philosophy</span>
+        </div>
+        <h2 class="font-display-lg text-display-lg text-on-surface leading-tight">
+          A Symphony<br/>
+          <span class="text-on-surface-variant italic">of Fire &amp; Shadow</span>
+        </h2>
+        <div class="flex flex-col gap-6 font-body-lg text-body-lg text-on-surface-variant/80 leading-relaxed">
+          <p>
+            Nocturnal Opulence was born from a single conviction — that the most memorable meals unfold not under bright lights, but in the intimate theater of night. Our kitchen is a sanctum where the heat of ancient tandoors meets the precision of French sous-vide.
+          </p>
+          <p>
+            Every ingredient is sourced at dawn. Every plate is choreographed like a scene. The music is low, the glassware is crystal, and the only spotlight that matters is the warm gilded glow falling upon your dish.
+          </p>
+        </div>
+        <div class="flex items-center gap-6 pt-4">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-brand-gold" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Farm to Flame</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-brand-gold" style="font-variation-settings:'FILL' 1;">nightlight</span>
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">After Dark Only</span>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-6 md:col-start-7 relative">
+        <div class="absolute -inset-6 bg-gradient-to-br from-brand-gold/10 to-transparent rounded-full blur-3xl opacity-60"></div>
+        <div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden shadow-2xl bg-surface-container border border-brand-gold/20 brushed-metal">
+          <img class="w-full h-full object-cover" alt="Executive chef plating a gold-leaf adorned dish" src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=close%20up%20of%20executive%20chef%20hands%20in%20black%20cotton%20gloves%20carefully%20placing%20edible%20gold%20leaf%20on%20a%20luxurious%20dark%20ceramic%20plate%2C%20moody%20spotlight%20lighting%2C%20deep%20shadows%2C%20fine%20dining%20michelin%20star%20plating%2C%20opulent%20and%20cinematic&image_size=portrait_4_3"/>
+        </div>
+        <div class="absolute -bottom-10 -left-10 bg-surface-container p-6 rounded-lg shadow-xl border border-outline-variant/30 max-w-[260px] leather-grain">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="material-symbols-outlined text-brand-gold text-[28px]" style="font-variation-settings:'FILL' 1;">workspace_premium</span>
+            <span class="font-headline-md text-headline-md text-on-surface">Chef Kael Rainer</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Two-Michelin-Starred Executive Chef &amp; Atelier Curator
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== DIAMOND COMPASS DIVIDER =============== -->
+  <div id="menu" class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-24 scroll-mt-24">
+    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-outline-variant/50 to-transparent relative max-w-md">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center z-10 bg-surface">
+        <svg class="w-6 h-6 transform" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 8px rgba(212,175,55,0.4));">
+          <path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2L12 2Z" fill="rgba(212,175,55,0.25)"/>
+          <circle cx="12" cy="12" r="1.5" fill="#d4af37"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== MENU CATEGORY TABS (STICKY) =============== -->
+  <section class="w-full sticky top-20 z-40 bg-surface/95 backdrop-blur-md border-y border-outline-variant/30 py-5">
+    <div class="max-w-[1200px] mx-auto px-margin-desktop flex justify-center gap-8 md:gap-16 flex-wrap">
+      <a class="font-label-caps text-label-caps text-brand-gold border-b-2 border-brand-gold pb-1 transition-colors uppercase tracking-widest" href="#appetizers">Appetizers</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-brand-gold pb-1 transition-colors uppercase tracking-widest" href="#mains">Mains</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-brand-gold pb-1 transition-colors uppercase tracking-widest" href="#desserts">Desserts</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-brand-gold pb-1 transition-colors uppercase tracking-widest" href="#libations">Libations</a>
+    </div>
+  </section>
+
+  <!-- =============== MENU SECTIONS =============== -->
+  <div class="w-full max-w-[1200px] mx-auto px-margin-desktop py-24 flex flex-col gap-32">
+
+    <!-- APPETIZERS -->
+    <section id="appetizers" class="flex flex-col gap-12 scroll-mt-36">
+      <div class="flex flex-col items-center gap-4">
+        <span class="font-label-caps text-label-caps text-brand-gold uppercase tracking-[0.35em]">Chapter I</span>
+        <div class="flex items-center gap-6">
+          <div class="h-px w-20 bg-gradient-to-r from-transparent to-brand-gold"></div>
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-wide">The Awakening — Appetizers</h2>
+          <div class="h-px w-20 bg-gradient-to-l from-transparent to-brand-gold"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+        <!-- Item 1 -->
+        <div class="flex flex-col gap-2 p-6 -mx-6 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Onyx Tartare of A5 Wagyu</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$68</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            Hand-cut Wagyu, truffle-infused quail yolk, pickled shallot, crowned with 24k gold leaf on black obsidian.
+          </p>
+          <div class="flex gap-2 mt-2">
+            <span class="px-3 py-1 rounded-full border border-brand-gold/50 text-brand-gold/80 font-label-caps text-[10px] uppercase tracking-widest">Chef's Special</span>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex flex-col gap-2 p-6 -mx-6 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Hokkaido Scallops in Saffron Velvet</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$52</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            Seared scallops, Persian saffron cauliflower purée, crispy caper berries, gold-infused olive oil drizzle.
+          </p>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex flex-col gap-2 p-6 -mx-6 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Smoked Burrata &amp; Midnight Figs</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$34</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            Oak-smoked burrata, aged Mission figs, honeycomb, toasted pistachio, charcoal-fired sourdough.
+          </p>
+          <div class="flex gap-2 mt-2">
+            <span class="px-3 py-1 rounded-full border border-brand-gold/50 text-brand-gold/80 font-label-caps text-[10px] uppercase tracking-widest">Vegetarian</span>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="flex flex-col gap-2 p-6 -mx-6 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Caspian Caviar Service</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$140</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            Beluga Imperial, chilled mother-of-pearl spoon, blinis, crème fraîche, crushed ice pedestal service.
+          </p>
+          <div class="flex gap-2 mt-2">
+            <span class="px-3 py-1 rounded-full border border-brand-gold/50 text-brand-gold/80 font-label-caps text-[10px] uppercase tracking-widest">Signature</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAINS -->
+    <section id="mains" class="flex flex-col gap-12 scroll-mt-36">
+      <div class="flex flex-col items-center gap-4">
+        <span class="font-label-caps text-label-caps text-brand-gold uppercase tracking-[0.35em]">Chapter II</span>
+        <div class="flex items-center gap-6">
+          <div class="h-px w-20 bg-gradient-to-r from-transparent to-brand-gold"></div>
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-wide">The Heart of Night — Mains</h2>
+          <div class="h-px w-20 bg-gradient-to-l from-transparent to-brand-gold"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Featured Card 1 -->
+        <div class="group bg-surface-container rounded-lg overflow-hidden border-l-2 border-brand-gold/50 shadow-lg relative flex flex-col sm:flex-row leather-grain">
+          <div class="w-full sm:w-2/5 h-72 sm:h-auto overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Dry-aged ribeye with gold leaf" src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=dark%20moody%20photography%20of%20dry%20aged%20ribeye%20steak%20sliced%20on%20black%20slate%2C%20charred%20edges%2C%20herb%20butter%20melting%2C%20edible%20gold%20flakes%2C%20coarse%20flaky%20salt%2C%20cinematic%20spotlight%2C%20deep%20shadow%2C%20luxury%20food&image_size=portrait_4_3"/>
+            <div class="absolute inset-0 bg-gradient-to-l sm:bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+          </div>
+          <div class="w-full sm:w-3/5 p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start gap-4 mb-4">
+                <h3 class="font-headline-md text-[26px] text-on-surface leading-tight">45-Day Dry-Aged Ribeye</h3>
+                <span class="font-headline-md text-[22px] text-brand-gold whitespace-nowrap">$110</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+                Snake River Farms ribeye, smoked bone marrow jus, charred leeks, confit fingerlings, flaked Himalayan salt.
+              </p>
+            </div>
+            <div class="flex gap-2 mb-6">
+              <span class="px-3 py-1 rounded-full border border-brand-gold/50 text-brand-gold/80 font-label-caps text-[10px] uppercase tracking-widest">Signature</span>
+            </div>
+            <div class="flex justify-end">
+              <button class="flex items-center gap-2 border border-brand-gold/50 text-brand-gold px-6 py-2 font-label-caps text-label-caps rounded-sm hover:bg-brand-gold/10 transition-colors uppercase">
+                <span class="material-symbols-outlined text-[16px]">add</span> Reserve
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Card 2 -->
+        <div class="group bg-surface-container rounded-lg overflow-hidden border-l-2 border-brand-gold/50 shadow-lg relative flex flex-col sm:flex-row leather-grain">
+          <div class="w-full sm:w-2/5 h-72 sm:h-auto overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Saffron lobster tail" src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=luxurious%20butter%20poached%20maine%20lobster%20tail%20on%20dark%20ceramic%20bowl%2C%20saffron%20bisque%2C%20edible%20flowers%2C%20gold%20leaf%2C%20dramatic%20lighting%2C%20fine%20dining%20cuisine%2C%20high%20contrast%20dark%20food%20photography&image_size=portrait_4_3"/>
+            <div class="absolute inset-0 bg-gradient-to-l sm:bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+          </div>
+          <div class="w-full sm:w-3/5 p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start gap-4 mb-4">
+                <h3 class="font-headline-md text-[26px] text-on-surface leading-tight">Saffron-Poached Maine Lobster</h3>
+                <span class="font-headline-md text-[22px] text-brand-gold whitespace-nowrap">$95</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+                8oz tail, Kashmiri saffron vanilla beurre blanc, citrus caviar, charred baby fennel, lobster coral emulsion.
+              </p>
+            </div>
+            <div class="flex gap-2 mb-6">
+              <span class="px-3 py-1 rounded-full border border-brand-gold/50 text-brand-gold/80 font-label-caps text-[10px] uppercase tracking-widest">Chef's Special</span>
+            </div>
+            <div class="flex justify-end">
+              <button class="flex items-center gap-2 border border-brand-gold/50 text-brand-gold px-6 py-2 font-label-caps text-label-caps rounded-sm hover:bg-brand-gold/10 transition-colors uppercase">
+                <span class="material-symbols-outlined text-[16px]">add</span> Reserve
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Standard Items Row -->
+        <div class="flex flex-col gap-2 p-6 -mx-2 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain col-span-1 lg:col-span-2">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Basmati Jeweled Biryani of Black Truffle</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$78</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            Hand-layered saffron basmati, Perigord truffle shavings, rosewater-infused raita, edible silver leaf, potli masala.
+          </p>
+          <div class="flex gap-2 mt-2">
+            <span class="px-3 py-1 rounded-full border border-brand-gold/50 text-brand-gold/80 font-label-caps text-[10px] uppercase tracking-widest">Gluten-Free</span>
+            <span class="px-3 py-1 rounded-full border border-brand-gold/50 text-brand-gold/80 font-label-caps text-[10px] uppercase tracking-widest">Vegetarian</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 p-6 -mx-2 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain col-span-1 lg:col-span-2">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Moroccan Spiced Rack of Lamb</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$88</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            Ras el hanout crust, date-tamarind glaze, smoked aubergine, pomegranate molasses, harissa oil, minted couscous.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESSERTS -->
+    <section id="desserts" class="flex flex-col gap-12 scroll-mt-36">
+      <div class="flex flex-col items-center gap-4">
+        <span class="font-label-caps text-label-caps text-brand-gold uppercase tracking-[0.35em]">Chapter III</span>
+        <div class="flex items-center gap-6">
+          <div class="h-px w-20 bg-gradient-to-r from-transparent to-brand-gold"></div>
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-wide">The Golden Veil — Desserts</h2>
+          <div class="h-px w-20 bg-gradient-to-l from-transparent to-brand-gold"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="group bg-surface-container rounded-lg overflow-hidden border-t border-brand-gold/30 shadow-lg hover:shadow-xl hover:shadow-brand-gold/5 transition-all duration-300 relative">
+          <div class="relative h-64 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Gold leaf chocolate sphere" src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=chocolate%20sphere%20dome%20dessert%20with%20edible%20gold%20leaf%20shattering%20open%20to%20reveal%20mousse%20and%20berries%2C%20dark%20black%20plate%2C%20moody%20cinematic%20lighting%2C%20luxury%20plated%20dessert&image_size=square_hd"/>
+          </div>
+          <div class="p-6 flex flex-col gap-4 relative leather-grain h-full">
+            <div class="flex justify-between items-start gap-4">
+              <h3 class="font-headline-md text-[22px] text-on-surface leading-tight">Midnight Gold Sphere</h3>
+              <span class="font-headline-md text-[18px] text-brand-gold whitespace-nowrap">$24</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+              70% Valrhona sphere, salted caramel heart, gold leaf, warm hazelnut praline tableside pour.
+            </p>
+            <button class="w-full mt-2 border border-brand-gold/50 text-brand-gold py-2 font-label-caps text-label-caps rounded-sm hover:bg-brand-gold/10 transition-colors uppercase">Add to Order</button>
+          </div>
+        </div>
+        <div class="group bg-surface-container rounded-lg overflow-hidden border-t border-brand-gold/30 shadow-lg hover:shadow-xl hover:shadow-brand-gold/5 transition-all duration-300 relative">
+          <div class="relative h-64 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Saffron crème brûlée" src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=saffron%20creme%20brulee%20in%20elegant%20gold%20rimmed%20ramekin%2C%20caramelized%20sugar%20top%2C%20pistachio%20garnish%2C%20edible%20flower%20petals%2C%20dark%20velvet%20background%2C%20warm%20candlelight%2C%20opulent%20dessert&image_size=square_hd"/>
+          </div>
+          <div class="p-6 flex flex-col gap-4 relative leather-grain h-full">
+            <div class="flex justify-between items-start gap-4">
+              <h3 class="font-headline-md text-[22px] text-on-surface leading-tight">Persian Saffron Brûlée</h3>
+              <span class="font-headline-md text-[18px] text-brand-gold whitespace-nowrap">$18</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+              Cardamom-infused custard, Iranian saffron threads, rock sugar crust, rose petal jam, pistachio crumble.
+            </p>
+            <button class="w-full mt-2 border border-brand-gold/50 text-brand-gold py-2 font-label-caps text-label-caps rounded-sm hover:bg-brand-gold/10 transition-colors uppercase">Add to Order</button>
+          </div>
+        </div>
+        <div class="group bg-surface-container rounded-lg overflow-hidden border-t border-brand-gold/30 shadow-lg hover:shadow-xl hover:shadow-brand-gold/5 transition-all duration-300 relative">
+          <div class="relative h-64 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Truffle cheesecake" src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=black%20truffle%20white%20chocolate%20cheesecake%20slice%20on%20black%20marble%20plate%2C%20gold%20drizzle%2C%20shaved%20truffle%20on%20top%2C%20dark%20moody%20background%2C%20luxury%20dessert%20photography&image_size=square_hd"/>
+            <div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-sm px-3 py-1 rounded-full border border-brand-gold/50">
+              <span class="font-label-caps text-label-caps text-[10px] text-brand-gold uppercase">New</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col gap-4 relative leather-grain h-full">
+            <div class="flex justify-between items-start gap-4">
+              <h3 class="font-headline-md text-[22px] text-on-surface leading-tight">Truffle &amp; Gold Cheesecake</h3>
+              <span class="font-headline-md text-[18px] text-brand-gold whitespace-nowrap">$28</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+              Bianco white truffle, white chocolate ganache, 24k gold veil, aged balsamic reduction, espresso soil.
+            </p>
+            <button class="w-full mt-2 border border-brand-gold/50 text-brand-gold py-2 font-label-caps text-label-caps rounded-sm hover:bg-brand-gold/10 transition-colors uppercase">Add to Order</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIBATIONS -->
+    <section id="libations" class="flex flex-col gap-12 scroll-mt-36">
+      <div class="flex flex-col items-center gap-4">
+        <span class="font-label-caps text-label-caps text-brand-gold uppercase tracking-[0.35em]">Chapter IV</span>
+        <div class="flex items-center gap-6">
+          <div class="h-px w-20 bg-gradient-to-r from-transparent to-brand-gold"></div>
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-wide">The Cellar — Libations</h2>
+          <div class="h-px w-20 bg-gradient-to-l from-transparent to-brand-gold"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+        <div class="flex flex-col gap-2 p-6 -mx-6 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Nocturne Gold Fashioned</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$32</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            21-year bourbon, saffron-infused demerara, tobacco bitters, gold leaf ice sphere, smoked cedar.
+          </p>
+          <div class="flex gap-2 mt-2">
+            <span class="px-3 py-1 rounded-full border border-brand-gold/50 text-brand-gold/80 font-label-caps text-[10px] uppercase tracking-widest">Signature</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 p-6 -mx-6 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Velvet Velvet — Barolo 2010</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$85 / Glass</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            Gaja, Piedmont. Tar, rose, dried cherry, truffle. Decanted and served tableside.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2 p-6 -mx-6 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Oudh Martini Royale</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$38</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            Premium gin, agar-oudh elixir, cardamom, date syrup, gold foil, olive-washed.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2 p-6 -mx-6 rounded-md hover:bg-surface-container/50 transition-colors group leather-grain">
+          <div class="flex items-baseline gap-2">
+            <h3 class="font-headline-md text-[22px] text-on-surface">Dom Pérignon Legacy</h3>
+            <div class="flex-1 dotted-leader h-6 mx-2"></div>
+            <span class="font-headline-md text-[20px] text-brand-gold whitespace-nowrap">$420 / Bottle</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pr-8">
+            Vintage 2012, champagne flute service, chilled pewter bucket, paired with caviar on request.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- =============== DIAMOND COMPASS DIVIDER =============== -->
+  <div id="experience" class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-24 scroll-mt-24">
+    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-outline-variant/50 to-transparent relative max-w-md">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center z-10 bg-surface">
+        <svg class="w-6 h-6 transform" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 8px rgba(212,175,55,0.4));">
+          <path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2L12 2Z" fill="rgba(212,175,55,0.25)"/>
+          <circle cx="12" cy="12" r="1.5" fill="#d4af37"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== SIGNATURE EXPERIENCE =============== -->
+  <section class="w-full max-w-[1200px] mx-auto px-margin-desktop py-16 scroll-mt-24">
+    <div class="relative overflow-hidden rounded-xl bg-surface-container-low border border-brand-gold/20 shadow-2xl leather-grain">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/3 translate-x-1/3"></div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 relative z-10">
+        <div class="relative h-[480px] lg:h-auto overflow-hidden">
+          <img class="w-full h-full object-cover" alt="Chef's table private dining" src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=ultra%20luxury%20private%20chef%20table%20dining%20experience%20at%20night%2C%20brass%20pendant%20lights%2C%20velvet%20chairs%2C%20crystal%20glassware%2C%20open%20kitchen%20view%20with%20chef%20working%2C%20dark%20rich%20wood%20table%2C%20candles%2C%20exclusive%20and%20opulent%20atmosphere&image_size=portrait_4_3"/>
+          <div class="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-surface-container-low via-surface-container-low/30 to-transparent"></div>
+        </div>
+        <div class="p-12 lg:p-16 flex flex-col justify-center gap-8">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-px bg-brand-gold/50"></div>
+            <span class="font-label-caps text-label-caps text-brand-gold uppercase tracking-[0.25em]">The Experience</span>
+          </div>
+          <h2 class="font-display-lg text-display-lg text-on-surface leading-[1.05]">
+            Chef's Table<br/>
+            <span class="text-brand-gold italic font-serif">— By Invitation</span>
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Behind a velvet curtain lies a private kitchen counter for eight. Twelve courses. Twelve stories. Each dish unveiled by the chef himself, with wine pairings drawn from our 2,000-bottle cellar. A three-hour voyage into the nocturnal art of cuisine.
+          </p>
+          <div class="grid grid-cols-2 gap-6 pt-2">
+            <div class="flex flex-col gap-1">
+              <span class="font-display-lg text-[40px] text-brand-gold leading-none">12</span>
+              <span class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase">Courses</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="font-display-lg text-[40px] text-brand-gold leading-none">3h</span>
+              <span class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase">Duration</span>
+            </div>
+          </div>
+          <button class="self-start mt-4 group relative overflow-hidden bg-brand-gold text-on-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest transition-all duration-300 hover:scale-105 gold-glow-hover rounded-sm flex items-center gap-3">
+            <span class="relative z-10 flex items-center gap-3">
+              <span class="material-symbols-outlined text-[18px]">local_activity</span>
+              Request Invitation
+            </span>
+            <div class="absolute inset-0 bg-primary-fixed transform scale-x-0 group-hover:scale-x-100 transition-transform origin-right duration-500 ease-out z-0"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== DIAMOND COMPASS DIVIDER =============== -->
+  <div id="testimonials" class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-24 scroll-mt-24">
+    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-outline-variant/50 to-transparent relative max-w-md">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center z-10 bg-surface">
+        <svg class="w-6 h-6 transform" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 8px rgba(212,175,55,0.4));">
+          <path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2L12 2Z" fill="rgba(212,175,55,0.25)"/>
+          <circle cx="12" cy="12" r="1.5" fill="#d4af37"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== TESTIMONIALS =============== -->
+  <section class="w-full max-w-[1200px] mx-auto px-margin-desktop pb-32 scroll-mt-24 relative">
+    <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 -translate-y-1/3"></div>
+
+    <div class="flex flex-col items-center text-center gap-6 mb-20 relative z-10">
+      <div class="flex items-center gap-4">
+        <div class="h-px w-12 bg-gradient-to-r from-transparent to-brand-gold"></div>
+        <span class="font-label-caps text-label-caps text-brand-gold uppercase tracking-[0.25em]">Voices of the Night</span>
+        <div class="h-px w-12 bg-gradient-to-l from-transparent to-brand-gold"></div>
+      </div>
+      <h2 class="font-display-lg text-display-lg text-on-surface">
+        Whispers from <br/><span class="text-on-surface-variant italic font-serif">Our Guests</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+      <!-- Featured -->
+      <article class="col-span-1 md:col-span-2 lg:col-span-2 flex flex-col md:flex-row bg-surface-container-low rounded-sm shadow-xl relative overflow-hidden group leather-grain">
+        <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-brand-gold via-brand-gold/50 to-transparent"></div>
+        <div class="w-full md:w-2/5 h-72 md:h-auto relative overflow-hidden">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Dining ambience" src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=top%20down%20view%20of%20luxury%20dining%20table%20with%20candles%2C%20crystal%20wine%20glass%2C%20gold%20utensils%2C%20plated%20gourmet%20dish%2C%20dark%20velvet%20tablecloth%2C%20moody%20candlelight%20reflections&image_size=landscape_4_3"/>
+          <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-surface-container-low via-surface-container-low/60 to-transparent"></div>
+        </div>
+        <div class="flex-1 p-8 md:p-10 flex flex-col justify-center relative z-10">
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex gap-1 text-brand-gold">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">star</span>
+            </div>
+            <span class="font-label-caps text-label-caps text-on-surface-variant/60 uppercase">Chef's Table</span>
+          </div>
+          <h3 class="font-headline-md text-[26px] text-on-surface mb-5 leading-tight">"A private sanctum where time stops"</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-8">
+            The Chef's Table experience was nothing short of a religious experience. The gold sphere dessert unveiled tableside — I have never tasted anything so precisely balanced between bitter chocolate and salted caramel. Every staff member greeted us by name.
+          </p>
+          <div class="flex items-center gap-4 mt-auto">
+            <div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant/30 text-on-surface font-headline-md text-[16px]">E</div>
+            <div>
+              <p class="font-body-md text-body-md text-on-surface leading-tight">Eleanor Blackwood</p>
+              <span class="font-label-caps text-[10px] text-brand-gold/70 uppercase tracking-widest">Private Member · 12 Visits</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-surface-container-low rounded-sm shadow-lg p-8 relative overflow-hidden group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow duration-300 flex flex-col leather-grain">
+        <div class="absolute top-0 right-0 w-[2px] h-14 bg-brand-gold"></div>
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex gap-1 text-brand-gold">
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star</span>
+          </div>
+          <span class="font-label-caps text-label-caps text-on-surface-variant/60 uppercase">3 Days Ago</span>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed flex-1">
+          The saffron lobster was ethereal. Atmospheric lighting so perfect that you feel like a character in a film. That's the magic of Nocturnal — they don't just serve food, they curate a moment.
+        </p>
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-outline-variant/20">
+          <div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-headline-md text-[14px]">R</div>
+          <p class="font-body-md text-body-md text-on-surface text-[14px]">Rashid Al-Mansoori</p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-surface-container-low rounded-sm shadow-lg p-8 relative overflow-hidden group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow duration-300 flex flex-col leather-grain">
+        <div class="absolute top-0 right-0 w-[2px] h-14 bg-brand-gold"></div>
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex gap-1 text-brand-gold">
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">star_half</span>
+          </div>
+          <span class="font-label-caps text-label-caps text-on-surface-variant/60 uppercase">1 Week Ago</span>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed flex-1">
+          Anniversary dinner. The truffle cheesecake and Nocturne Gold Fashioned pair so beautifully. Our sommelier, Viktor, recommended a Barolo that literally made me tear up. Will return monthly.
+        </p>
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-outline-variant/20">
+          <div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-headline-md text-[14px]">S</div>
+          <p class="font-body-md text-body-md text-on-surface text-[14px]">Sophia Laurent</p>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="col-span-1 md:col-span-2 bg-surface-container-low rounded-sm shadow-lg p-8 md:p-10 relative overflow-hidden group leather-grain">
+        <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-brand-gold via-brand-gold/50 to-transparent"></div>
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant/30 bg-surface-container-high flex items-center justify-center font-headline-md text-brand-gold">M</div>
+            <div>
+              <p class="font-body-md text-body-md text-on-surface font-semibold">Marcus Chen</p>
+              <div class="flex gap-1 text-brand-gold mt-1">
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+              </div>
+            </div>
+          </div>
+          <span class="font-label-caps text-label-caps text-on-surface-variant/60 uppercase">2 Weeks Ago</span>
+        </div>
+        <h4 class="font-headline-md text-[26px] text-on-surface mb-4 leading-tight">"I've dined at 14 of the World's 50 Best. Nocturnal belongs there."</h4>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-[17px]">
+          As a food critic who has traveled every culinary capital, I found myself genuinely surprised by the biryani. The Perigord truffle shavings and rosewater-infused raita — blasphemy on paper, transcendence in practice. Chef Kael Rainer has created something that bridges cultures without diluting either. This is the future of fine dining.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- =============== DIAMOND COMPASS DIVIDER =============== -->
+  <div id="reserve" class="w-full max-w-[1200px] mx-auto flex items-center justify-center py-24 scroll-mt-24">
+    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-outline-variant/50 to-transparent relative max-w-md">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center z-10 bg-surface">
+        <svg class="w-6 h-6 transform" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 8px rgba(212,175,55,0.4));">
+          <path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2L12 2Z" fill="rgba(212,175,55,0.25)"/>
+          <circle cx="12" cy="12" r="1.5" fill="#d4af37"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== RESERVATION / CONTACT =============== -->
+  <section class="w-full max-w-[1200px] mx-auto px-margin-desktop py-16 pb-32 scroll-mt-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+      <!-- Left: Info -->
+      <div class="lg:col-span-5 flex flex-col gap-10 z-10 relative">
+        <div class="absolute -top-8 -left-8 w-64 h-64 bg-brand-gold/10 rounded-full blur-[80px] pointer-events-none"></div>
+        <div class="flex flex-col gap-6">
+          <span class="font-label-caps text-label-caps text-brand-gold uppercase tracking-widest">Reserve Your Evening</span>
+          <h2 class="font-display-lg text-display-lg text-on-background leading-[1.05]">
+            Step Through<br/>
+            <span class="text-on-surface-variant italic font-serif">the Velvet Curtain</span>
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md leading-relaxed">
+            Seating is extremely limited. Kindly provide a few details and our Concierge will confirm your table within the hour.
+          </p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div class="group flex items-start gap-5 p-5 bg-surface-container rounded-lg hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden border border-outline-variant/30 hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] leather-grain">
+            <div class="w-12 h-12 flex-shrink-0 bg-brand-gold/10 rounded-full flex items-center justify-center text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-on-primary transition-all duration-300">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">call</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Concierge Line</span>
+              <span class="font-headline-md text-[22px] text-on-background">+1 (212) 555-OPUL</span>
+            </div>
+          </div>
+          <div class="group flex items-start gap-5 p-5 bg-surface-container rounded-lg hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden border border-outline-variant/30 hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] leather-grain">
+            <div class="w-12 h-12 flex-shrink-0 bg-brand-gold/10 rounded-full flex items-center justify-center text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-on-primary transition-all duration-300">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">location_on</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">The Atelier</span>
+              <span class="font-headline-md text-[20px] text-on-background leading-snug">42 Midnight Lane<br/>Tribeca, New York</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 p-5 bg-surface-container rounded-lg border border-outline-variant/30 leather-grain">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Opening Hours</span>
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <span class="font-body-md text-body-md text-on-surface-variant">Tue — Thu</span>
+                <span class="font-body-md text-body-md text-on-background">6:00 PM — 11:00 PM</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="font-body-md text-body-md text-on-surface-variant">Fri — Sat</span>
+                <span class="font-body-md text-body-md text-on-background">6:00 PM — 1:00 AM</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="font-body-md text-body-md text-brand-gold">Chef's Table</span>
+                <span class="font-body-md text-body-md text-on-background">By Invitation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Reservation Form + Map -->
+      <div class="lg:col-span-7 flex flex-col gap-8">
+        <!-- Reservation Card -->
+        <div class="relative overflow-hidden bg-surface-container rounded-lg shadow-2xl border border-brand-gold/20 p-8 md:p-10 leather-grain">
+          <div class="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-brand-gold via-brand-gold/30 to-transparent"></div>
+
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-8">Request a Reservation</h3>
+
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label class="font-label-caps text-label-caps text-brand-gold/80 uppercase tracking-wider pl-1">Name</label>
+              <div class="relative border-b border-brand-gold/40 focus-within:border-brand-gold transition-colors">
+                <input type="text" placeholder="Your full name" class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none placeholder:text-on-surface-variant/40 focus:bg-surface-container-low transition-colors rounded-sm"/>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-label-caps text-label-caps text-brand-gold/80 uppercase tracking-wider pl-1">Phone</label>
+              <div class="relative border-b border-brand-gold/40 focus-within:border-brand-gold transition-colors">
+                <input type="tel" placeholder="+1 (555) 000-0000" class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none placeholder:text-on-surface-variant/40 focus:bg-surface-container-low transition-colors rounded-sm"/>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-label-caps text-label-caps text-brand-gold/80 uppercase tracking-wider pl-1">Date</label>
+              <div class="relative border-b border-brand-gold/40 focus-within:border-brand-gold transition-colors">
+                <input type="date" class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none focus:bg-surface-container-low transition-colors rounded-sm"/>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-label-caps text-label-caps text-brand-gold/80 uppercase tracking-wider pl-1">Party Size</label>
+              <div class="relative border-b border-brand-gold/40 focus-within:border-brand-gold transition-colors">
+                <select class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none focus:bg-surface-container-low transition-colors rounded-sm">
+                  <option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6 Guests</option><option>7+ (Private Room)</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 md:col-span-2">
+              <label class="font-label-caps text-label-caps text-brand-gold/80 uppercase tracking-wider pl-1">Special Requests</label>
+              <div class="relative border-b border-brand-gold/40 focus-within:border-brand-gold transition-colors">
+                <textarea rows="2" placeholder="Dietary needs, occasion, seating preference…" class="w-full bg-surface-container-low/60 text-on-surface font-body-md text-body-md py-3 px-2 outline-none placeholder:text-on-surface-variant/40 focus:bg-surface-container-low transition-colors rounded-sm resize-none"></textarea>
+              </div>
+            </div>
+            <div class="md:col-span-2 pt-4 flex items-center justify-between gap-4 flex-col sm:flex-row">
+              <p class="font-body-md text-body-md text-on-surface-variant/70 text-sm">A Concierge will reply within 60 minutes.</p>
+              <button type="button" class="group relative overflow-hidden bg-brand-gold text-on-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest transition-all duration-300 hover:scale-105 gold-glow-hover rounded-sm flex items-center gap-3">
+                <span class="relative z-10 flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                  Send Request
+                </span>
+                <div class="absolute inset-0 bg-primary-fixed transform scale-x-0 group-hover:scale-x-100 transition-transform origin-right duration-500 ease-out z-0"></div>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Map / Location Card -->
+        <div class="relative h-[340px] rounded-lg overflow-hidden border border-outline-variant/30 shadow-xl group brushed-metal">
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent z-10 pointer-events-none opacity-70"></div>
+          <div class="w-full h-full bg-cover bg-center" style="background-image:url('https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=aerial%20drone%20view%20of%20Tribeca%20New%20York%20at%20dusk%2C%20cobblestone%20streets%2C%20historic%20loft%20buildings%2C%20warm%20street%20lights%2C%20cinematic%20golden%20hour%20turning%20to%20night%2C%20moody%20and%20luxurious%20atmosphere&image_size=landscape_16_9')"></div>
+          <div class="absolute bottom-6 right-6 left-6 z-20 flex justify-between items-end gap-4 flex-col sm:flex-row">
+            <div class="bg-surface-container/92 backdrop-blur-md p-6 rounded-lg border border-outline-variant/50 shadow-lg max-w-sm">
+              <span class="font-headline-md text-[22px] text-brand-gold mb-2 block">Nocturnal Opulence</span>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                42 Midnight Lane, Tribeca<br/>New York, NY 10013
+              </p>
+              <div class="mt-4 pt-4 border-t border-outline-variant/30 flex justify-between items-center gap-6">
+                <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Entry</span>
+                <span class="font-body-md text-body-md text-on-background">Black Door · Ring Gold Bell</span>
+              </div>
+            </div>
+            <button class="w-14 h-14 bg-brand-gold text-on-primary rounded-full flex items-center justify-center gold-glow-hover hover:scale-105 transition-transform duration-300 flex-shrink-0 self-end sm:self-auto">
+              <span class="material-symbols-outlined">directions</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== QUALITY / COMMITMENT BAR =============== -->
+  <section class="w-full border-t border-outline-variant/20 bg-surface-container-lowest/50">
+    <div class="max-w-[1200px] mx-auto px-margin-desktop py-20 relative">
+      <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary-container/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2"></div>
+      <div class="flex flex-col items-center text-center gap-6 max-w-2xl mx-auto mb-16 relative z-10">
+        <span class="font-label-caps text-label-caps text-brand-gold uppercase tracking-widest">Our Commitment</span>
+        <h2 class="font-display-lg text-display-lg text-on-background leading-[1.05]">The Gold Standard<br/><span class="text-on-surface-variant italic font-serif">in Everything</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter relative z-10">
+        <div class="flex flex-col gap-6 p-8 bg-surface-container rounded-lg border-t border-brand-gold/20 shadow-lg relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 leather-grain">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500"></div>
+          <div class="w-16 h-16 bg-surface-variant rounded-full flex items-center justify-center text-brand-gold border border-outline-variant/30">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">eco</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-headline-md text-on-background mb-3">Sourced at Dawn</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Every ingredient is hand-selected each morning from sustainable farms and artisan purveyors. Nothing sits overnight.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-6 p-8 bg-surface-container rounded-lg border-t border-brand-gold/20 shadow-lg relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 delay-100 leather-grain">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500"></div>
+          <div class="w-16 h-16 bg-surface-variant rounded-full flex items-center justify-center text-brand-gold border border-outline-variant/30">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">sanitizer</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-headline-md text-on-background mb-3">HACCP Certified</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Our kitchen adheres to the strictest global food safety protocols. Hygiene, temperature control, and cleanliness are non-negotiable.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-6 p-8 bg-surface-container rounded-lg border-t border-brand-gold/20 shadow-lg relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 delay-200 leather-grain">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500"></div>
+          <div class="w-16 h-16 bg-surface-variant rounded-full flex items-center justify-center text-brand-gold border border-outline-variant/30">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">diversity_3</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-headline-md text-on-background mb-3">Inclusive Table</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              We gladly accommodate dietary restrictions, allergies, and cultural preferences. Every guest receives a tailored experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!-- =============== FOOTER =============== -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 pt-24 pb-10 leather-grain">
+  <div class="max-w-[1200px] mx-auto px-margin-desktop flex flex-col items-center gap-16">
+    <div class="flex flex-col items-center gap-5">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-sm bg-surface-container border border-brand-gold/40 flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:#d4af37">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-7.07l-2.83 2.83M9.76 14.24l-2.83 2.83m0-14.14l2.83 2.83m4.48 4.48l2.83 2.83"/>
+          </svg>
+        </div>
+        <span class="font-headline-md text-[30px] tracking-[0.25em] text-brand-gold">NOCTURNAL</span>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-lg text-center leading-relaxed">
+        A private culinary atelier where darkness becomes a canvas, and every evening is choreographed between the twinkle of crystal and the glow of gilded plates.
+      </p>
+    </div>
+
+    <div class="flex items-center justify-center gap-8 flex-wrap">
+      <a class="group flex items-center gap-2 text-on-surface-variant hover:text-brand-gold transition-colors" href="tel:+12125550785">
+        <span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">call</span>
+        <span class="font-label-caps text-label-caps uppercase">Concierge</span>
+      </a>
+      <a class="group flex items-center gap-2 text-on-surface-variant hover:text-brand-gold transition-colors" href="#reserve">
+        <span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">location_on</span>
+        <span class="font-label-caps text-label-caps uppercase">Visit</span>
+      </a>
+      <a class="group flex items-center gap-2 text-on-surface-variant hover:text-brand-gold transition-colors" href="mailto:concierge@nocturnal.com">
+        <span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">mail</span>
+        <span class="font-label-caps text-label-caps uppercase">Write</span>
+      </a>
+      <a class="group flex items-center gap-2 text-on-surface-variant hover:text-brand-gold transition-colors" href="#">
+        <span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">lock</span>
+        <span class="font-label-caps text-label-caps uppercase">Members</span>
+      </a>
+    </div>
+
+    <div class="w-full max-w-xs h-px bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between w-full gap-4">
+      <div class="flex items-center gap-6">
+        <a class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container text-on-surface-variant hover:bg-brand-gold hover:text-on-primary transition-all duration-300 border border-outline-variant/30 hover:border-brand-gold" href="#">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"/>
+          </svg>
+        </a>
+        <a class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container text-on-surface-variant hover:bg-brand-gold hover:text-on-primary transition-all duration-300 border border-outline-variant/30 hover:border-brand-gold" href="#">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+          </svg>
+        </a>
+        <a class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container text-on-surface-variant hover:bg-brand-gold hover:text-on-primary transition-all duration-300 border border-outline-variant/30 hover:border-brand-gold" href="#">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="text-label-caps font-label-caps text-on-surface-variant/60 uppercase tracking-widest text-center">
+        © MMXV — Nocturnal Opulence. All Rights Reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body></html>
