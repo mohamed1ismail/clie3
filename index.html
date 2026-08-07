@@ -48,43 +48,97 @@ html{scroll-behavior:smooth;}
 <!-- ===================== SECTION 1: HERO SIGNATURE ================= -->
 <!-- ================================================================== -->
 <div id="hero" class="flex flex-col w-full bg-surface text-on-surface scroll-mt-24">
-  <section class="w-full relative py-32 overflow-hidden flex items-center justify-center min-h-[70vh]">
+  <section class="w-full relative py-32 overflow-hidden flex items-center justify-center min-h-[85vh]">
     <div class="absolute inset-0 z-0 bg-surface-container opacity-50 leather-grain"></div>
     <div class="absolute inset-0 z-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
     <div class="relative z-10 w-full max-w-[1200px] px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
       <div class="flex flex-col gap-6 order-2 md:order-1">
         <div class="flex items-center gap-4">
           <div class="h-px w-12 bg-primary"></div>
-          <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">الطبق المميز</span>
+          <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">البرجر المميز</span>
         </div>
-        <h1 class="font-display-lg text-display-lg text-on-surface">دجاج مشوي<br/><span class="text-primary italic font-serif">على اللهب</span></h1>
+        <h1 class="font-display-lg text-display-lg text-on-surface">سماش كلاسيك<br/><span class="text-primary italic font-serif">نانو برجر</span></h1>
         <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-          دجاج مشوي بعناية فائقة، متبل بخلطتنا السرية من التوابل الشرقية والغربية. عصاري من الداخل ومقرمش من الخارج.
+          برجر سماش كلاسيكي محضّر من قطعتين لحم أنجوس طازج مشوي على اللهب، مع الجبن السويسري الذائب والصلصة المميزة.
         </p>
         <div class="flex flex-col gap-4 mt-4">
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-primary">local_fire_department</span>
-            <span class="font-label-caps text-label-caps text-on-background">مشوي بمثالية</span>
+            <span class="font-label-caps text-label-caps text-on-background">مشوي بمثالية على اللهب</span>
           </div>
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-primary">eco</span>
-            <span class="font-label-caps text-label-caps text-on-background">مكونات طازجة</span>
+            <span class="font-label-caps text-label-caps text-on-background">لحم أنجوس بقري طازج 100%</span>
           </div>
         </div>
         <div class="mt-8 flex items-center gap-8">
           <span class="font-headline-md text-headline-md text-primary" id="hero-featured-price">120 ج.م</span>
-          <a href="#menu" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase flex items-center gap-2">
-            <span class="material-symbols-outlined text-[18px]">menu_book</span>
-            استكشف المنيو
-          </a>
+          <button onclick="openOrderModalById(1)" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+            اطلب الآن
+          </button>
         </div>
       </div>
-      <div class="relative order-1 md:order-2">
-        <div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"></div>
-        <img alt="Signature Grilled Chicken" class="relative z-10 w-full object-cover rounded-xl shadow-2xl border border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjHfisiBLfpoGAiV3Zy1fsmLWhCv9kOE5jMorENMH8Ppm_jTdIJHbpROVKx7KKLqYijseartdzQqnRuVvZnRlors9pyvRTQbomKz_t2jeJHgqPfAMCOx8Gp4lgCqHjKMZm8nglbYZVShKRGvWkKiK673Cw0Z3BQV2Sl8S3jZEaZRHNmC_8RXH3HFsA4bKJe9pFEtvcUMNy1AhA_b3g9bpRi5Ez8T1e_inLW1T1_QpMLb69QQ4TeCQ9k75o_Nv4c2vc5g"/>
+      <div class="relative order-1 md:order-2 flex justify-center items-center">
+        <div class="absolute inset-0 bg-primary/10 blur-[100px] rounded-full"></div>
+        <div class="relative w-full aspect-square max-w-[450px]">
+          <canvas id="hero-canvas" class="w-full h-full object-contain rounded-xl border border-outline-variant/30 bg-surface-container-lowest/50 shadow-2xl"></canvas>
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-surface/85 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20 text-[11px] font-label-caps text-primary flex items-center gap-1.5 shadow-md">
+            <span class="material-symbols-outlined text-[14px] animate-bounce">mouse</span> اسحب أو مرر الصفحة لتجميع البرجر
+          </div>
+        </div>
       </div>
     </div>
   </section>
+</div>
+
+<!-- ===================== ORDER MODAL ===================== -->
+<div id="order-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+  <div class="bg-surface-container max-w-md w-full rounded-lg border border-primary/30 p-6 md:p-8 relative leather-grain shadow-2xl">
+    <div class="flex justify-between items-start mb-6">
+      <div>
+        <span class="font-label-caps text-[11px] text-primary tracking-widest uppercase">طلب وجبة جديدة</span>
+        <h3 class="font-headline-md text-[24px] text-on-surface mt-1" id="modal-dish-name">اسم الطبق</h3>
+      </div>
+      <button onclick="closeOrderModal()" class="text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <form id="client-order-form" class="flex flex-col gap-4">
+      <input type="hidden" id="modal-dish-id"/>
+      <div class="flex flex-col gap-1">
+        <label class="text-[11px] font-label-caps text-primary/80 uppercase">الاسم الكامل</label>
+        <input type="text" id="order-name" required placeholder="اسمك الكريم" class="w-full bg-surface-container-low text-on-surface font-body-md text-[14px] py-2 px-3 outline-none border border-outline-variant/30 rounded-sm focus:border-primary transition-colors"/>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label class="text-[11px] font-label-caps text-primary/80 uppercase">رقم الهاتف</label>
+        <input type="tel" id="order-phone" required placeholder="رقم الموبايل" class="w-full bg-surface-container-low text-on-surface font-body-md text-[14px] py-2 px-3 outline-none border border-outline-variant/30 rounded-sm focus:border-primary transition-colors"/>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col gap-1">
+          <label class="text-[11px] font-label-caps text-primary/80 uppercase">رقم الطاولة</label>
+          <select id="order-table" class="w-full bg-surface-container-low text-on-surface font-body-md text-[14px] py-2.5 px-3 outline-none border border-outline-variant/30 rounded-sm focus:border-primary transition-colors">
+            <!-- Populated via JS -->
+          </select>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="text-[11px] font-label-caps text-primary/80 uppercase">الكمية</label>
+          <input type="number" id="order-qty" min="1" max="20" value="1" class="w-full bg-surface-container-low text-on-surface font-body-md text-[14px] py-2 px-3 outline-none border border-outline-variant/30 rounded-sm focus:border-primary transition-colors"/>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label class="text-[11px] font-label-caps text-primary/80 uppercase">ملاحظات إضافية (اختياري)</label>
+        <textarea id="order-notes" rows="2" placeholder="مثال: بدون بصل، زيادة جبن..." class="w-full bg-surface-container-low text-on-surface font-body-md text-[13px] py-2 px-3 outline-none border border-outline-variant/30 rounded-sm focus:border-primary transition-colors resize-none"></textarea>
+      </div>
+      <div class="flex justify-between items-center mt-4 pt-4 border-t border-outline-variant/30">
+        <div>
+          <div class="text-[10px] text-on-surface-variant">السعر الإجمالي</div>
+          <div class="text-[20px] font-headline-md text-primary" id="modal-total-price">0 ج.م</div>
+        </div>
+        <button type="submit" class="bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps rounded-sm hover:bg-primary-fixed transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)] uppercase">تأكيد الطلب</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <!-- ===================== DIAMOND COMPASS DIVIDER ===================== -->
@@ -563,50 +617,56 @@ html{scroll-behavior:smooth;}
 // ─── LocalStorage helpers ───────────────────────────────────────────────────
 const getList = (k) => JSON.parse(localStorage.getItem(k) || '[]');
 const getObj  = (k) => JSON.parse(localStorage.getItem(k) || '{}');
+const setList = (k, v) => localStorage.setItem(k, JSON.stringify(v));
 const esc = (s) => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
 // ─── SEED if needed ─────────────────────────────────────────────────────────
 if (!localStorage.getItem('ew_seeded')) {
   localStorage.setItem('ew_categories', JSON.stringify([
-    {id:1,name:'مشويات',slug:'grills',is_active:true},
+    {id:1,name:'برجر لحم',slug:'burgers',is_active:true},
     {id:2,name:'مقبلات',slug:'starters',is_active:true},
     {id:3,name:'شوربات',slug:'soups',is_active:true},
     {id:4,name:'حلويات',slug:'desserts',is_active:true},
     {id:5,name:'مشروبات',slug:'drinks',is_active:true},
   ]));
   localStorage.setItem('ew_dishes', JSON.stringify([
-    {id:1,name:'دجاج مشوي على اللهب',category_id:1,category_name:'مشويات',price:120,description:'دجاج طازج يُشوى على الفحم الحي مع بهارات خاصة',is_available:true,is_featured:true,image_url:'https://lh3.googleusercontent.com/aida-public/AB6AXuDT02CX-g6oEd18qZm24sWRUUEpA9wUfq-GDaznekQo6gaeetkr-tAuEDg9_trKx6jmF5xWWT5SgSKJ6FCYg2oD1BkJdsn7zqYVPflM3dy36Mp8ENhbFrFY_lGiupYHcj0R41Vo5KhtkfKq5_spXJ71ioG1hbtnJcQZtpJ-RFLVl5yjDrDAT3zfpJAvpTHukslO7vlbRxB6ab8QbeBiuCJWM1vY0jco56J6SvhHezrb7zEojfEvYDSI',sizes:[{size_name:'صغير',price:90,is_default:false},{size_name:'وسط',price:120,is_default:true},{size_name:'كبير',price:160,is_default:false}]},
-    {id:2,name:'كفتة لحم بلدي',category_id:1,category_name:'مشويات',price:95,description:'كفتة لحم بلدي طازجة مشوية على الفحم بنكهة مميزة',is_available:true,is_featured:false,image_url:'https://lh3.googleusercontent.com/aida-public/AB6AXuDd-NUO4VCuwd7-0B0DCjn6arr3KuG7534tN356mC9v5XVDqHA8GG-xSpMvn_39YCV3I-zE7KpYDzvIVOuhBiFyTzCgQNSVwljHfQrP8DuE-z2AB65JCZScyA8PQO9I2vZzgEDzsV-wqhFUS0-PAQfUhgR7SHaeIDjI6x8J-b4wWhhGtQ_0uRGmuqVy7JlICELyhEPimo8pC_5FXo5SzDdpvDp0WTuLjH12IajOfo_rIezeG_xLon3b',sizes:[{size_name:'صغير',price:95,is_default:true},{size_name:'كبير',price:150,is_default:false}]},
-    {id:3,name:'لحم ضاني تكا',category_id:1,category_name:'مشويات',price:180,description:'قطع لحم ضاني طرية محمرة على جمر متقد',is_available:true,is_featured:true,image_url:'https://lh3.googleusercontent.com/aida-public/AB6AXuAKooMoBdbotx6aOdKHUVd2kAxlaHLOyQ1uVHjo8uyAmnU2ja33foz36xBW_jfUSM5KRGC285aLFsYkOd1t-1hGZcx1WrFMZVmW5k8rcLiBpxEM6B6DlkXuTo-M5bGnRgQXupaXRwAW2loQ89k4aNnqiAXq3SD6JZUOBJZgF12qCW2bt0ztaX36ME2MN1U97MLWOpklRamcc15orwPRPkopCBH-14kkUmqj78jLAcQKg-N1zAqTZqXe',sizes:[]},
-    {id:4,name:'حمص بالزيت',category_id:2,category_name:'مقبلات',price:45,description:'حمص ناعم بزيت الزيتون والكمون',is_available:true,is_featured:false,image_url:'',sizes:[]},
-    {id:5,name:'سلطة فتوش',category_id:2,category_name:'مقبلات',price:50,description:'سلطة فتوش طازجة بالخضروات والخبز المقرمش',is_available:true,is_featured:false,image_url:'',sizes:[]},
-    {id:6,name:'شوربة عدس',category_id:3,category_name:'شوربات',price:40,description:'شوربة عدس دافئة بعصير الليمون والكمون',is_available:true,is_featured:false,image_url:'',sizes:[]},
-    {id:7,name:'أم علي',category_id:4,category_name:'حلويات',price:60,description:'أم علي بالقشطة والمكسرات والجوز تُقدَّم ساخنة',is_available:true,is_featured:true,image_url:'',sizes:[]},
+    {id:1,name:'سماش كلاسيك نانو',category_id:1,category_name:'برجر لحم',price:120,description:'برجر سماش كلاسيكي محضّر من قطعتين لحم أنجوس طازج مشوي على اللهب، مع الجبن السويسري الذائب والصلصة المميزة.',is_available:true,is_featured:true,image_url:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400',sizes:[{size_name:'صغير',price:90,is_default:false},{size_name:'وسط',price:120,is_default:true},{size_name:'كبير',price:160,is_default:false}]},
+    {id:2,name:'دبل تشيز برجر نانو',category_id:1,category_name:'برجر لحم',price:150,description:'طبقتين من لحم الأنجوس مع جبنة التشيدر الغنية السائلة والصلصة الخاصة والبهارات الأصلية.',is_available:true,is_featured:false,image_url:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400',sizes:[{size_name:'صغير',price:120,is_default:false},{size_name:'وسط',price:150,is_default:true},{size_name:'كبير',price:190,is_default:false}]},
+    {id:3,name:'برجر نانو الحار المميز',category_id:1,category_name:'برجر لحم',price:140,description:'قطعة لحم بقري أنجوس مشوية مع صلصة الفلفل الحار الفاخرة وشرائح الهالبينو المذهلة.',is_available:true,is_featured:true,image_url:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400',sizes:[]},
+    {id:4,name:'حمص بالزيت والليمون',category_id:2,category_name:'مقبلات',price:45,description:'حمص ناعم أصيل بزيت الزيتون البكر وعصير الليمون.',is_available:true,is_featured:false,image_url:'',sizes:[]},
+    {id:5,name:'سلطة فتوش لبنانية',category_id:2,category_name:'مقبلات',price:50,description:'خضروات طازجة متنوعة مع الخبز المحمص ودبس الرمان اللذيذ.',is_available:true,is_featured:false,image_url:'',sizes:[]},
+    {id:6,name:'شوربة عدس دافئة',category_id:3,category_name:'شوربات',price:40,description:'شوربة عدس مهروسة مع الكمون والخبز المحمص وشرائح الليمون.',is_available:true,is_featured:false,image_url:'',sizes:[]},
+    {id:7,name:'أم علي الشرقية الفاخرة',category_id:4,category_name:'حلويات',price:60,description:'مخبوزة بقطع الكرواسون والحليب الساخن والمكسرات وعلبة قشطة طازجة.',is_available:true,is_featured:true,image_url:'',sizes:[]},
+  ]));
+  localStorage.setItem('ew_tables', JSON.stringify([
+    {id:1,table_number:'طاولة 1',capacity:2,status:'available'},
+    {id:2,table_number:'طاولة 2',capacity:4,status:'available'},
+    {id:3,table_number:'طاولة 3',capacity:4,status:'available'},
+    {id:4,table_number:'طاولة 4',capacity:6,status:'occupied'},
+    {id:5,table_number:'طاولة 5',capacity:2,status:'available'},
   ]));
   localStorage.setItem('ew_offers', JSON.stringify([
-    {id:1,title:'عروض الصيف',description:'خصم خاص ١٥٪ على جميع المشويات',discount_percentage:15,code:'SUMMER2026',is_active:true},
+    {id:1,title:'عرض الصيف من نانو',description:'خصم خاص ١٥٪ على كل وجبات البرجر طوال شهر أغسطس',discount_percentage:15,code:'NANO15',is_active:true},
   ]));
   localStorage.setItem('ew_social_links', JSON.stringify({
     phone:'+201001234567',whatsapp:'+201001234567',
-    facebook:'https://facebook.com/eastandwest',
-    instagram:'https://instagram.com/eastandwest',
-    tiktok:'https://tiktok.com/@eastandwest',
+    facebook:'https://facebook.com/nanoburger',
+    instagram:'https://instagram.com/nanoburger',
+    tiktok:'https://tiktok.com/@nanoburger',
   }));
   localStorage.setItem('ew_seeded','1');
 }
 
-// ─── RENDER DYNAMIC MENU ───────────────────────────────────────────────────
+// ─── DYNAMIC MENU RENDERING ────────────────────────────────────────────────
 function renderMenu() {
   const cats    = getList('ew_categories').filter(c => c.is_active);
   const dishes  = getList('ew_dishes').filter(d => d.is_available);
 
-  // Category nav
   const nav = document.getElementById('menu-cat-nav');
   nav.innerHTML = cats.map((c,i) =>
     `<a class="font-label-caps text-label-caps ${i===0?'text-primary border-b-2 border-primary pb-1':'text-on-surface-variant hover:text-primary pb-1'} transition-colors uppercase" href="#cat-${c.id}">${esc(c.name)}</a>`
   ).join('');
 
-  // Sections per category
   const sections = document.getElementById('menu-sections');
   if (!dishes.length) {
     sections.innerHTML = `<div class="text-center py-20 text-on-surface-variant font-label-caps text-label-caps">لا توجد أطباق متاحة حالياً</div>`;
@@ -619,20 +679,27 @@ function renderMenu() {
     const dishCards = catDishes.map(d => {
       const imgHtml = d.image_url
         ? `<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${esc(d.image_url)}" alt="${esc(d.name)}" loading="lazy"/>`
-        : `<div class="w-full h-full flex items-center justify-center text-5xl bg-surface-container-high">🍽️</div>`;
+        : `<div class="w-full h-full flex items-center justify-center text-5xl bg-surface-container-high">🍔</div>`;
       const sizesHtml = d.sizes && d.sizes.length
         ? `<div class="flex flex-wrap gap-2 my-2">${d.sizes.map(s=>`<span class="text-[10px] font-label-caps text-primary/70 border border-primary/30 px-2 py-0.5 rounded-full">${esc(s.size_name)} ${Number(s.price).toLocaleString()} ج.م</span>`).join('')}</div>`
         : '';
       return `
-        <div class="group bg-surface-container rounded-lg overflow-hidden border-t border-primary/30 shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
-          <div class="relative h-64 overflow-hidden">${imgHtml}</div>
-          <div class="p-6 flex flex-col gap-3 relative leather-grain h-full">
-            <div class="flex justify-between items-start gap-4">
-              <h3 class="font-headline-md text-[22px] text-on-surface leading-tight">${esc(d.name)}</h3>
-              <span class="font-headline-md text-[18px] text-primary whitespace-nowrap">${Number(d.price).toLocaleString()} ج.م</span>
+        <div class="group bg-surface-container rounded-lg overflow-hidden border-t border-primary/30 shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative h-64 overflow-hidden">${imgHtml}</div>
+            <div class="p-6 flex flex-col gap-3 relative leather-grain">
+              <div class="flex justify-between items-start gap-4">
+                <h3 class="font-headline-md text-[22px] text-on-surface leading-tight">${esc(d.name)}</h3>
+                <span class="font-headline-md text-[18px] text-primary whitespace-nowrap">${Number(d.price).toLocaleString()} ج.م</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant">${esc(d.description||'')}</p>
+              ${sizesHtml}
             </div>
-            <p class="font-body-md text-body-md text-on-surface-variant flex-grow">${esc(d.description||'')}</p>
-            ${sizesHtml}
+          </div>
+          <div class="px-6 pb-6 pt-2">
+            <button onclick="openOrderModalById(${d.id})" class="w-full border border-primary/50 text-primary py-2.5 font-label-caps text-label-caps rounded-sm hover:bg-primary/10 transition-colors uppercase flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-[16px]">shopping_cart</span> اطلب الآن
+            </button>
           </div>
         </div>`;
     }).join('');
@@ -647,6 +714,227 @@ function renderMenu() {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${dishCards}</div>
       </section>`;
   }).join('');
+}
+
+// ─── ORDER MODAL SYSTEM ────────────────────────────────────────────────────
+let selectedDish = null;
+
+function openOrderModalById(id) {
+  const dishes = getList('ew_dishes');
+  selectedDish = dishes.find(d => d.id == id);
+  if (!selectedDish) return;
+
+  document.getElementById('modal-dish-id').value = selectedDish.id;
+  document.getElementById('modal-dish-name').textContent = selectedDish.name;
+  document.getElementById('order-qty').value = 1;
+  document.getElementById('order-notes').value = '';
+
+  // Load Tables Options
+  const tables = getList('ew_tables');
+  const tableSelect = document.getElementById('order-table');
+  tableSelect.innerHTML = '<option value="">توصيل خارجي / دليفري</option>' + 
+    tables.map(t => `<option value="${t.id}">${esc(t.table_number)}</option>`).join('');
+
+  updateModalTotal();
+
+  const modal = document.getElementById('order-modal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
+
+function closeOrderModal() {
+  const modal = document.getElementById('order-modal');
+  modal.classList.remove('flex');
+  modal.classList.add('hidden');
+}
+
+function updateModalTotal() {
+  if (!selectedDish) return;
+  const qty = parseInt(document.getElementById('order-qty').value) || 1;
+  const total = selectedDish.price * qty;
+  document.getElementById('modal-total-price').textContent = `${total.toLocaleString()} ج.م`;
+}
+
+document.getElementById('order-qty').addEventListener('input', updateModalTotal);
+document.getElementById('order-qty').addEventListener('change', updateModalTotal);
+
+// Submit Order Form
+document.getElementById('client-order-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  if (!selectedDish) return;
+
+  const name = document.getElementById('order-name').value.trim();
+  const phone = document.getElementById('order-phone').value.trim();
+  const tableId = document.getElementById('order-table').value;
+  const qty = parseInt(document.getElementById('order-qty').value) || 1;
+  const notes = document.getElementById('order-notes').value.trim();
+
+  let tableObj = null;
+  if (tableId) {
+    const tables = getList('ew_tables');
+    const matched = tables.find(t => t.id == tableId);
+    if (matched) {
+      tableObj = { id: matched.id, table_number: matched.table_number };
+    }
+  }
+
+  // Create Order Object
+  const newOrder = {
+    id: Date.now(),
+    order_number: `ORD-${new Date().toISOString().slice(0,10).replace(/-/g,'')}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`,
+    customer_name: name,
+    customer_phone: phone,
+    table: tableObj,
+    status: 'pending',
+    total_amount: selectedDish.price * qty,
+    created_at: new Date().toISOString(),
+    notes: notes,
+    items: [
+      {
+        dish_id: selectedDish.id,
+        dish_name: selectedDish.name,
+        quantity: qty,
+        price: selectedDish.price,
+        subtotal: selectedDish.price * qty
+      }
+    ]
+  };
+
+  // Save to localStorage list of orders
+  const orders = getList('ew_orders');
+  orders.unshift(newOrder);
+  setList('ew_orders', orders);
+
+  closeOrderModal();
+  
+  // Show customized Toast message
+  const toastContainer = document.getElementById('toast');
+  if (toastContainer) {
+    const t = document.createElement('div');
+    t.className = 'toast-item toast-success';
+    t.innerHTML = `<span class="icon" style="font-size:18px;">check_circle</span>تم تسجيل طلبك بنجاح وسيصلك فوراً! رقم الطلب: ${newOrder.order_number}`;
+    toastContainer.appendChild(t);
+    setTimeout(() => t.remove(), 4000);
+  }
+});
+
+// ─── 3D BURGER SCROLLYTELLING CANVAS ENGINE ───────────────────────────────
+const frameCount = 300;
+const images = [];
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas?.getContext('2d');
+
+// Path to image frames: ezgif-5debe75207d55653-jpg/ezgif-frame-001.jpg
+const currentFrame = index => (
+  `./ezgif-5debe75207d55653-jpg/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
+);
+
+// Preload images
+function preloadImages() {
+  for (let i = 1; i <= frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    images.push(img);
+  }
+}
+
+function resizeCanvas() {
+  if (!canvas) return;
+  const parent = canvas.parentElement;
+  canvas.width = parent.clientWidth || 450;
+  canvas.height = parent.clientHeight || 450;
+  renderFrame(currentFrameIndex());
+}
+
+function currentFrameIndex() {
+  const scrollFraction = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  const index = Math.min(
+    frameCount - 1,
+    Math.floor(scrollFraction * frameCount)
+  );
+  return Math.max(0, index);
+}
+
+function renderFrame(index) {
+  if (!ctx || !canvas || !images[index]) return;
+  const img = images[index];
+  
+  // Draw when loaded
+  if (img.complete) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Contain/cover logic
+    const imgRatio = img.width / img.height;
+    const canvasRatio = canvas.width / canvas.height;
+    let drawWidth, drawHeight, drawX, drawY;
+
+    if (imgRatio > canvasRatio) {
+      drawWidth = canvas.width;
+      drawHeight = canvas.width / imgRatio;
+      drawX = 0;
+      drawY = (canvas.height - drawHeight) / 2;
+    } else {
+      drawHeight = canvas.height;
+      drawWidth = canvas.height * imgRatio;
+      drawX = (canvas.width - drawWidth) / 2;
+      drawY = 0;
+    }
+
+    ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+  } else {
+    img.onload = () => renderFrame(index);
+  }
+}
+
+// Attach listeners
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(() => renderFrame(currentFrameIndex()));
+});
+
+// Drag to rotate logic
+let isDragging = false;
+let startX = 0;
+let currentFrameOffset = 0;
+
+if (canvas) {
+  canvas.addEventListener('mousedown', e => {
+    isDragging = true;
+    startX = e.clientX;
+    currentFrameOffset = currentFrameIndex();
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    const frameShift = Math.floor(deltaX / 3); // adjust sensitivity
+    let targetIndex = (currentFrameOffset + frameShift) % frameCount;
+    if (targetIndex < 0) targetIndex += frameCount;
+    requestAnimationFrame(() => renderFrame(targetIndex));
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  // Touch support
+  canvas.addEventListener('touchstart', e => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    currentFrameOffset = currentFrameIndex();
+  });
+
+  window.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    const deltaX = e.touches[0].clientX - startX;
+    const frameShift = Math.floor(deltaX / 3);
+    let targetIndex = (currentFrameOffset + frameShift) % frameCount;
+    if (targetIndex < 0) targetIndex += frameCount;
+    requestAnimationFrame(() => renderFrame(targetIndex));
+  });
+
+  window.addEventListener('touchend', () => {
+    isDragging = false;
+  });
 }
 
 // ─── LOAD SOCIAL LINKS INTO CONTACT SECTION ────────────────────────────────
@@ -696,8 +984,14 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(target);
 
   // INIT
+  preloadImages();
   renderMenu();
   loadContactInfo();
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+  
+  // Draw first frame
+  setTimeout(() => renderFrame(0), 100);
 });
 </script>
 </body></html>
