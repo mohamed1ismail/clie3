@@ -117,3 +117,79 @@
 [2026-08-07T22:24:40.373Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Generating summary for commit 46496a45
 [2026-08-07T22:24:40.373Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Context: transcript=0, files=301, lines=331+37
 [2026-08-07T22:24:40.373Z] WARN  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] First API attempt failed: No LLM provider available. Set an Anthropic API key (ANTHROPIC_API_KEY) or configure a Jolli Space API key (jolliApiKey).. Retrying in 2000ms...
+[2026-08-07T22:39:29.202Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook started (source: message) ===
+[2026-08-07T22:39:29.281Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook finished ===
+[2026-08-07T22:39:29.607Z] INFO  [PostCommitHook] [trace=0c67f442300abd7aad7d2c7ae4e7c0f1] Detected operation: commit
+[2026-08-07T22:39:29.662Z] INFO  [PostCommitHook] [trace=0c67f442300abd7aad7d2c7ae4e7c0f1] Enqueued: type=commit hash=90d9be3f
+[2026-08-07T22:39:29.662Z] INFO  [QueueWorker] [trace=0c67f442300abd7aad7d2c7ae4e7c0f1] Launching background worker
+[2026-08-07T22:39:29.666Z] INFO  [QueueWorker] [trace=0c67f442300abd7aad7d2c7ae4e7c0f1] Background worker spawned (PID: 32836)
+[2026-08-07T22:39:29.787Z] INFO  [QueueWorker] [trace=0c67f442300abd7aad7d2c7ae4e7c0f1] === Queue worker started === node=24.18.0 kind=vscode-plugin source=antigravity-ide pkgVer=0.99.10 cliVer=0.99.10 dist=c:\Users\narut\.antigravity-ide\extensions\jolli.jollimemory-vscode-0.99.10-universal\dist
+[2026-08-07T22:39:29.791Z] WARN  [LockPrimitives] [trace=0c67f442300abd7aad7d2c7ae4e7c0f1] Removing orphaned lock C:\Users\narut\.jolli\jollimemory\locks\vault-b0d8e0f4dd4d7c36ac8e54006cb985b1f6a38ecf7d0e6a003e30948555446330.lock (PID 4384 no longer running)
+[2026-08-07T22:39:29.794Z] INFO  [StorageFactory] [trace=0c67f442300abd7aad7d2c7ae4e7c0f1] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T22:39:29.864Z] INFO  [StorageFactory] [trace=0c67f442300abd7aad7d2c7ae4e7c0f1] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:39:29.865Z] WARN  [LockPrimitives] [trace=0c67f442300abd7aad7d2c7ae4e7c0f1] Removing orphaned lock D:\stitch_\.jolli\jollimemory\worker.lock (PID 4384 no longer running)
+[2026-08-07T22:39:29.871Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Processing queue entry: type=commit hash=46496a45
+[2026-08-07T22:39:29.899Z] INFO  [GitOps] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Commit 46496a45: Add 3D burger scrollytelling frames and link direct ordering
+[2026-08-07T22:39:29.899Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Commit: 46496a45 - Add 3D burger scrollytelling frames and link direct ordering system to admin (26ms)
+[2026-08-07T22:39:29.955Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] No active sessions found — will infer topics from diff if available
+[2026-08-07T22:39:30.101Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Git diff: 301 files changed, +331 -37 (145ms)
+[2026-08-07T22:39:30.272Z] WARN  [GitOps] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Diff exceeds 60000-char budget (98326 chars) — prepending --stat file list and truncating body
+[2026-08-07T22:39:30.284Z] INFO  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Prompt blocks: plans=0 notes=0 references=0 (+0 track-only archived, not prompted) (AI soft-excluded 0)
+[2026-08-07T22:39:30.285Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Generating summary for commit 46496a45
+[2026-08-07T22:39:30.285Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Context: transcript=0, files=301, lines=331+37
+[2026-08-07T22:39:30.285Z] WARN  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] First API attempt failed: No LLM provider available. Set an Anthropic API key (ANTHROPIC_API_KEY) or configure a Jolli Space API key (jolliApiKey).. Retrying in 2000ms...
+[2026-08-07T22:39:31.205Z] INFO  [PrePushHook] [trace=cc7e2d867acf44525b582a47d4e91ec8] pre-push hook: remote=origin budget=3000ms
+[2026-08-07T22:39:31.276Z] INFO  [PushPendingStore] [trace=cc7e2d867acf44525b582a47d4e91ec8] Enqueued 1 new push-pending entries (branch=main)
+[2026-08-07T22:39:31.279Z] INFO  [PrePushHook] [trace=cc7e2d867acf44525b582a47d4e91ec8] pre-push: recorded 1 commit(s) across 1 pushed ref(s)
+[2026-08-07T22:39:31.309Z] INFO  [PrePushHook] [trace=cc7e2d867acf44525b582a47d4e91ec8] Recorded 1 commit(s) for later sync — not signed in to Jolli
+[2026-08-07T22:39:31.311Z] INFO  [StorageFactory] [trace=cc7e2d867acf44525b582a47d4e91ec8] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-07T22:39:31.386Z] INFO  [StorageFactory] [trace=cc7e2d867acf44525b582a47d4e91ec8] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:39:32.287Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Generating summary for commit 46496a45
+[2026-08-07T22:39:32.287Z] INFO  [Summarizer] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Context: transcript=0, files=301, lines=331+37
+[2026-08-07T22:39:32.287Z] ERROR [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] API call failed after retry: No LLM provider available. Set an Anthropic API key (ANTHROPIC_API_KEY) or configure a Jolli Space API key (jolliApiKey).
+[2026-08-07T22:39:32.287Z] WARN  [QueueWorker] [trace=fa8e2cee4108aaa9e9b80bcb5f897fd5] Saving summary with empty topics + llm-failed marker for commit 46496a45
+[2026-08-07T22:42:24.831Z] INFO  [activate] Activating JolliMemory extension {"workspaceRoot":"d:\\stitch_","extensionPath":"c:\\Users\\narut\\.antigravity-ide\\extensions\\jolli.jollimemory-vscode-0.99.10-universal"}
+[2026-08-07T22:42:25.043Z] INFO  [initialLoad] Loading all panels
+[2026-08-07T22:42:25.276Z] INFO  [plans] detectPlans found 0 plans (0 in registry)
+[2026-08-07T22:42:25.277Z] INFO  [notes] detectNotes found 0 notes (0 in registry)
+[2026-08-07T22:42:25.277Z] INFO  [references] detectReferences(*) found 0 (0 in registry)
+[2026-08-07T22:42:25.277Z] INFO  [skills] detectSkills found 0 active (0 in registry)
+[2026-08-07T22:42:25.822Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T22:42:26.041Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:42:26.050Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T22:42:26.052Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T22:42:26.285Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T22:42:26.455Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:42:40.712Z] INFO  [activate] Activating JolliMemory extension {"workspaceRoot":"d:\\stitch_","extensionPath":"c:\\Users\\narut\\.antigravity-ide\\extensions\\jolli.jollimemory-vscode-0.99.10-universal"}
+[2026-08-07T22:42:41.089Z] INFO  [initialLoad] Loading all panels
+[2026-08-07T22:42:41.461Z] INFO  [plans] detectPlans found 0 plans (0 in registry)
+[2026-08-07T22:42:41.461Z] INFO  [notes] detectNotes found 0 notes (0 in registry)
+[2026-08-07T22:42:41.461Z] INFO  [references] detectReferences(*) found 0 (0 in registry)
+[2026-08-07T22:42:41.461Z] INFO  [skills] detectSkills found 0 active (0 in registry)
+[2026-08-07T22:42:41.461Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T22:42:41.692Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:42:41.701Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T22:42:41.703Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T22:42:42.516Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T22:42:42.700Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:42:42.845Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T22:42:43.030Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:42:43.120Z] INFO  [bridge] Merged mode activated {"branch":"main","creationPoint":"9260295d","author":"mohamed1ismail"}
+[2026-08-07T22:42:43.203Z] INFO  [SchemaV5Migration] Storage backend not initialized yet — skipping schema v5 migration (no data to migrate)
+[2026-08-07T22:42:43.203Z] INFO  [activate] Schema v5 migration: alreadyDone=false fresh=true migrated=0 skipped=0
+[2026-08-07T22:42:43.565Z] WARN  [ReadStorageResolver] createReadStorage: folder lacks index.json — falling back to orphan branch (migration incomplete, or folder wiped)
+[2026-08-07T22:42:44.088Z] INFO  [PrePushWorker] [trace=6a21ccd85758941224fe9517206cdefe] PrePushWorker(vscode-activation): spawned compensation drain starting
+[2026-08-07T22:42:44.103Z] INFO  [PushExecutor] [trace=6a21ccd85758941224fe9517206cdefe] processPushPending(activation): 5 pending entr(ies)
+[2026-08-07T22:42:44.223Z] INFO  [PushExecutor] [trace=6a21ccd85758941224fe9517206cdefe] processPushPending(activation): not signed in — keeping 5 entries for later
+[2026-08-07T22:42:44.223Z] INFO  [PrePushWorker] [trace=6a21ccd85758941224fe9517206cdefe] PrePushWorker(vscode-activation): drain done — attempted=0 pushed=0 failed=0 (not signed in)
+[2026-08-07T22:42:44.501Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T22:42:44.517Z] INFO  [initialLoad] All panels loaded — updating status bar
+[2026-08-07T22:42:44.517Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T22:42:44.544Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T22:42:44.545Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T22:42:45.103Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T22:42:45.290Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-07T22:42:45.311Z] INFO  [Installer] Checking Jolli Memory status
+[2026-08-07T22:42:45.319Z] INFO  [StorageFactory] StorageFactory.create: storageMode=dual-write, projectPath=d:\stitch_
+[2026-08-07T22:42:45.481Z] INFO  [StorageFactory] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-07T22:42:47.532Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=0, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
