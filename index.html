@@ -78,46 +78,7 @@ html{scroll-behavior:smooth;}
     <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%);"></div>
     <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);"></div>
 
-    <!-- Content: left-aligned like the banner -->
-    <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-16 pb-16 md:pb-0 flex flex-col items-start gap-4">
-
-      <!-- Brand Name — matches reference banner exactly -->
-      <div class="flex flex-col items-start gap-2">
-        <h1 class="font-serif tracking-[0.08em] text-5xl sm:text-7xl md:text-8xl font-light text-white uppercase flex items-baseline gap-3 flex-wrap leading-none">
-          EAST <span style="color:#D4AF37; font-size:0.55em; font-weight:400; letter-spacing:0.2em; line-height:1;">AND</span> WEST
-        </h1>
-
-        <!-- Gold divider line with diamond -->
-        <div class="flex items-center gap-3 w-56 sm:w-80 my-1">
-          <div class="h-px flex-1" style="background: linear-gradient(to right, #D4AF37, rgba(212,175,55,0.2));"></div>
-          <div class="w-2 h-2 rotate-45 border flex-shrink-0" style="border-color:#D4AF37; background:rgba(212,175,55,0.3);"></div>
-        </div>
-
-        <p data-i18n="hero_tagline" class="font-serif font-light uppercase tracking-[0.35em] text-sm sm:text-base" style="color:rgba(212,175,55,0.85); letter-spacing:0.3em;">
-          FLAVORS FROM EAST TO WEST
-        </p>
-      </div>
-
-      <!-- CTA Buttons -->
-      <div class="flex items-center gap-4 flex-wrap mt-3">
-        <a href="#menu" data-i18n="btn_explore"
-           class="font-bold px-8 py-3 rounded text-sm text-black transition-all"
-           style="background:#D4AF37; box-shadow: 0 0 24px rgba(212,175,55,0.4);">
-          استعرض القائمة
-        </a>
-        <button onclick="openOrderModalById(1)" data-i18n="btn_order"
-                class="font-bold px-8 py-3 rounded text-sm transition-all"
-                style="border:1px solid rgba(212,175,55,0.6); color:#D4AF37; background:rgba(212,175,55,0.08);">
-          اطلب الآن
-        </button>
-      </div>
-    </div>
-
-    <!-- Scroll hint -->
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce" style="color:rgba(255,255,255,0.4);">
-      <span class="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
-      <span data-i18n="scroll_down" class="text-[10px] tracking-widest uppercase">مرر لأسفل</span>
-    </div>
+    <!-- Hero remains as a pure background image with no text overlay -->
   </section>
 </div>
 
