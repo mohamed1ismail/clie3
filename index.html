@@ -171,6 +171,132 @@ body{
   overflow-x:hidden;
 }
 
+html.is-mobile-view .hero-shell{
+  height:calc(100dvh - 56px);
+  min-height:calc(100dvh - 56px);
+}
+
+html.is-mobile-view .hero-copy{
+  display:none !important;
+}
+
+html.is-mobile-view .mobile-hero-copy{
+  display:flex !important;
+  padding-inline:8px;
+  overflow:hidden;
+}
+
+html.is-mobile-view .mobile-hero-copy .brand-text{
+  width:100%;
+  max-width:calc(100vw - 16px);
+  justify-content:center;
+  letter-spacing:-0.045em;
+}
+
+html.is-mobile-view .mobile-hero-copy .brand-text .west,
+html.is-mobile-view .mobile-hero-copy .brand-text .east{
+  font-size:clamp(2.35rem, 14vw, 4.6rem);
+}
+
+html.is-mobile-view .mobile-hero-copy .brand-text .and{
+  font-size:clamp(0.9rem, 4.4vw, 1.45rem);
+  margin-inline:0.22em;
+}
+
+html.is-mobile-view #menu-canvas-wrap{
+  display:none !important;
+}
+
+html.is-mobile-view #menu{
+  background-image:linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.52)), url('hero sechan.jpeg');
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  min-height:100vh;
+}
+
+html.is-mobile-view header > div{
+  padding-inline:6px !important;
+  gap:4px !important;
+}
+
+html.is-mobile-view header a[href="#hero"]{
+  width:28px;
+  min-width:28px;
+  gap:0 !important;
+}
+
+html.is-mobile-view header a[href="#hero"] img{
+  width:28px !important;
+  height:28px !important;
+}
+
+html.is-mobile-view header a[href="#hero"] span{
+  display:none !important;
+}
+
+html.is-mobile-view header nav.hidden{
+  display:none !important;
+}
+
+html.is-mobile-view header > div > div:last-child{
+  flex:1 1 auto !important;
+  min-width:0;
+  justify-content:flex-end;
+  gap:4px !important;
+}
+
+html.is-mobile-view header .md\:hidden{
+  display:flex !important;
+  min-width:0;
+  flex:1 1 auto;
+  justify-content:center;
+  gap:2px !important;
+}
+
+html.is-mobile-view header .md\:hidden a{
+  padding:4px 3px !important;
+  font-size:11px !important;
+  line-height:1;
+  white-space:nowrap;
+}
+
+html.is-mobile-view #lang-toggle-btn{
+  padding:4px 6px !important;
+  font-size:11px !important;
+  line-height:1;
+  max-width:74px;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+html.is-mobile-view header button[data-i18n="btn_order"]{
+  padding:6px 8px !important;
+  font-size:11px !important;
+  line-height:1;
+}
+
+html.is-mobile-view header a[href="admin.html"]{
+  width:26px !important;
+  height:26px !important;
+  min-width:26px;
+}
+
+@media (max-width: 374px){
+  html.is-mobile-view header a[href="admin.html"]{
+    display:none !important;
+  }
+
+  html.is-mobile-view #lang-toggle-btn{
+    max-width:68px;
+    padding-inline:5px !important;
+  }
+
+  html.is-mobile-view header button[data-i18n="btn_order"]{
+    padding-inline:7px !important;
+  }
+}
+
 @media (max-width: 900px){
   .hero-shell{
     height:calc(100dvh - 56px);
@@ -292,6 +418,15 @@ body{
   }
 }
 </style>
+<script>
+(function(){
+  var isMobile = /Android|iPhone|iPad|iPod|Mobile|Silk|Opera Mini|IEMobile/i.test(navigator.userAgent);
+  var screenWidth = Math.min(screen.width || 9999, window.innerWidth || 9999);
+  if (isMobile || screenWidth <= 900) {
+    document.documentElement.classList.add('is-mobile-view');
+  }
+})();
+</script>
 </head>
 <body class="bg-background font-sans text-on-background antialiased">
 
