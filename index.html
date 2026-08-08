@@ -25,10 +25,10 @@ html{scroll-behavior:smooth;}
 <header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">
   <div class="h-14 max-w-[1200px] mx-auto px-3 md:px-margin-desktop flex items-center justify-between gap-2">
 
-    <!-- Logo: icon always + name only on md+ (Always East & West in English) -->
-    <a href="#hero" class="flex items-center gap-2 flex-shrink-0">
-      <img alt="East & West" class="w-8 h-8 rounded-full object-cover border border-primary/50 flex-shrink-0" src="logo.jpeg"/>
-      <span class="hidden sm:block font-display font-bold text-base text-primary tracking-wide whitespace-nowrap">East &amp; West</span>
+    <!-- Logo: icon always + name only on md+ (EAST AND WEST in luxury serif) -->
+    <a href="#hero" class="flex items-center gap-2.5 flex-shrink-0">
+      <img alt="EAST AND WEST Logo" class="w-8 h-8 rounded-full object-cover border border-primary/50 flex-shrink-0 shadow-sm" src="logo.jpeg"/>
+      <span class="hidden sm:block font-serif tracking-[0.15em] text-sm text-on-surface font-light uppercase whitespace-nowrap">EAST <span class="text-primary text-xs font-normal">AND</span> WEST</span>
     </a>
 
     <!-- Nav links: hidden on mobile, shown on md+ -->
@@ -69,30 +69,39 @@ html{scroll-behavior:smooth;}
     <!-- Background glow -->
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(212,175,55,0.1),transparent)] pointer-events-none"></div>
 
-    <div class="relative z-10 flex flex-col items-center gap-6 text-center px-6">
+    <div class="relative z-10 flex flex-col items-center gap-5 text-center px-6">
       <!-- Logo image big -->
-      <div class="relative max-w-[280px] md:max-w-[360px] w-full">
+      <div class="relative max-w-[260px] md:max-w-[340px] w-full">
         <div class="absolute inset-0 rounded-2xl bg-primary/20 blur-3xl scale-125 animate-pulse"></div>
         <img
           src="logo.jpeg"
-          alt="East & West Logo"
+          alt="EAST AND WEST Logo"
           class="relative w-full h-auto rounded-2xl object-cover border-2 border-primary/60 shadow-[0_0_50px_rgba(212,175,55,0.35)]"
         />
       </div>
 
-      <!-- Brand Name (ALWAYS East & West in English) -->
+      <!-- Brand Name (Exact typography matching reference image) -->
       <div class="flex flex-col items-center gap-2">
         <span data-i18n="hero_subtitle" class="text-xs font-bold text-primary/70 tracking-[0.4em] uppercase">مطعم فاخر</span>
-        <h1 class="font-display font-extrabold text-5xl md:text-7xl text-on-surface tracking-wide leading-none">
-          East <span class="text-primary">&amp;</span> West
+        
+        <h1 class="font-serif tracking-[0.15em] text-4xl sm:text-6xl md:text-7xl font-light text-on-surface uppercase flex items-center justify-center gap-2 flex-wrap leading-none">
+          EAST <span class="text-primary text-xl sm:text-3xl md:text-4xl font-normal font-serif">AND</span> WEST
         </h1>
+
+        <!-- Gold Diamond Divider Line matching image -->
+        <div class="flex items-center gap-3 w-48 sm:w-64 my-1">
+          <div class="h-px flex-1 bg-gradient-to-r from-transparent via-primary/60 to-primary"></div>
+          <div class="w-2 h-2 rotate-45 border border-primary bg-primary/30 flex-shrink-0"></div>
+          <div class="h-px flex-1 bg-gradient-to-l from-transparent via-primary/60 to-primary"></div>
+        </div>
+
         <p data-i18n="hero_tagline" class="text-on-surface-variant text-base md:text-lg max-w-md leading-relaxed">
           رحلة طهي فاخرة تجمع بين عراقة الشرق وحداثة الغرب
         </p>
       </div>
 
       <!-- CTA Buttons -->
-      <div class="flex items-center gap-4 flex-wrap justify-center">
+      <div class="flex items-center gap-4 flex-wrap justify-center mt-1">
         <a href="#menu" data-i18n="btn_explore" class="bg-primary text-black font-bold px-8 py-3 rounded-lg hover:bg-primary-fixed transition-all shadow-[0_0_20px_rgba(242,202,80,0.3)] text-sm">
           استعرض القائمة
         </a>
@@ -228,8 +237,8 @@ html{scroll-behavior:smooth;}
   <div class="max-w-[1200px] mx-auto px-margin-desktop flex flex-col items-center gap-12">
     <div class="flex flex-col items-center gap-4">
       <a href="#hero" class="flex items-center gap-3">
-        <img alt="East & West Logo" class="w-10 h-10 rounded-full object-cover border border-primary/50" src="logo.jpeg"/>
-        <span class="font-headline-md text-headline-md text-primary">East &amp; West</span>
+        <img alt="EAST AND WEST Logo" class="w-10 h-10 rounded-full object-cover border border-primary/50" src="logo.jpeg"/>
+        <span class="font-serif tracking-[0.15em] text-2xl text-on-surface uppercase font-light">EAST <span class="text-primary text-base font-normal">AND</span> WEST</span>
       </a>
       <p data-i18n="footer_tagline" class="font-body-md text-body-md text-on-surface-variant max-w-md text-center">رحلة طهي فاخرة تجمع بين عراقة الشرق وحداثة الغرب في أجواء مفعمة بالفخامة.</p>
     </div>
@@ -239,7 +248,7 @@ html{scroll-behavior:smooth;}
       <a data-i18n="nav_dashboard" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="admin.html">لوحة التحكم</a>
     </nav>
     <div class="w-24 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-    <div data-i18n="footer_rights" class="text-label-caps font-label-caps text-on-surface-variant/60 uppercase tracking-widest text-center">جميع الحقوق محفوظة © 2026 East &amp; West</div>
+    <div data-i18n="footer_rights" class="text-label-caps font-label-caps text-on-surface-variant/60 uppercase tracking-widest text-center">جميع الحقوق محفوظة © 2026 EAST AND WEST</div>
   </div>
 </footer>
 
@@ -250,7 +259,7 @@ const getObj  = (k) => JSON.parse(localStorage.getItem(k) || '{}');
 const setList = (k, v) => localStorage.setItem(k, JSON.stringify(v));
 const esc = (s) => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
-// ─── BILINGUAL I18N DICTIONARY (Brand name East & West is ALWAYS English) ────
+// ─── BILINGUAL I18N DICTIONARY (Brand name is ALWAYS EAST AND WEST) ───────────
 const i18n = {
   ar: {
     nav_home: "الرئيسية",
@@ -276,7 +285,7 @@ const i18n = {
     modal_total: "السعر الإجمالي",
     modal_confirm: "تأكيد الطلب",
     footer_tagline: "رحلة طهي فاخرة تجمع بين عراقة الشرق وحداثة الغرب في أجواء مفعمة بالفخامة.",
-    footer_rights: "جميع الحقوق محفوظة © 2026 East & West",
+    footer_rights: "جميع الحقوق محفوظة © 2026 EAST AND WEST",
     table_banner_success: "تم تحديد طاولتك بنجاح — طلبك سيصل لطاولتك مباشرة",
     no_dishes_found: "لا توجد وجبات تطابق البحث",
     all_cat: "🍽️ الكل",
@@ -306,7 +315,7 @@ const i18n = {
     modal_total: "Total Amount",
     modal_confirm: "Confirm Order",
     footer_tagline: "A luxury culinary journey combining East heritage and West modernity in an elegant ambiance.",
-    footer_rights: "All Rights Reserved © 2026 East & West",
+    footer_rights: "All Rights Reserved © 2026 EAST AND WEST",
     table_banner_success: "Table selected successfully — Your order will arrive directly to your table",
     no_dishes_found: "No dishes match your search",
     all_cat: "🍽️ All",

@@ -1176,3 +1176,40 @@
 [2026-08-08T17:46:35.415Z] INFO  [PushExecutor] [trace=2c2bc870f994922177d9e9cb7f58dd5f] processPushPending(activation): not signed in — keeping 18 entries for later
 [2026-08-08T17:46:35.415Z] INFO  [PrePushWorker] [trace=2c2bc870f994922177d9e9cb7f58dd5f] PrePushWorker(vscode-activation): drain done — attempted=0 pushed=0 failed=0 (not signed in)
 [2026-08-08T17:46:35.621Z] INFO  [Installer] Status: enabled=true, claude=true, git=true, geminiHook=true, worktreeHooks=true, sessions=0, summaries=18, codex=true/true, gemini=true/true, enabledWorktrees=1, opencode=true/true, cursor=true/true, copilot=false/true, copilotChat=true, cline=false/undefined
+[2026-08-08T17:49:54.695Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook started (source: message) ===
+[2026-08-08T17:49:54.826Z] INFO  [PrepareMsgHook] === Prepare-commit-msg hook finished ===
+[2026-08-08T17:49:57.012Z] INFO  [PostCommitHook] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Detected operation: commit
+[2026-08-08T17:49:57.080Z] INFO  [PostCommitHook] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Enqueued: type=commit hash=74e45c50
+[2026-08-08T17:49:57.080Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Launching background worker
+[2026-08-08T17:49:57.085Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Background worker spawned (PID: 5632)
+[2026-08-08T17:49:58.589Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] === Queue worker started === node=24.18.0 kind=vscode-plugin source=antigravity-ide pkgVer=0.99.10 cliVer=0.99.10 dist=c:\Users\narut\.antigravity-ide\extensions\jolli.jollimemory-vscode-0.99.10-universal\dist
+[2026-08-08T17:49:58.594Z] INFO  [StorageFactory] [trace=72c0d2a8156c8bfe39399ee76152ab0e] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-08T17:49:58.753Z] INFO  [StorageFactory] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-08T17:49:58.757Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Processing queue entry: type=commit hash=74e45c50
+[2026-08-08T17:49:58.820Z] INFO  [GitOps] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Commit 74e45c50: Update logo image to logo.jpeg and add bilingual Arabic/Engl
+[2026-08-08T17:49:58.820Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Commit: 74e45c50 - Update logo image to logo.jpeg and add bilingual Arabic/English support with strict English brand name East & West (53ms)
+[2026-08-08T17:49:58.974Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] No active sessions found — will infer topics from diff if available
+[2026-08-08T17:49:59.257Z] WARN  [GitOps] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Diff exceeds 150000-char budget (161374 chars) — prepending --stat file list and truncating body
+[2026-08-08T17:49:59.388Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Git diff: 47 files changed, +915 -246 (412ms)
+[2026-08-08T17:49:59.724Z] WARN  [GitOps] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Diff exceeds 60000-char budget (161374 chars) — prepending --stat file list and truncating body
+[2026-08-08T17:49:59.738Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Prompt blocks: plans=0 notes=0 references=0 (+0 track-only archived, not prompted) (AI soft-excluded 0)
+[2026-08-08T17:49:59.739Z] INFO  [Summarizer] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Generating summary for commit 74e45c50
+[2026-08-08T17:49:59.740Z] INFO  [Summarizer] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Context: transcript=0, files=47, lines=915+246
+[2026-08-08T17:49:59.740Z] WARN  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] First API attempt failed: No LLM provider available. Set an Anthropic API key (ANTHROPIC_API_KEY) or configure a Jolli Space API key (jolliApiKey).. Retrying in 2000ms...
+[2026-08-08T17:50:00.190Z] INFO  [PrePushHook] [trace=fb48a20df9688f968edb2f33164ef642] pre-push hook: remote=origin budget=3000ms
+[2026-08-08T17:50:00.309Z] INFO  [PushPendingStore] [trace=fb48a20df9688f968edb2f33164ef642] Enqueued 1 new push-pending entries (branch=main)
+[2026-08-08T17:50:00.312Z] INFO  [PrePushHook] [trace=fb48a20df9688f968edb2f33164ef642] pre-push: recorded 1 commit(s) across 1 pushed ref(s)
+[2026-08-08T17:50:00.353Z] INFO  [PrePushHook] [trace=fb48a20df9688f968edb2f33164ef642] Recorded 1 commit(s) for later sync — not signed in to Jolli
+[2026-08-08T17:50:00.354Z] INFO  [StorageFactory] [trace=fb48a20df9688f968edb2f33164ef642] StorageFactory.create: storageMode=dual-write, projectPath=D:\stitch_
+[2026-08-08T17:50:00.524Z] INFO  [StorageFactory] [trace=fb48a20df9688f968edb2f33164ef642] Storage mode: dual-write (primary=orphan, shadow=folder)
+[2026-08-08T17:50:01.741Z] INFO  [Summarizer] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Generating summary for commit 74e45c50
+[2026-08-08T17:50:01.741Z] INFO  [Summarizer] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Context: transcript=0, files=47, lines=915+246
+[2026-08-08T17:50:01.741Z] ERROR [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] API call failed after retry: No LLM provider available. Set an Anthropic API key (ANTHROPIC_API_KEY) or configure a Jolli Space API key (jolliApiKey).
+[2026-08-08T17:50:01.741Z] WARN  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Saving summary with empty topics + llm-failed marker for commit 74e45c50
+[2026-08-08T17:50:01.742Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] API summary generated (2.0s)
+[2026-08-08T17:50:01.743Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Plan registry scan: found 0 uncommitted slug(s) on main: []
+[2026-08-08T17:50:01.743Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Plan association: detected 0 slug(s) from transcripts: []
+[2026-08-08T17:50:01.744Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Note registry scan: found 0 uncommitted note(s) on main: []
+[2026-08-08T17:50:01.744Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Note association: detected 0 note(s): []
+[2026-08-08T17:50:01.745Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Reference association: detected 0 ref(s) for branch main
+[2026-08-08T17:50:01.754Z] INFO  [QueueWorker] [trace=72c0d2a8156c8bfe39399ee76152ab0e] Summary built for 74e45c50: recap=no, topics=0, plans=absent, notes=absent, references=absent
