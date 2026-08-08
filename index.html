@@ -67,13 +67,12 @@ html{scroll-behavior:smooth;}
 <div id="hero" class="flex flex-col w-full">
   <section class="w-full relative h-screen flex items-end md:items-center overflow-hidden bg-black">
 
-    <!-- Full-screen background image -->
-    <img
-      src="hero sechan.jpeg"
-      alt="EAST AND WEST Restaurant"
-      class="absolute inset-0 w-full h-full object-cover object-center"
-      style="opacity:0.85;"
-    />
+    <!-- Full-screen background image behind the content -->
+    <div
+      aria-label="EAST AND WEST Restaurant"
+      class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+      style="background-image:url('hero sechan.jpeg'); opacity:0.85; background-position:center center;"
+    ></div>
 
     <!-- Dark gradient overlays for text readability -->
     <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%);"></div>
@@ -81,14 +80,6 @@ html{scroll-behavior:smooth;}
 
     <!-- Content: left-aligned like the banner -->
     <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-16 pb-16 md:pb-0 flex flex-col items-start gap-4">
-
-      <!-- Logo compass icon -->
-      <img
-        src="logo.jpeg"
-        alt="EAST AND WEST Logo"
-        class="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.5)]"
-        style="filter: drop-shadow(0 0 16px rgba(212,175,55,0.6));"
-      />
 
       <!-- Brand Name — matches reference banner exactly -->
       <div class="flex flex-col items-start gap-2">
@@ -617,13 +608,17 @@ const images = [];
 const canvas = document.getElementById('hero-canvas');
 const ctx = canvas?.getContext('2d');
 
-// Canvas follows menu section scroll
+// First frame of the active video should use the restaurant hero still, not the EW logo
 const currentFrame = index => (
-  `./ezgif-5debe75207d55653-jpg/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
+  index === 0 ? './hero sechan.jpeg' : `./ezgif-5debe75207d55653-jpg/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
 );
 
 // Preload images
 function preloadImages() {
+  const introImg = new Image();
+  introImg.src = currentFrame(0);
+  images.push(introImg);
+
   for (let i = 1; i <= frameCount; i++) {
     const img = new Image();
     img.src = currentFrame(i);
