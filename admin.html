@@ -128,7 +128,7 @@
         </div>
         <div>
           <label>Password</label>
-          <input id="login-password" type="password" class="input" placeholder="••••••••" value="password" autocomplete="current-password"/>
+          <input id="login-password" type="password" class="input" placeholder="••••••••" value="Ra22446688@@" autocomplete="current-password"/>
         </div>
         <button type="submit" class="btn-primary w-full justify-center mt-2" style="padding:12px;">
           <span class="icon" style="font-size:16px;">login</span>
@@ -1274,6 +1274,18 @@ function toast(msg, type = 'info') {
 document.getElementById('login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('button[type=submit]');
+  const password = document.getElementById('login-password').value;
+  const errorEl = document.getElementById('login-error');
+  
+  errorEl.classList.add('hidden');
+  errorEl.textContent = '';
+  
+  if (password !== 'Ra22446688@@') {
+    errorEl.textContent = 'كلمة المرور غير صحيحة! / Incorrect password!';
+    errorEl.classList.remove('hidden');
+    return;
+  }
+  
   btn.disabled = true; btn.textContent = 'Signing in…';
   
   token = 'offline_token_session';
