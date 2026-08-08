@@ -172,8 +172,8 @@ body{
 }
 
 html.is-mobile-view .hero-shell{
-  height:calc(100dvh - 56px);
-  min-height:calc(100dvh - 56px);
+  height:calc(100dvh - 86px);
+  min-height:calc(100dvh - 86px);
 }
 
 html.is-mobile-view .hero-copy{
@@ -216,8 +216,13 @@ html.is-mobile-view #menu{
 }
 
 html.is-mobile-view header > div{
+  height:auto !important;
+  min-height:86px;
   padding-inline:6px !important;
+  padding-block:6px !important;
   gap:4px !important;
+  align-content:center;
+  align-items:center;
 }
 
 html.is-mobile-view header a[href="#hero"]{
@@ -244,21 +249,29 @@ html.is-mobile-view header > div > div:last-child{
   min-width:0;
   justify-content:flex-end;
   gap:4px !important;
+  flex-wrap:wrap;
 }
 
 html.is-mobile-view header .md\:hidden{
   display:flex !important;
   min-width:0;
-  flex:1 1 auto;
+  flex:0 0 100%;
+  order:10;
   justify-content:center;
   gap:2px !important;
+  padding-top:5px;
+  margin-top:2px;
+  border-top:1px solid rgba(242,202,80,0.16);
 }
 
 html.is-mobile-view header .md\:hidden a{
-  padding:4px 3px !important;
-  font-size:11px !important;
+  flex:0 1 auto;
+  padding:5px 14px !important;
+  font-size:12px !important;
   line-height:1;
   white-space:nowrap;
+  border-radius:999px;
+  background:rgba(255,255,255,0.04);
 }
 
 html.is-mobile-view #lang-toggle-btn{
@@ -282,6 +295,10 @@ html.is-mobile-view header a[href="admin.html"]{
   min-width:26px;
 }
 
+html.is-mobile-view main{
+  padding-top:86px !important;
+}
+
 @media (max-width: 374px){
   html.is-mobile-view header a[href="admin.html"]{
     display:none !important;
@@ -299,8 +316,8 @@ html.is-mobile-view header a[href="admin.html"]{
 
 @media (max-width: 900px){
   .hero-shell{
-    height:calc(100dvh - 56px);
-    min-height:calc(100dvh - 56px);
+    height:calc(100dvh - 86px);
+    min-height:calc(100dvh - 86px);
   }
 
   .hero-copy{
@@ -345,8 +362,13 @@ html.is-mobile-view header a[href="admin.html"]{
 
 @media (max-width: 767px){
   header > div{
+    height:auto !important;
+    min-height:86px;
     padding-inline:6px !important;
+    padding-block:6px !important;
     gap:4px !important;
+    align-content:center;
+    align-items:center;
   }
 
   header a[href="#hero"]{
@@ -365,20 +387,29 @@ html.is-mobile-view header a[href="admin.html"]{
     min-width:0;
     justify-content:flex-end;
     gap:4px !important;
+    flex-wrap:wrap;
   }
 
   header .md\:hidden{
+    display:flex !important;
     min-width:0;
-    flex:1 1 auto;
+    flex:0 0 100%;
+    order:10;
     justify-content:center;
     gap:2px !important;
+    padding-top:5px;
+    margin-top:2px;
+    border-top:1px solid rgba(242,202,80,0.16);
   }
 
   header .md\:hidden a{
-    padding:4px 3px !important;
-    font-size:11px !important;
+    flex:0 1 auto;
+    padding:5px 14px !important;
+    font-size:12px !important;
     line-height:1;
     white-space:nowrap;
+    border-radius:999px;
+    background:rgba(255,255,255,0.04);
   }
 
   #lang-toggle-btn{
@@ -400,6 +431,10 @@ html.is-mobile-view header a[href="admin.html"]{
     width:26px !important;
     height:26px !important;
     min-width:26px;
+  }
+
+  main{
+    padding-top:86px !important;
   }
 }
 
