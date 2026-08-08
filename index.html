@@ -172,6 +172,18 @@ html{scroll-behavior:smooth;}
   <div class="relative z-10 flex flex-col w-full py-12" style="min-height:100vh;">
     <div class="max-w-[1000px] mx-auto px-4 w-full flex flex-col gap-6">
 
+      <!-- Table QR Detection Notification Banner -->
+      <div id="table-detected-banner" class="hidden w-full max-w-md mx-auto bg-primary/10 border border-primary/40 rounded-2xl p-3.5 items-center justify-between gap-3 text-sm text-primary shadow-lg backdrop-blur-md animate-fade-in">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-primary text-xl">qr_code_scanner</span>
+          <div>
+            <span class="font-bold block text-on-surface" id="table-banner-name">طاولة</span>
+            <span class="text-xs text-on-surface-variant/80">تم تحديد طاولتك بنجاح — طلبك سيصل لطاولتك مباشرك</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-primary/70 text-lg cursor-pointer" onclick="document.getElementById('table-detected-banner').classList.add('hidden')">close</span>
+      </div>
+
       <!-- Title & Search Bar -->
       <div class="flex flex-col items-center gap-4 text-center">
         <span class="text-xs font-bold text-primary tracking-widest uppercase">قائمتنا</span>
@@ -357,23 +369,38 @@ function openOrderModalById(id) {
   document.getElementById('order-qty').value = 1;
   document.getElementById('order-notes').value = '';
 
-  // Load Tables Options (Ensure 20 tables available)
+  // Load Tables Options from localStorage
   let tables = getList('ew_tables');
-  if (!tables || tables.length < 20) {
+  if (!tables || !tables.length) {
     tables = [];
     for (let i = 1; i <= 20; i++) {
       tables.push({id: i, table_number: `طاولة ${i}`});
     }
   }
 
-  // Check URL query parameters for ?table= or ?table_id=
+  // Detect table from URL parameter ?table= or ?table_id= with EXACT matching
   const urlParams = new URLSearchParams(window.location.search);
-  const tableParam = urlParams.get('table') || urlParams.get('table_id');
+  const tableParam = (urlParams.get('table') || urlParams.get('table_id') || '').trim();
+
+  let matchedTableId = null;
+  if (tableParam) {
+    const targetDigits = tableParam.replace(/[^0-9]/g, '');
+    const matched = tables.find(t => {
+      if (String(t.id) === tableParam) return true;
+      if (t.table_number.trim() === tableParam) return true;
+      if (targetDigits !== '') {
+        const tableDigits = String(t.table_number).replace(/[^0-9]/g, '');
+        if (tableDigits === targetDigits) return true;
+      }
+      return false;
+    });
+    if (matched) matchedTableId = matched.id;
+  }
 
   const tableSelect = document.getElementById('order-table');
   tableSelect.innerHTML = '<option value="">توصيل خارجي / دليفري</option>' + 
     tables.map(t => {
-      const isSelected = tableParam && (t.id == tableParam || t.table_number.includes(tableParam));
+      const isSelected = matchedTableId !== null && (t.id == matchedTableId);
       return `<option value="${t.id}" ${isSelected ? 'selected' : ''}>${esc(t.table_number)}</option>`;
     }).join('');
 
@@ -594,11 +621,47 @@ function loadContactInfo() {
   }
 }
 
+function checkQrTableDetection() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const tableParam = (urlParams.get('table') || urlParams.get('table_id') || '').trim();
+  if (!tableParam) return;
+
+  let tables = getList('ew_tables');
+  if (!tables || !tables.length) {
+    tables = [];
+    for (let i = 1; i <= 20; i++) {
+      tables.push({id: i, table_number: `طاولة ${i}`});
+    }
+  }
+
+  const targetDigits = tableParam.replace(/[^0-9]/g, '');
+  const matched = tables.find(t => {
+    if (String(t.id) === tableParam) return true;
+    if (t.table_number.trim() === tableParam) return true;
+    if (targetDigits !== '') {
+      const tableDigits = String(t.table_number).replace(/[^0-9]/g, '');
+      if (tableDigits === targetDigits) return true;
+    }
+    return false;
+  });
+
+  if (matched) {
+    const banner = document.getElementById('table-detected-banner');
+    const bannerName = document.getElementById('table-banner-name');
+    if (banner && bannerName) {
+      bannerName.textContent = `📍 ${matched.table_number}`;
+      banner.classList.remove('hidden');
+      banner.classList.add('flex');
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // INIT
   preloadImages();
   renderMenu();
   resizeCanvas();
+  checkQrTableDetection();
   window.addEventListener('resize', resizeCanvas);
   
   // Draw first frame
