@@ -1652,8 +1652,13 @@ async function saveDish() {
   fd.append('name_en', nameEn);
   fd.append('description_ar', descAr);
   fd.append('description_en', descEn);
-  fd.append('name', nameAr || nameEn);
-  fd.append('description', currentLang === 'ar' ? (descAr || descEn) : (descEn || descAr));
+
+  // Keep the generic fields neutral so they do not force one language into another.
+  const fallbackName = nameAr || nameEn || '';
+  const fallbackDescription = descAr || descEn || '';
+  fd.append('name', fallbackName);
+  fd.append('description', fallbackDescription);
+
   fd.append('category_id',     document.getElementById('dish-category').value);
   fd.append('price',           document.getElementById('dish-price').value);
   fd.append('calories',        document.getElementById('dish-calories').value);
