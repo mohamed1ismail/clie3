@@ -180,8 +180,8 @@ main{
 }
 
 html.is-mobile-view .hero-shell{
-  height:calc(100dvh - 86px);
-  min-height:calc(100dvh - 86px);
+  height:auto;
+  min-height:auto;
   touch-action:pan-y;
 }
 
@@ -196,11 +196,15 @@ html.is-mobile-view body{
 }
 
 html.is-mobile-view .hero-bg{
-  background-size:cover !important;
+  position:relative !important;
+  background-size:contain !important;
   background-position:center center !important;
   background-color:#050505;
   pointer-events:none;
   opacity:0.95 !important;
+  width:100% !important;
+  padding-top:41.625% !important; /* exact ratio: 666/1600 */
+  height:0 !important;
 }
 
 html.is-mobile-view .hero-copy{
@@ -208,11 +212,7 @@ html.is-mobile-view .hero-copy{
 }
 
 html.is-mobile-view .mobile-hero-copy{
-  display:flex !important;
-  flex-direction:column;
-  padding-inline:8px;
-  overflow:hidden;
-  pointer-events:none;
+  display:none !important;
 }
 
 html.is-mobile-view .mobile-hero-copy .brand-panel{
@@ -397,8 +397,8 @@ html.is-mobile-view #menu{
 
 @media (max-width: 900px){
   .hero-shell{
-    height:calc(100dvh - 86px);
-    min-height:calc(100dvh - 86px);
+    height:auto;
+    min-height:auto;
     touch-action:pan-y;
   }
 
@@ -413,11 +413,15 @@ html.is-mobile-view #menu{
   }
 
   .hero-bg{
-    background-size:cover !important;
+    position:relative !important;
+    background-size:contain !important;
     background-position:center center !important;
     background-color:#050505;
     pointer-events:none;
     opacity:0.95 !important;
+    width:100% !important;
+    padding-top:31.25% !important;
+    height:0 !important;
   }
 
   .hero-copy{
@@ -425,11 +429,7 @@ html.is-mobile-view #menu{
   }
 
   .mobile-hero-copy{
-    display:flex !important;
-    flex-direction:column;
-    padding-inline:8px;
-    overflow:hidden;
-    pointer-events:none;
+    display:none !important;
   }
 
   .mobile-hero-copy .brand-panel{
@@ -703,8 +703,8 @@ html.is-mobile-view main{
 }
 
 html.is-mobile-view .hero-shell{
-  height:calc(100dvh - 82px);
-  min-height:calc(100dvh - 82px);
+  height:auto;
+  min-height:auto;
 }
 
 @media (max-width: 767px){
@@ -804,8 +804,8 @@ html.is-mobile-view .hero-shell{
   }
 
   .hero-shell{
-    height:calc(100dvh - 82px);
-    min-height:calc(100dvh - 82px);
+    height:auto;
+    min-height:auto;
   }
 }
 </style>
@@ -898,10 +898,9 @@ html.is-mobile-view .hero-shell{
       </div>
     </div>
 
-    <!-- Dark gradient overlays for text readability -->
+    <!-- No dark overlays on mobile so full image is visible -->
     <div class="absolute inset-0 hidden md:block" style="background: linear-gradient(to right, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%);"></div>
-    <div class="absolute inset-0 md:hidden" style="background: rgba(0,0,0,0.35);"></div>
-    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%);"></div>
   </section>
 </div>
 
