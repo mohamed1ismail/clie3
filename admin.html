@@ -453,8 +453,12 @@
       <input type="hidden" id="dish-id"/>
       <div class="grid grid-cols-2 gap-4">
         <div class="col-span-2">
-          <label data-i18n="dish_name_label">اسم الطبق *</label>
-          <input id="dish-name" class="input" placeholder="مثال: دجاج مشوي"/>
+          <label data-i18n="dish_name_label">اسم الطبق عربي *</label>
+          <input id="dish-name-ar" class="input" placeholder="مثال: دجاج مشوي"/>
+        </div>
+        <div class="col-span-2">
+          <label>Dish Name English *</label>
+          <input id="dish-name-en" class="input" placeholder="Example: Grilled Chicken"/>
         </div>
         <div>
           <label data-i18n="category_label">القسم *</label>
@@ -465,8 +469,12 @@
           <input id="dish-price" type="number" class="input" placeholder="0.00" step="0.01" min="0"/>
         </div>
         <div class="col-span-2">
-          <label data-i18n="description_label">الوصف</label>
-          <textarea id="dish-desc" class="input" rows="2" placeholder="وصف الطبق..."></textarea>
+          <label data-i18n="description_label">الوصف بالعربي</label>
+          <textarea id="dish-desc-ar" class="input" rows="2" placeholder="وصف الطبق بالعربي..."></textarea>
+        </div>
+        <div class="col-span-2">
+          <label>Description English</label>
+          <textarea id="dish-desc-en" class="input" rows="2" placeholder="Dish description in English..."></textarea>
         </div>
         <div>
           <label data-i18n="calories_label">السعرات الحرارية</label>
@@ -1542,14 +1550,17 @@ async function loadDishes() {
 function renderDishes(dishes) {
   const el = document.getElementById('dishes-list');
   if (!dishes.length) { el.innerHTML = '<div class="text-center py-10 text-muted text-sm">No dishes found</div>'; return; }
-  el.innerHTML = dishes.map(d => `
+  el.innerHTML = dishes.map(d => {
+    const displayName = currentLang === 'ar' ? (d.name_ar || d.name || '') : (d.name_en || d.name || '');
+    const displayDesc = currentLang === 'ar' ? (d.description_ar || d.description || '') : (d.description_en || d.description || '');
+    return `
     <div class="table-row" style="grid-template-columns:64px 1fr 120px 80px 80px 80px 120px;">
       <div class="w-10 h-10 rounded-lg overflow-hidden bg-s3 flex-shrink-0">
         ${d.image_url ? `<img src="${d.image_url}" class="w-full h-full object-cover"/>` : `<span class="icon text-muted" style="font-size:22px;display:flex;align-items:center;justify-content:center;height:100%;">image</span>`}
       </div>
       <div>
-        <div class="text-sm font-medium text-heading">${esc(d.name)}</div>
-        ${d.description ? `<div class="text-xs text-muted truncate max-w-[200px]">${esc(d.description)}</div>` : ''}
+        <div class="text-sm font-medium text-heading">${esc(displayName)}</div>
+        ${displayDesc ? `<div class="text-xs text-muted truncate max-w-[200px]">${esc(displayDesc)}</div>` : ''}
       </div>
       <span class="text-xs text-muted">${esc(d.category_name||'—')}</span>
       <span class="text-sm font-semibold text-heading">${Number(d.price).toLocaleString()} <span class="text-xs text-muted">ج.م</span></span>
@@ -1559,19 +1570,22 @@ function renderDishes(dishes) {
         <button class="btn-ghost" style="padding:4px 8px;font-size:11px;" onclick='editDish(${JSON.stringify(d)})'>
           <span class="icon" style="font-size:14px;">edit</span>
         </button>
-        <button class="btn-danger" style="padding:4px 8px;" onclick="deleteDish(${d.id},'${esc(d.name)}')">
+        <button class="btn-danger" style="padding:4px 8px;" onclick="deleteDish(${d.id},'${esc(displayName)}')">
           <span class="icon" style="font-size:14px;">delete</span>
         </button>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
 function openDishModal(data = null) {
   document.getElementById('dish-id').value = data?.id || '';
-  document.getElementById('dish-name').value = data?.name || '';
+  document.getElementById('dish-name-ar').value = data?.name_ar || data?.name || '';
+  document.getElementById('dish-name-en').value = data?.name_en || data?.name || '';
   document.getElementById('dish-category').value = data?.category_id || '';
   document.getElementById('dish-price').value = data?.price || '';
-  document.getElementById('dish-desc').value = data?.description || '';
+  document.getElementById('dish-desc-ar').value = data?.description_ar || data?.description || '';
+  document.getElementById('dish-desc-en').value = data?.description_en || data?.description || '';
   document.getElementById('dish-calories').value = data?.calories || '';
   document.getElementById('dish-prep').value = data?.prep_time_minutes || '';
   document.getElementById('dish-available').checked = data ? data.is_available : true;
@@ -1617,10 +1631,19 @@ document.getElementById('dish-image').addEventListener('change', function() {
 async function saveDish() {
   const id = document.getElementById('dish-id').value;
   const fd = new FormData();
-  fd.append('name',            document.getElementById('dish-name').value);
+  const nameAr = document.getElementById('dish-name-ar').value.trim();
+  const nameEn = document.getElementById('dish-name-en').value.trim();
+  const descAr = document.getElementById('dish-desc-ar').value.trim();
+  const descEn = document.getElementById('dish-desc-en').value.trim();
+
+  fd.append('name_ar', nameAr);
+  fd.append('name_en', nameEn);
+  fd.append('description_ar', descAr);
+  fd.append('description_en', descEn);
+  fd.append('name', nameAr || nameEn);
+  fd.append('description', currentLang === 'ar' ? (descAr || descEn) : (descEn || descAr));
   fd.append('category_id',     document.getElementById('dish-category').value);
   fd.append('price',           document.getElementById('dish-price').value);
-  fd.append('description',     document.getElementById('dish-desc').value);
   fd.append('calories',        document.getElementById('dish-calories').value);
   fd.append('prep_time_minutes', document.getElementById('dish-prep').value);
   fd.append('is_available',    document.getElementById('dish-available').checked ? '1' : '0');

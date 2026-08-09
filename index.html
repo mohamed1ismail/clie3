@@ -1186,10 +1186,17 @@ function renderMenu() {
   let dishes = getList('ew_dishes').filter(d => d.is_available);
   const lang = currentLang;
   const dict = i18n[lang] || i18n.ar;
-  
+
+  const getDishName = (d) => lang === 'ar' ? (d.name_ar || d.name || '') : (d.name_en || d.name || '');
+  const getDishDescription = (d) => lang === 'ar' ? (d.description_ar || d.description || '') : (d.description_en || d.description || '');
+
   const query = (document.getElementById('menu-search-input')?.value || '').trim().toLowerCase();
   if (query) {
-    dishes = dishes.filter(d => d.name.toLowerCase().includes(query) || (d.description||'').toLowerCase().includes(query));
+    dishes = dishes.filter(d => {
+      const nm = getDishName(d).toLowerCase();
+      const desc = getDishDescription(d).toLowerCase();
+      return nm.includes(query) || desc.includes(query);
+    });
   }
 
   // 1. Render Category Pills Bar
@@ -1217,16 +1224,18 @@ function renderMenu() {
   }
 
   sections.innerHTML = dishes.map(d => {
+    const dishName = getDishName(d);
+    const dishDesc = getDishDescription(d);
     const imgHtml = d.image_url
-      ? `<img class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500" src="${esc(d.image_url)}" alt="${esc(d.name)}" loading="lazy"/>`
+      ? `<img class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500" src="${esc(d.image_url)}" alt="${esc(dishName)}" loading="lazy"/>`
       : `<div class="w-full h-full flex items-center justify-center text-3xl bg-surface-container-high rounded-xl">🍔</div>`;
 
     return `
       <div class="group bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 rounded-2xl p-4 flex items-center justify-between gap-4 shadow-sm hover:shadow-md transition-all duration-300">
         <!-- Content Info (Right side in RTL) -->
         <div class="flex-1 flex flex-col gap-2 min-w-0">
-          <h3 class="font-display font-bold text-lg md:text-xl text-on-surface group-hover:text-primary transition-colors truncate">${esc(d.name)}</h3>
-          <p class="text-xs md:text-sm text-on-surface-variant/80 line-clamp-2 leading-relaxed">${esc(d.description||'')}</p>
+          <h3 class="font-display font-bold text-lg md:text-xl text-on-surface group-hover:text-primary transition-colors truncate">${esc(dishName)}</h3>
+          <p class="text-xs md:text-sm text-on-surface-variant/80 line-clamp-2 leading-relaxed">${esc(dishDesc || '')}</p>
           
           <div class="flex items-center gap-4 mt-2">
             <!-- Price -->
@@ -1259,7 +1268,8 @@ function openOrderModalById(id) {
   if (!selectedDish) return;
 
   document.getElementById('modal-dish-id').value = selectedDish.id;
-  document.getElementById('modal-dish-name').textContent = selectedDish.name;
+  const dishName = currentLang === 'ar' ? (selectedDish.name_ar || selectedDish.name || '') : (selectedDish.name_en || selectedDish.name || '');
+  document.getElementById('modal-dish-name').textContent = dishName;
   document.getElementById('order-qty').value = 1;
   document.getElementById('order-notes').value = '';
 
@@ -1355,7 +1365,7 @@ document.getElementById('client-order-form').addEventListener('submit', function
     items: [
       {
         dish_id: selectedDish.id,
-        dish_name: selectedDish.name,
+        dish_name: currentLang === 'ar' ? (selectedDish.name_ar || selectedDish.name || '') : (selectedDish.name_en || selectedDish.name || ''),
         quantity: qty,
         price: selectedDish.price,
         subtotal: selectedDish.price * qty
