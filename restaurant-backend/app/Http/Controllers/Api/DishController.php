@@ -55,7 +55,15 @@ class DishController extends Controller
         $sizes = $data['sizes'] ?? null;
         unset($data['sizes']); // sizes are saved separately
 
-        $data['slug'] = $data['slug'] ?? Str::slug($data['name']);
+        if (!empty($data['name_ar']) || !empty($data['name_en'])) {
+            $data['name'] = $data['name_ar'] ?? $data['name_en'] ?? $data['name'] ?? '';
+        }
+
+        if (!empty($data['description_ar']) || !empty($data['description_en'])) {
+            $data['description'] = $data['description_ar'] ?? $data['description_en'] ?? $data['description'] ?? '';
+        }
+
+        $data['slug'] = $data['slug'] ?? Str::slug($data['name'] ?? ($data['name_ar'] ?? $data['name_en'] ?? 'dish'));
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('dishes', 'public');
@@ -85,6 +93,14 @@ class DishController extends Controller
         $syncSizes = array_key_exists('sizes', $data);
         $sizes = $data['sizes'] ?? null;
         unset($data['sizes']);
+
+        if (!empty($data['name_ar']) || !empty($data['name_en'])) {
+            $data['name'] = $data['name_ar'] ?? $data['name_en'] ?? $data['name'] ?? $dish->name;
+        }
+
+        if (!empty($data['description_ar']) || !empty($data['description_en'])) {
+            $data['description'] = $data['description_ar'] ?? $data['description_en'] ?? $data['description'] ?? $dish->description;
+        }
 
         if (isset($data['name']) && empty($data['slug'])) {
             $data['slug'] = Str::slug($data['name']);
