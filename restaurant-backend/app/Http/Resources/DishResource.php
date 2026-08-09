@@ -9,17 +9,22 @@ class DishResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
+        $nameAr = trim((string) ($this->name_ar ?? ''));
+        $nameEn = trim((string) ($this->name_en ?? ''));
+        $descAr = trim((string) ($this->description_ar ?? ''));
+        $descEn = trim((string) ($this->description_en ?? ''));
+
         return [
             'id'                => $this->id,
             'category_id'       => $this->category_id,
             'category_name'     => $this->category?->name,
             'name'              => $this->name,
-            'name_ar'           => $this->name_ar ?? $this->name,
-            'name_en'           => $this->name_en ?? $this->name,
+            'name_ar'           => $nameAr !== '' ? $nameAr : ($this->name ?? ''),
+            'name_en'           => $nameEn !== '' ? $nameEn : ($this->name ?? ''),
             'slug'              => $this->slug,
             'description'       => $this->description,
-            'description_ar'    => $this->description_ar ?? $this->description,
-            'description_en'   => $this->description_en ?? $this->description,
+            'description_ar'    => $descAr !== '' ? $descAr : ($this->description ?? ''),
+            'description_en'   => $descEn !== '' ? $descEn : ($this->description ?? ''),
             'price'             => (float) $this->price,
             'image_url'         => $this->image_url,
             'is_available'      => (bool) $this->is_available,

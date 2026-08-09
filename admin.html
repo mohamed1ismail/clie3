@@ -1551,8 +1551,20 @@ function renderDishes(dishes) {
   const el = document.getElementById('dishes-list');
   if (!dishes.length) { el.innerHTML = '<div class="text-center py-10 text-muted text-sm">No dishes found</div>'; return; }
   el.innerHTML = dishes.map(d => {
-    const displayName = currentLang === 'ar' ? (d.name_ar || d.name || '') : (d.name_en || d.name || '');
-    const displayDesc = currentLang === 'ar' ? (d.description_ar || d.description || '') : (d.description_en || d.description || '');
+    const pickLocalizedText = (primary, secondary, fallback = '') => {
+      const normalize = (value) => typeof value === 'string' ? value.trim() : (value ?? '');
+      const primaryValue = normalize(primary);
+      if (primaryValue) return primaryValue;
+      const secondaryValue = normalize(secondary);
+      if (secondaryValue) return secondaryValue;
+      return normalize(fallback);
+    };
+    const displayName = currentLang === 'ar'
+      ? pickLocalizedText(d.name_ar, d.name_en, d.name)
+      : pickLocalizedText(d.name_en, d.name_ar, d.name);
+    const displayDesc = currentLang === 'ar'
+      ? pickLocalizedText(d.description_ar, d.description_en, d.description)
+      : pickLocalizedText(d.description_en, d.description_ar, d.description);
     return `
     <div class="table-row" style="grid-template-columns:64px 1fr 120px 80px 80px 80px 120px;">
       <div class="w-10 h-10 rounded-lg overflow-hidden bg-s3 flex-shrink-0">

@@ -1187,8 +1187,22 @@ function renderMenu() {
   const lang = currentLang;
   const dict = i18n[lang] || i18n.ar;
 
-  const getDishName = (d) => lang === 'ar' ? (d.name_ar || d.name || '') : (d.name_en || d.name || '');
-  const getDishDescription = (d) => lang === 'ar' ? (d.description_ar || d.description || '') : (d.description_en || d.description || '');
+  const pickLocalizedText = (primary, secondary, fallback = '') => {
+    const normalize = (value) => typeof value === 'string' ? value.trim() : (value ?? '');
+    const primaryValue = normalize(primary);
+    if (primaryValue) return primaryValue;
+    const secondaryValue = normalize(secondary);
+    if (secondaryValue) return secondaryValue;
+    return normalize(fallback);
+  };
+
+  const getDishName = (d) => lang === 'ar'
+    ? pickLocalizedText(d.name_ar, d.name_en, d.name)
+    : pickLocalizedText(d.name_en, d.name_ar, d.name);
+
+  const getDishDescription = (d) => lang === 'ar'
+    ? pickLocalizedText(d.description_ar, d.description_en, d.description)
+    : pickLocalizedText(d.description_en, d.description_ar, d.description);
 
   const query = (document.getElementById('menu-search-input')?.value || '').trim().toLowerCase();
   if (query) {
@@ -1268,7 +1282,9 @@ function openOrderModalById(id) {
   if (!selectedDish) return;
 
   document.getElementById('modal-dish-id').value = selectedDish.id;
-  const dishName = currentLang === 'ar' ? (selectedDish.name_ar || selectedDish.name || '') : (selectedDish.name_en || selectedDish.name || '');
+  const dishName = currentLang === 'ar'
+    ? pickLocalizedText(selectedDish.name_ar, selectedDish.name_en, selectedDish.name)
+    : pickLocalizedText(selectedDish.name_en, selectedDish.name_ar, selectedDish.name);
   document.getElementById('modal-dish-name').textContent = dishName;
   document.getElementById('order-qty').value = 1;
   document.getElementById('order-notes').value = '';
@@ -1365,7 +1381,9 @@ document.getElementById('client-order-form').addEventListener('submit', function
     items: [
       {
         dish_id: selectedDish.id,
-        dish_name: currentLang === 'ar' ? (selectedDish.name_ar || selectedDish.name || '') : (selectedDish.name_en || selectedDish.name || ''),
+        dish_name: currentLang === 'ar'
+          ? pickLocalizedText(selectedDish.name_ar, selectedDish.name_en, selectedDish.name)
+          : pickLocalizedText(selectedDish.name_en, selectedDish.name_ar, selectedDish.name),
         quantity: qty,
         price: selectedDish.price,
         subtotal: selectedDish.price * qty
