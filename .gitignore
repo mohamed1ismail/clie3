@@ -14,3 +14,5 @@ restaurant-backend/bootstrap/cache/*
 restaurant-backend/vendor/
 node_modules/
 .DS_Store
+.jolli/
+
